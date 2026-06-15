@@ -655,7 +655,7 @@
     </div>
     <button class="login-btn" onclick="doLogin()">Entrar</button>
     <div class="login-error" id="login-error">Usuário ou senha incorretos.</div>
-    <div class="login-footer">Plataforma de uso exclusivo da Prof.ª R1 - BERNADETE</div>
+    <div class="login-footer">Plataforma de uso exclusivo da Prof.ª R1 - BERNADETE GOMES</div>
   </div>
 </div>
 
@@ -664,7 +664,7 @@
   <div class="sidebar-logo">
     <div class="escola">CEMEI Vila da Paz · Contagem</div>
     <h2>Relatórios Educação Infantil</h2>
-    <div class="prof">Prof.ª R1 - <span>BERNADETE</span></div>
+    <div class="prof">Prof.ª R1 - <span>BERNADETE GOMES</span></div>
   </div>
   <nav class="sidebar-nav">
     <div class="nav-item active" onclick="goTo('dashboard')"><span class="icon">🏠</span> Início</div>
@@ -1592,7 +1592,7 @@ function buildPrompt(aluno, aval, turma) {
   function descCriterio(lista, avalObj) {
     return lista.map(c => `- ${c.texto}: ${avalObj[c.id] === 'S' ? 'Satisfatório' : avalObj[c.id] === 'D' ? 'Em desenvolvimento' : avalObj[c.id] === 'N' ? 'Não adquirido' : 'Não avaliado'}`).join('\n');
   }
-  return `Você é a Prof.ª R1 Bernadete, da CEMEI Vila da Paz, Contagem/MG. Seu texto será inserido como parte de um relatório maior redigido pela professora regente. Esta é uma turma de crianças de quatro anos.
+  return `Você é a Prof.ª R1 Bernadete Gomes, da CEMEI Vila da Paz, Contagem/MG. Seu texto será inserido como parte de um relatório maior redigido pela professora regente. Esta é uma turma de crianças de quatro anos.
 
 INSTRUÇÕES OBRIGATÓRIAS:
 - Escreva um texto entre 80 e 100 palavras. Seja sintético e objetivo — não detalhe cada item avaliado individualmente, apresente uma visão geral do desenvolvimento da criança.
@@ -1731,7 +1731,7 @@ function imprimirLote(turmaId) {
     </style>
   </head><body>
     <h1>Relatórios Educação Infantil – CEMEI Vila da Paz</h1>
-    <p class="meta">${turma ? turma.nome + ' · ' : ''}1º Semestre 2026 · Prof.ª R1 Bernadete · ${alunos.length} aluno(s)</p>
+    <p class="meta">${turma ? turma.nome + ' · ' : ''}1º Semestre 2026 · Prof.ª R1 Bernadete Gomes · ${alunos.length} aluno(s)</p>
     ${linhas}
   </body></html>`);
   win.document.close();
@@ -1778,7 +1778,7 @@ function imprimirRelatorio() {
   .meta{font-size:12px;color:#5a7a68;margin:8px 0 24px;}
   p{margin:0;}</style></head><body>
   <h2>Relatório Educação Infantil – CEMEI Vila da Paz</h2>
-  <p class="meta">Aluno: <strong>${aluno.nome}</strong> &nbsp;|&nbsp; 1º Semestre 2026 &nbsp;|&nbsp; Prof.ª Bernadete</p>
+  <p class="meta">Aluno: <strong>${aluno.nome}</strong> &nbsp;|&nbsp; 1º Semestre 2026 &nbsp;|&nbsp; Prof.ª Bernadete Gomes</p>
   <p>${texto}</p>
   </body></html>`);
   win.document.close(); win.print();
@@ -2200,7 +2200,7 @@ function gerarHTMLCardImpressao(aluno, opts) {
         </div>
         <div style="text-align:right;">
           <div style="color:rgba(255,255,255,.5);font-size:8pt;">1º Semestre 2026</div>
-          <div style="color:rgba(255,255,255,.5);font-size:8pt;margin-top:4px;">Prof.ª R1 - BERNADETE</div>
+          <div style="color:rgba(255,255,255,.5);font-size:8pt;margin-top:4px;">Prof.ª R1 - BERNADETE GOMES</div>
           <div style="display:flex;gap:6px;margin-top:8px;justify-content:flex-end;">
             <span style="background:${cS>0?'#d8f3dc':'#f0f0f0'};color:${cS>0?'#1b4332':'#aaa'};padding:3px 8px;border-radius:6px;font-size:9pt;font-weight:700;">${cS} S</span>
             <span style="background:${cD>0?'#fef3e2':'#f0f0f0'};color:${cD>0?'#a05c00':'#aaa'};padding:3px 8px;border-radius:6px;font-size:9pt;font-weight:700;">${cD} D</span>
