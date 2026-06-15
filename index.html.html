@@ -1,0 +1,2967 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<title>Relatórios CEMEI Vila da Paz</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+  :root {
+    --verde: #2d6a4f;
+    --verde-claro: #52b788;
+    --verde-menta: #d8f3dc;
+    --verde-escuro: #1b4332;
+    --laranja: #f4845f;
+    --amarelo: #f9c74f;
+    --cinza-bg: #f7f9f8;
+    --cinza-borda: #e0e9e4;
+    --texto: #1c2e26;
+    --texto-suave: #5a7a68;
+    --branco: #ffffff;
+    --satisfatorio: #2d6a4f;
+    --desenvolvimento: #e9891a;
+    --nao-adquirido: #c1121f;
+    --shadow: 0 4px 24px rgba(45,106,79,0.10);
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cinza-bg);
+    color: var(--texto);
+    min-height: 100vh;
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    position: fixed; left: 0; top: 0; bottom: 0; width: 240px;
+    background: var(--verde-escuro);
+    display: flex; flex-direction: column;
+    z-index: 100;
+    box-shadow: 4px 0 24px rgba(0,0,0,0.12);
+  }
+  .sidebar-logo {
+    padding: 28px 20px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.10);
+  }
+  .sidebar-logo .escola { color: var(--verde-claro); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
+  .sidebar-logo h2 { color: white; font-family: 'Lora', serif; font-size: 16px; line-height: 1.3; margin-top: 4px; }
+  .sidebar-logo .prof { color: rgba(255,255,255,0.55); font-size: 11px; margin-top: 8px; }
+  .sidebar-logo .prof span { color: var(--amarelo); font-weight: 600; }
+  .sidebar-nav { flex: 1; padding: 16px 0; }
+  .nav-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 11px 20px; cursor: pointer;
+    color: rgba(255,255,255,0.65); font-size: 13.5px; font-weight: 500;
+    transition: all .2s; border-left: 3px solid transparent;
+  }
+  .nav-item:hover { background: rgba(255,255,255,0.06); color: white; }
+  .nav-item.active { background: rgba(82,183,136,0.18); color: var(--verde-claro); border-left-color: var(--verde-claro); }
+  .nav-item .icon { font-size: 18px; width: 22px; text-align: center; }
+  .sidebar-footer { padding: 16px 20px; border-top: 1px solid rgba(255,255,255,0.08); }
+  .semester-badge {
+    background: rgba(249,199,79,0.15); border: 1px solid rgba(249,199,79,0.35);
+    color: var(--amarelo); font-size: 11px; font-weight: 600;
+    padding: 6px 12px; border-radius: 20px; text-align: center;
+  }
+
+  /* MAIN */
+  .main { margin-left: 240px; min-height: 100vh; }
+  .topbar {
+    background: white; border-bottom: 1px solid var(--cinza-borda);
+    padding: 18px 32px; display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 50;
+  }
+  .topbar h1 { font-family: 'Lora', serif; font-size: 20px; color: var(--verde-escuro); }
+  .topbar-actions { display: flex; gap: 10px; }
+  .content { padding: 28px 32px; }
+
+  /* CARDS */
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 28px; }
+  .stat-card {
+    background: white; border-radius: var(--radius); padding: 18px 20px;
+    box-shadow: var(--shadow); border: 1px solid var(--cinza-borda);
+  }
+  .stat-card .label { font-size: 11px; color: var(--texto-suave); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+  .stat-card .value { font-family: 'Lora', serif; font-size: 28px; color: var(--verde-escuro); margin-top: 4px; }
+  .stat-card .sub { font-size: 11px; color: var(--texto-suave); margin-top: 2px; }
+
+  /* BUTTONS */
+  .btn {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 9px 18px; border-radius: 8px; font-size: 13px; font-weight: 600;
+    cursor: pointer; border: none; transition: all .2s; font-family: 'DM Sans', sans-serif;
+  }
+  .btn-primary { background: var(--verde); color: white; }
+  .btn-primary:hover { background: var(--verde-escuro); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(45,106,79,0.3); }
+  .btn-outline { background: white; color: var(--verde); border: 1.5px solid var(--cinza-borda); }
+  .btn-outline:hover { border-color: var(--verde-claro); background: var(--verde-menta); }
+  .btn-laranja { background: var(--laranja); color: white; }
+  .btn-laranja:hover { background: #e0633a; }
+  .btn-sm { padding: 6px 12px; font-size: 12px; }
+  .btn-danger { background: #fff0f0; color: var(--nao-adquirido); border: 1px solid #ffc0c0; }
+  .btn-danger:hover { background: #ffe0e0; }
+
+  /* TABS */
+  .tabs { display: flex; gap: 4px; background: var(--cinza-borda); padding: 4px; border-radius: 10px; width: fit-content; margin-bottom: 24px; }
+  .tab { padding: 8px 18px; border-radius: 7px; cursor: pointer; font-size: 13px; font-weight: 500; color: var(--texto-suave); transition: all .2s; }
+  .tab.active { background: white; color: var(--verde-escuro); box-shadow: 0 2px 8px rgba(0,0,0,0.08); font-weight: 600; }
+
+  /* TABLES */
+  .card { background: white; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--cinza-borda); overflow: hidden; }
+  .card-header { padding: 18px 24px; border-bottom: 1px solid var(--cinza-borda); display: flex; align-items: center; justify-content: space-between; }
+  .card-header h3 { font-family: 'Lora', serif; font-size: 16px; color: var(--verde-escuro); }
+  .card-body { padding: 0; }
+
+  table { width: 100%; border-collapse: collapse; }
+  th { background: var(--cinza-bg); font-size: 11px; font-weight: 700; color: var(--texto-suave); text-transform: uppercase; letter-spacing: 0.8px; padding: 12px 16px; text-align: left; }
+  td { padding: 13px 16px; font-size: 13px; border-bottom: 1px solid var(--cinza-borda); vertical-align: middle; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: var(--verde-menta); }
+
+  /* BADGES */
+  .badge { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+  .badge-turma { background: #e8f4fd; color: #1a6fa3; }
+  .badge-especial { background: #fef3e2; color: #a05c00; }
+  .badge-sat { background: #d8f3dc; color: var(--verde-escuro); }
+  .badge-dev { background: #fef3e2; color: #a05c00; }
+  .badge-nao { background: #ffe0e0; color: var(--nao-adquirido); }
+
+  /* MODAL */
+  .modal-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.45);
+    display: none; align-items: center; justify-content: center;
+    z-index: 1000; backdrop-filter: blur(3px);
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: white; border-radius: 18px; width: 90%; max-width: 780px;
+    max-height: 90vh; overflow-y: auto; box-shadow: 0 24px 60px rgba(0,0,0,0.2);
+    animation: slideUp .25s ease;
+  }
+  @keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+  .modal-header {
+    padding: 24px 28px 20px; border-bottom: 1px solid var(--cinza-borda);
+    display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; background: white; z-index: 2; border-radius: 18px 18px 0 0;
+  }
+  .modal-header h2 { font-family: 'Lora', serif; font-size: 20px; color: var(--verde-escuro); }
+  .modal-close { background: none; border: none; font-size: 22px; cursor: pointer; color: var(--texto-suave); line-height: 1; }
+  .modal-body { padding: 24px 28px; }
+  .modal-footer { padding: 16px 28px; border-top: 1px solid var(--cinza-borda); display: flex; gap: 10px; justify-content: flex-end; }
+
+  /* FORM */
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-full { grid-column: 1 / -1; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group label { font-size: 12px; font-weight: 700; color: var(--texto-suave); text-transform: uppercase; letter-spacing: 0.5px; }
+  .form-group input, .form-group select, .form-group textarea {
+    padding: 10px 14px; border: 1.5px solid var(--cinza-borda); border-radius: 8px;
+    font-size: 14px; font-family: 'DM Sans', sans-serif; color: var(--texto);
+    transition: border-color .2s; background: var(--cinza-bg);
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none; border-color: var(--verde-claro); background: white;
+  }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .checkbox-row { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+  .checkbox-row input[type=checkbox] { width: 17px; height: 17px; accent-color: var(--verde); cursor: pointer; }
+
+  /* AVALIAÇÃO */
+  .avaliacao-section { margin-bottom: 20px; }
+  .avaliacao-section h4 { font-size: 13px; font-weight: 700; color: var(--verde-escuro); margin-bottom: 10px; padding-bottom: 6px; border-bottom: 2px solid var(--verde-menta); }
+  .criterio-row {
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+    padding: 10px 0; border-bottom: 1px solid var(--cinza-borda);
+  }
+  .criterio-row:last-child { border-bottom: none; }
+  .criterio-texto { font-size: 13px; line-height: 1.5; flex: 1; color: var(--texto); }
+  .criterio-texto.destaque { font-style: italic; color: #5a4000; }
+  .radio-group { display: flex; gap: 6px; flex-shrink: 0; }
+  .radio-btn {
+    padding: 5px 10px; border-radius: 6px; border: 1.5px solid var(--cinza-borda);
+    font-size: 11px; font-weight: 600; cursor: pointer; transition: all .15s;
+    background: white; color: var(--texto-suave);
+  }
+  .radio-btn.s:hover, .radio-btn.s.sel { background: var(--verde-menta); border-color: var(--verde); color: var(--verde-escuro); }
+  .radio-btn.d:hover, .radio-btn.d.sel { background: #fef3e2; border-color: #e9891a; color: #a05c00; }
+  .radio-btn.n:hover, .radio-btn.n.sel { background: #ffe0e0; border-color: #c1121f; color: var(--nao-adquirido); }
+
+  /* RELATÓRIO GERADO */
+  .relatorio-box {
+    background: linear-gradient(135deg, var(--verde-menta) 0%, #fff 100%);
+    border: 2px solid var(--verde-claro); border-radius: 12px; padding: 20px;
+    font-size: 14px; line-height: 1.8; color: var(--texto);
+    font-family: 'Lora', serif;
+  }
+  .relatorio-loading { text-align: center; padding: 30px; color: var(--texto-suave); }
+  .relatorio-loading .spin { display: inline-block; animation: spin 1s linear infinite; font-size: 24px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* TURMAS GRID */
+  .turmas-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+  .turma-card {
+    background: white; border-radius: 12px; padding: 20px;
+    border: 2px solid var(--cinza-borda); cursor: pointer;
+    transition: all .2s; box-shadow: var(--shadow);
+  }
+  .turma-card:hover { border-color: var(--verde-claro); transform: translateY(-2px); }
+  .turma-card.selected { border-color: var(--verde); background: var(--verde-menta); }
+  .turma-card .turma-nome { font-family: 'Lora', serif; font-size: 15px; color: var(--verde-escuro); font-weight: 700; }
+  .turma-card .turma-info { font-size: 12px; color: var(--texto-suave); margin-top: 4px; }
+  .turma-card .turma-count { font-size: 22px; font-weight: 700; color: var(--verde); margin-top: 10px; }
+
+  /* CSV UPLOAD */
+  .upload-area {
+    border: 2px dashed var(--cinza-borda); border-radius: 12px;
+    padding: 36px; text-align: center; cursor: pointer;
+    transition: all .2s; background: var(--cinza-bg);
+  }
+  .upload-area:hover { border-color: var(--verde-claro); background: var(--verde-menta); }
+  .upload-area .upload-icon { font-size: 36px; margin-bottom: 10px; }
+  .upload-area p { color: var(--texto-suave); font-size: 13px; }
+  .upload-area strong { color: var(--verde); }
+
+  /* EMPTY */
+  .empty-state { text-align: center; padding: 50px 20px; color: var(--texto-suave); }
+  .empty-state .icon { font-size: 44px; margin-bottom: 12px; }
+  .empty-state p { font-size: 14px; }
+
+  /* SEARCH */
+  .search-bar { position: relative; }
+  .search-bar input { padding-left: 36px; width: 260px; }
+  .search-bar .search-icon { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); color: var(--texto-suave); font-size: 15px; }
+
+  /* PAGE SECTIONS */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* TOAST */
+  .toast {
+    position: fixed; bottom: 24px; right: 24px;
+    background: var(--verde-escuro); color: white;
+    padding: 12px 20px; border-radius: 10px; font-size: 13px; font-weight: 500;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2); z-index: 9999;
+    transform: translateY(80px); opacity: 0; transition: all .3s;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .toast.show { transform: translateY(0); opacity: 1; }
+
+  .divider { height: 1px; background: var(--cinza-borda); margin: 20px 0; }
+  .text-muted { color: var(--texto-suave); font-size: 12px; }
+  .flex { display: flex; }
+  .items-center { align-items: center; }
+  .gap-2 { gap: 8px; }
+  .gap-3 { gap: 12px; }
+  .mt-2 { margin-top: 8px; }
+  .mt-3 { margin-top: 12px; }
+  .mb-4 { margin-bottom: 16px; }
+
+  .legend { display: flex; gap: 16px; font-size: 11px; font-weight: 600; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 5px; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+  /* HABILIDADES MULTISELECT */
+  .hab-wrapper { position: relative; }
+  .hab-trigger {
+    width: 100%; min-height: 42px; padding: 7px 10px;
+    border: 1.5px solid var(--cinza-borda); border-radius: 8px;
+    background: var(--cinza-bg); cursor: pointer; text-align: left;
+    font-size: 12px; font-family: 'DM Sans', sans-serif;
+    display: flex; flex-wrap: wrap; gap: 4px; align-items: center;
+    transition: border-color .2s;
+  }
+  .hab-trigger:focus { outline: none; border-color: var(--verde-claro); background: white; }
+  .hab-trigger.open { border-color: var(--verde-claro); background: white; }
+  .hab-tag {
+    background: #dbeafe; color: #1e40af; border-radius: 4px;
+    padding: 2px 6px; font-size: 10px; font-weight: 700; font-family: monospace;
+    display: inline-flex; align-items: center; gap: 3px; white-space: nowrap;
+  }
+  .hab-tag .hab-tag-remove { cursor: pointer; font-size: 11px; line-height: 1; opacity: .7; }
+  .hab-tag .hab-tag-remove:hover { opacity: 1; }
+  .hab-placeholder { color: #aaa; font-size: 12px; }
+  .hab-dropdown {
+    display: none; position: absolute; top: calc(100% + 4px); left: 0; z-index: 300;
+    background: white; border: 1.5px solid var(--cinza-borda); border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.14); width: 340px; max-height: 400px;
+    overflow: hidden; flex-direction: column;
+  }
+  .hab-dropdown.open { display: flex; }
+  .hab-search-wrap { padding: 10px 12px; border-bottom: 1px solid var(--cinza-borda); }
+  .hab-search {
+    width: 100%; padding: 7px 10px; border: 1.5px solid var(--cinza-borda);
+    border-radius: 7px; font-size: 12px; font-family: 'DM Sans', sans-serif;
+    background: var(--cinza-bg);
+  }
+  .hab-search:focus { outline: none; border-color: var(--verde-claro); background: white; }
+  .hab-custom-wrap { padding: 6px 12px; border-bottom: 1px solid var(--cinza-borda); display: flex; gap: 6px; }
+  .hab-custom-input {
+    flex: 1; padding: 6px 8px; border: 1.5px solid var(--cinza-borda);
+    border-radius: 6px; font-size: 11px; font-family: monospace;
+  }
+  .hab-custom-input:focus { outline: none; border-color: var(--verde-claro); }
+  .hab-custom-btn {
+    padding: 6px 10px; background: var(--verde); color: white; border: none;
+    border-radius: 6px; font-size: 11px; font-weight: 700; cursor: pointer;
+  }
+  .hab-list { overflow-y: auto; flex: 1; padding: 6px 0; }
+  .hab-group-label {
+    padding: 6px 12px 3px; font-size: 9px; font-weight: 800;
+    color: var(--texto-suave); text-transform: uppercase; letter-spacing: 1px;
+  }
+  .hab-option {
+    display: flex; align-items: flex-start; gap: 8px;
+    padding: 6px 12px; cursor: pointer; transition: background .1s;
+  }
+  .hab-option:hover { background: var(--verde-menta); }
+  .hab-option.selected { background: #eff6ff; }
+  .hab-option input[type=checkbox] { margin-top: 2px; accent-color: var(--verde); flex-shrink: 0; }
+  .hab-option-code { font-family: monospace; font-size: 10px; font-weight: 700; color: #1a6fa3; min-width: 72px; }
+  .hab-option-desc { font-size: 11px; color: var(--texto); line-height: 1.35; }
+
+  /* CAMPO DIGITAÇÃO DIRETA DE HABILIDADES */
+  .hab-direct-input {
+    width: 100%; padding: 7px 10px; border: 1.5px solid var(--cinza-borda); border-radius: 8px;
+    font-size: 12px; font-family: monospace; background: var(--cinza-bg);
+    margin-top: 6px; resize: vertical; min-height: 52px;
+    transition: border-color .2s;
+  }
+  .hab-direct-input:focus { outline: none; border-color: var(--verde-claro); background: white; }
+  .hab-direct-hint { font-size: 10px; color: var(--texto-suave); margin-top: 3px; }
+
+
+  /* LOGIN */
+  #login-screen {
+    position: fixed; inset: 0; z-index: 9999;
+    background: linear-gradient(135deg, var(--verde-escuro) 0%, #0d2b1f 100%);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .login-box {
+    background: white; border-radius: 22px; padding: 48px 44px;
+    width: 100%; max-width: 400px; box-shadow: 0 32px 80px rgba(0,0,0,0.35);
+    text-align: center; animation: slideUp .35s ease;
+  }
+  .login-logo { font-size: 40px; margin-bottom: 12px; }
+  .login-escola { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--verde-claro); font-weight: 700; margin-bottom: 4px; }
+  .login-titulo { font-family: "Lora", serif; font-size: 22px; color: var(--verde-escuro); margin-bottom: 6px; }
+  .login-sub { font-size: 12px; color: var(--texto-suave); margin-bottom: 32px; }
+  .login-box .form-group { text-align: left; margin-bottom: 16px; }
+  .login-btn {
+    width: 100%; padding: 13px; background: var(--verde); color: white;
+    border: none; border-radius: 10px; font-size: 15px; font-weight: 700;
+    cursor: pointer; font-family: "DM Sans", sans-serif; transition: all .2s; margin-top: 8px;
+  }
+  .login-btn:hover { background: var(--verde-escuro); transform: translateY(-1px); }
+  .login-error { background: #ffe0e0; color: var(--nao-adquirido); border-radius: 8px; padding: 10px 14px; font-size: 13px; margin-top: 14px; display: none; }
+  .login-footer { font-size: 11px; color: var(--texto-suave); margin-top: 24px; }
+
+  /* ACCORDION TURMAS */
+  .accordion-turma { border: 1.5px solid var(--cinza-borda); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+  .accordion-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 20px; background: white; cursor: pointer; transition: background .15s;
+  }
+  .accordion-header:hover { background: var(--verde-menta); }
+  .accordion-header .acc-left { display: flex; align-items: center; gap: 12px; }
+  .accordion-header .acc-nome { font-family: "Lora", serif; font-size: 15px; color: var(--verde-escuro); font-weight: 700; }
+  .accordion-header .acc-info { font-size: 12px; color: var(--texto-suave); margin-top: 2px; }
+  .accordion-header .acc-arrow { font-size: 13px; color: var(--texto-suave); transition: transform .2s; }
+  .accordion-header.open .acc-arrow { transform: rotate(180deg); }
+  .accordion-body { display: none; border-top: 1px solid var(--cinza-borda); }
+  .accordion-body.open { display: block; }
+  .acc-aluno-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 20px; border-bottom: 1px solid var(--cinza-borda); font-size: 13px;
+    background: white; transition: background .15s;
+  }
+  .acc-aluno-row:last-child { border-bottom: none; }
+  .acc-aluno-row:hover { background: var(--verde-menta); }
+  .acc-aluno-nome { font-weight: 500; color: var(--texto); display: flex; align-items: center; gap: 7px; }
+  .acc-actions { display: flex; gap: 5px; }
+  .acc-empty { padding: 18px 20px; font-size: 13px; color: var(--texto-suave); text-align: center; }
+  .acc-header-actions { display: flex; gap: 6px; align-items: center; }
+
+  /* SAIR BTN */
+  .btn-sair {
+    display: flex; align-items: center; gap: 8px;
+    padding: 9px 16px; border-radius: 8px; font-size: 12px; font-weight: 600;
+    cursor: pointer; border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.7); background: transparent; transition: all .2s;
+    font-family: "DM Sans", sans-serif; width: 100%; margin-top: 10px;
+  }
+  .btn-sair:hover { background: rgba(255,255,255,0.1); color: white; }
+
+  /* CARD PANORAMA ALUNO */
+  .modal-panorama .modal { max-width: 640px; }
+  .panorama-header {
+    display: flex; align-items: center; gap: 16px; margin-bottom: 20px;
+  }
+  .panorama-avatar {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: var(--verde-menta); border: 2px solid var(--verde-claro);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; flex-shrink: 0;
+  }
+  .panorama-nome { font-family: 'Lora', serif; font-size: 20px; color: var(--verde-escuro); font-weight: 700; }
+  .panorama-turma { font-size: 12px; color: var(--texto-suave); margin-top: 2px; }
+  .panorama-diag { display: inline-flex; align-items: center; gap: 5px; background: #fef3e2; color: #a05c00; border-radius: 20px; padding: 3px 10px; font-size: 11px; font-weight: 600; margin-top: 6px; }
+  .panorama-scores {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px;
+  }
+  .score-box {
+    border-radius: 12px; padding: 16px 12px; text-align: center;
+  }
+  .score-box .score-val { font-family: 'Lora', serif; font-size: 30px; font-weight: 700; line-height: 1; }
+  .score-box .score-label { font-size: 11px; font-weight: 700; letter-spacing: 0.5px; margin-top: 4px; text-transform: uppercase; }
+  .score-box.s { background: #d8f3dc; color: var(--verde-escuro); }
+  .score-box.d { background: #fef3e2; color: #a05c00; }
+  .score-box.n { background: #ffe0e0; color: var(--nao-adquirido); }
+  .panorama-rel {
+    background: linear-gradient(135deg, var(--verde-menta) 0%, #fff 100%);
+    border: 1.5px solid var(--verde-claro); border-radius: 12px;
+    padding: 16px 18px; font-size: 13.5px; line-height: 1.8;
+    font-family: 'Lora', serif; color: var(--texto); margin-top: 4px;
+    max-height: 180px; overflow-y: auto;
+  }
+  .panorama-sem-rel {
+    background: var(--cinza-bg); border: 1.5px dashed var(--cinza-borda);
+    border-radius: 12px; padding: 20px; text-align: center;
+    color: var(--texto-suave); font-size: 13px;
+  }
+  .panorama-section-title {
+    font-size: 11px; font-weight: 700; color: var(--texto-suave);
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;
+  }
+  .panorama-barra-wrap { margin-bottom: 14px; }
+  .panorama-barra-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }
+  .panorama-barra-bg { flex: 1; height: 8px; background: var(--cinza-borda); border-radius: 99px; overflow: hidden; }
+  .panorama-barra-fill { height: 100%; border-radius: 99px; transition: width .4s; }
+  .panorama-barra-pct { font-size: 11px; font-weight: 600; color: var(--texto-suave); width: 30px; text-align: right; }
+  .panorama-barra-label { font-size: 12px; color: var(--texto); width: 80px; }
+
+  /* MODAL LOTE SELEÇÃO */
+  .lote-turma-card {
+    border: 2px solid var(--cinza-borda); border-radius: 10px; padding: 12px 16px;
+    cursor: pointer; transition: all .15s; margin-bottom: 8px; background: white;
+  }
+  .lote-turma-card:hover { border-color: var(--verde-claro); background: var(--verde-menta); }
+  .lote-turma-card.sel { border-color: var(--verde); background: var(--verde-menta); }
+  .lote-turma-card .lc-nome { font-family: 'Lora', serif; font-size: 14px; font-weight: 700; color: var(--verde-escuro); }
+  .lote-turma-card .lc-info { font-size: 11px; color: var(--texto-suave); margin-top: 2px; }
+  .lote-aluno-item {
+    display: flex; align-items: center; gap: 10px; padding: 8px 12px;
+    border-bottom: 1px solid var(--cinza-borda); cursor: pointer; font-size: 13px;
+    transition: background .1s; background: white;
+  }
+  .lote-aluno-item:last-child { border-bottom: none; }
+  .lote-aluno-item:hover { background: var(--verde-menta); }
+  .lote-aluno-item input[type=checkbox] { accent-color: var(--verde); width: 16px; height: 16px; cursor: pointer; }
+  .lote-aluno-item label { cursor: pointer; flex: 1; }
+  .lote-aluno-item .badge { flex-shrink: 0; }
+  .lote-steps { display: flex; gap: 0; margin-bottom: 20px; }
+  .lote-step { flex: 1; text-align: center; font-size: 12px; font-weight: 600; padding: 8px 4px; border-bottom: 2px solid var(--cinza-borda); color: var(--texto-suave); transition: all .2s; }
+  .lote-step.active { color: var(--verde); border-bottom-color: var(--verde); }
+  .lote-step.done { color: var(--verde-claro); border-bottom-color: var(--verde-claro); }
+  .nome-clicavel {
+    cursor: pointer; color: var(--verde-escuro); font-weight: 600;
+    transition: color .15s;
+  }
+  .nome-clicavel:hover { color: var(--verde); text-decoration: underline; }
+
+  /* EXPORT CARDS */
+  .exp-card {
+    border: 2px solid var(--cinza-borda); border-radius: 12px; padding: 16px;
+    cursor: pointer; transition: all .15s; background: white; text-align: center;
+  }
+  .exp-card:hover { border-color: var(--verde-claro); background: var(--verde-menta); }
+  .exp-card.sel { border-color: var(--verde); background: var(--verde-menta); box-shadow: 0 0 0 3px rgba(45,106,79,.12); }
+  .exp-card-icon { font-size: 28px; margin-bottom: 6px; }
+  .exp-card-title { font-weight: 700; font-size: 13px; color: var(--verde-escuro); margin-bottom: 4px; }
+  .exp-card-desc { font-size: 11px; color: var(--texto-suave); line-height: 1.4; }
+
+  /* BOTÃO DE VOZ */
+  .voice-btn {
+    position: absolute; right: 8px; bottom: 8px;
+    background: none; border: none; cursor: pointer;
+    width: 30px; height: 30px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--texto-suave); font-size: 16px;
+    transition: all .2s; padding: 0;
+    z-index: 2;
+  }
+  .voice-btn:hover { background: var(--verde-menta); color: var(--verde); }
+  .voice-btn.gravando {
+    background: #ffe0e0; color: #c1121f;
+    animation: pulse-mic 1s infinite;
+  }
+  @keyframes pulse-mic {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(193,18,31,.4); }
+    50% { transform: scale(1.12); box-shadow: 0 0 0 6px rgba(193,18,31,0); }
+  }
+  .voice-wrap { position: relative; }
+  .voice-wrap textarea { padding-right: 38px; }
+
+  @media print {
+    .sidebar, .topbar, .modal-overlay, .toast { display: none !important; }
+    .main { margin-left: 0; }
+    .relatorio-box { border: 1px solid #ccc; background: white; }
+  }
+
+  /* ===================== HAMBURGER ===================== */
+  .hamburger {
+    display: none; flex-direction: column; justify-content: center; gap: 5px;
+    width: 38px; height: 38px; cursor: pointer; padding: 6px;
+    border-radius: 8px; transition: background .2s; flex-shrink: 0;
+  }
+  .hamburger:hover { background: var(--verde-menta); }
+  .hamburger span { display: block; height: 2px; background: var(--verde-escuro); border-radius: 2px; transition: all .25s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .sidebar-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,0.5); z-index: 99;
+  }
+  .sidebar-overlay.open { display: block; }
+
+  /* ===================== TABLET (≤ 900px) ===================== */
+  @media (max-width: 900px) {
+    .sidebar { transform: translateX(-100%); transition: transform .28s ease; z-index: 200; width: 270px; }
+    .sidebar.open { transform: translateX(0); }
+    .main { margin-left: 0; }
+    .hamburger { display: flex; }
+    .topbar { padding: 14px 16px; gap: 10px; }
+    .topbar h1 { font-size: 18px; }
+    .content { padding: 20px 16px; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 20px; }
+    .form-grid { grid-template-columns: 1fr; }
+    .form-full { grid-column: 1; }
+    .modal { width: 96%; border-radius: 14px; }
+    .modal-body { padding: 18px; }
+    .modal-header { padding: 16px 18px; }
+    .modal-footer { padding: 14px 18px; flex-wrap: wrap; }
+    table th:nth-child(4), table td:nth-child(4) { display: none; }
+    .search-bar input { width: 180px; }
+    #page-importar > div { grid-template-columns: 1fr !important; }
+    #tab-relatorio > div:first-child { flex-wrap: wrap; }
+  }
+
+  /* ===================== MOBILE (≤ 600px) ===================== */
+  @media (max-width: 600px) {
+    .topbar h1 { font-size: 15px; }
+    .content { padding: 12px 10px; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 16px; }
+    .stat-card { padding: 12px 12px; }
+    .stat-card .value { font-size: 22px; }
+    .stat-card .label { font-size: 10px; }
+
+    .login-box { padding: 28px 18px; border-radius: 16px; margin: 16px; }
+    .login-titulo { font-size: 17px; }
+    .login-sub { margin-bottom: 22px; }
+
+    #page-alunos > div:first-child { flex-wrap: wrap; gap: 8px; }
+    #page-alunos > div:first-child > div:last-child { margin-left: 0 !important; width: 100%; justify-content: flex-end; }
+    #page-turmas > div:first-child { flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+    .search-bar { flex: 1; min-width: 0; }
+    .search-bar input { width: 100%; }
+
+    table th:nth-child(3), table td:nth-child(3),
+    table th:nth-child(4), table td:nth-child(4) { display: none; }
+    #tabela-relatorios th:nth-child(3), #tabela-relatorios td:nth-child(3),
+    #tabela-relatorios th:nth-child(4), #tabela-relatorios td:nth-child(4) { display: none; }
+    td { padding: 9px 8px; font-size: 12px; }
+    th { padding: 9px 8px; font-size: 10px; }
+    td:last-child { display: flex; flex-direction: column; gap: 4px; align-items: flex-start; min-width: 80px; }
+
+    .acc-aluno-row { flex-wrap: wrap; gap: 8px; padding: 10px 12px; }
+    .acc-actions { width: 100%; display: flex; flex-wrap: wrap; gap: 4px; justify-content: flex-end; }
+    .accordion-header { padding: 12px 12px; }
+    .acc-header-actions { gap: 4px; flex-wrap: wrap; }
+    .acc-header-actions .btn-sm { padding: 5px 8px; font-size: 11px; }
+    .acc-nome { font-size: 13px !important; }
+
+    .modal-overlay { align-items: flex-end; padding: 0; }
+    .modal { width: 100%; max-width: 100%; border-radius: 20px 20px 0 0; max-height: 94vh; margin: 0; }
+    .modal-header { padding: 16px 16px 12px; border-radius: 20px 20px 0 0; }
+    .modal-header h2 { font-size: 16px; }
+    .modal-body { padding: 14px 16px; }
+    .modal-footer { padding: 12px 16px; gap: 8px; }
+    .modal-footer .btn { flex: 1; justify-content: center; }
+
+    .criterio-row { flex-direction: column; gap: 10px; align-items: flex-start; }
+    .criterio-texto { font-size: 13px; }
+    .radio-group { gap: 8px; }
+    .radio-btn { padding: 8px 16px; font-size: 13px; }
+
+    .tabs { width: 100%; }
+    .tab { flex: 1; text-align: center; padding: 8px 6px; font-size: 12px; }
+
+    #tab-relatorio > div:first-child { flex-wrap: wrap; gap: 6px; }
+    #tab-relatorio > div:first-child .btn { flex: 1; justify-content: center; font-size: 12px; }
+
+    .toast { right: 10px; left: 10px; bottom: 14px; justify-content: center; }
+
+    .card-header { flex-wrap: wrap; gap: 8px; padding: 14px 14px; }
+    .card-header h3 { font-size: 14px; }
+    #page-relatorios .card-header { flex-direction: column; align-items: flex-start; }
+    #page-relatorios .card-header > div { width: 100%; }
+    #page-relatorios .card-header select { width: 100%; }
+
+    .turmas-grid { grid-template-columns: 1fr !important; }
+    .legend { flex-direction: column; gap: 6px; }
+    #figura-humana { font-size: 12px; padding: 6px 8px; }
+    .upload-area { padding: 24px 16px; }
+  }
+
+  /* ===================== MOBILE PEQUENO (≤ 380px) ===================== */
+  @media (max-width: 380px) {
+    .stats-row { grid-template-columns: 1fr 1fr; gap: 6px; }
+    .stat-card .value { font-size: 20px; }
+    .btn-sm { padding: 5px 7px; font-size: 11px; }
+    td:last-child .btn-sm { width: 100%; justify-content: center; }
+  }
+
+
+  .tema-opt {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 14px; cursor: pointer; font-size: 13px;
+    color: var(--texto); transition: background .15s;
+  }
+  .tema-opt:hover { background: var(--verde-menta); }
+  .tema-opt input[type=checkbox] { accent-color: var(--verde); width:15px; height:15px; cursor:pointer; }
+
+
+</style>
+</head>
+<body>
+
+<!-- TELA DE LOGIN -->
+<div id="login-screen">
+  <div class="login-box">
+    <div class="login-logo">🌿</div>
+    <div class="login-escola">CEMEI Vila da Paz · Contagem/MG</div>
+    <h1 class="login-titulo">Relatórios Educação Infantil</h1>
+    <p class="login-sub">1º Semestre 2026 · Acesso restrito</p>
+    <div class="form-group">
+      <label>E-mail</label>
+      <input type="email" id="login-user" placeholder="seu@email.com" autocomplete="username">
+    </div>
+    <div class="form-group">
+      <label>Senha</label>
+      <input type="password" id="login-pass" placeholder="Sua senha" autocomplete="current-password">
+    </div>
+    <button class="login-btn" onclick="doLogin()">Entrar</button>
+    <div class="login-error" id="login-error">Usuário ou senha incorretos.</div>
+    <div class="login-footer">Plataforma de uso exclusivo da Prof.ª R1 - BERNADETE</div>
+  </div>
+</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <div class="sidebar-logo">
+    <div class="escola">CEMEI Vila da Paz · Contagem</div>
+    <h2>Relatórios Educação Infantil</h2>
+    <div class="prof">Prof.ª R1 - <span>BERNADETE</span></div>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-item active" onclick="goTo('dashboard')"><span class="icon">🏠</span> Início</div>
+    <div class="nav-item" onclick="goTo('alunos')"><span class="icon">👧</span> Alunos</div>
+    <div class="nav-item" onclick="goTo('relatorios')"><span class="icon">📄</span> Relatórios</div>
+    <div class="nav-item" onclick="goTo('turmas')"><span class="icon">🏫</span> Turmas</div>
+
+  </nav>
+  <div class="sidebar-footer">
+    <div class="semester-badge">1º Semestre 2026</div>
+    <button class="btn-sair" onclick="fazerLogout()">🚪 Sair</button>
+  </div>
+</div>
+
+<div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+<!-- MAIN -->
+<div class="main">
+  <div class="topbar" style="display:flex;align-items:center;justify-content:space-between;padding:10px 20px;">
+    <!-- Logo PMC esquerda -->
+    <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;">
+      <div class="hamburger" id="hamburger" onclick="toggleSidebar()" style="flex-shrink:0;">
+        <span></span><span></span><span></span>
+      </div>
+      <img src="data:image/png;base64,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" alt="Prefeitura Municipal de Contagem" style="height:56px;width:auto;object-fit:contain;">
+    </div>
+    <!-- Título central -->
+    <div style="flex:1;text-align:center;padding:0 12px;">
+      <h1 id="page-title" style="font-family:'Lora',serif;font-size:18px;color:var(--verde-escuro);">Início</h1>
+    </div>
+    <!-- Logo CEMEI direita + sync -->
+    <div style="display:flex;align-items:center;gap:14px;flex-shrink:0;">
+      <div id="sync-indicator" style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--texto-suave);">
+        <span id="sync-dot" style="width:7px;height:7px;border-radius:50%;background:#52b788;display:inline-block;transition:background .4s;"></span>
+        <span id="sync-label">Sincronizado</span>
+      </div>
+      <div class="topbar-actions" id="topbar-actions"></div>
+      <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCACiALwDASIAAhEBAxEB/8QAHAAAAQQDAQAAAAAAAAAAAAAAAAQFBgcCAwgB/8QAQhAAAQMDAgQEAwUFBgQHAAAAAQIDBAAFEQYhBxIxURNBYXEUIjIIM0KBkRUjocHRFlJicrHhNHOT8CRDRFRjZJL/xAAbAQABBQEBAAAAAAAAAAAAAAAAAgMEBQYBB//EADIRAAEEAQMCBAQFBAMAAAAAAAEAAgMEEQUSMSFBBhNRYSIyceEUI0KBkRVSwdGhsfD/2gAMAwEAAhEDEQA/AOy6KKKEIyO4rzI7ikrn3ivc1jQhLMjuKMjuKR15XMoS3mT3H60ZHcU1TZkaCwqRKfbZaSMlSjioLduIbkuUqFpa3LnPpBKnVbJA7486jz24oB8Z/bupdWjPZ+RvT17KzlLQkZUtIHcmtCrjb0nCp0UHsXU/1qi0u3/Utpu8+4XiQyqAN46RyjPbam3hpHhz9TiLcGUvJfYWEc++FgbVWO1h29rWs+bjKu2eHmiJ8j5Pk5AGV0KLlbj/AOvi/wDWT/WvVXCAk4VOjA9i6n+tcyJY+F1OmMoY8KWlBBH+MVIeLENTeq3HGIyw0WUnKG/l6d6a/rcnluf5fBxz9lIPhqITRxeb8wznH3V8/tK3f+/i/wDWT/WgXK3E4E+KT/zk/wBa594aWD9s3rxXmy5Dip8R0Y+ojomnbidbobdqtl1iWsQFPKUlbYTykHyzTjNWldAZtgx9fsmJNCgZbFXzTk98DofTlXohxtYyhaVDuDmvcjuK5etOor1a1hcK4PNAH6ColJ/I1YOmOKaiUsXuMMHq+yOnqU0utrkEpw7oUm74Xt1xuZ8Q9lcHMnuP1oyO4potdxg3KMmRBktvtqGcoPT3HlSqrhrw8AtOVm3NLThwwluR3FGR3FIxRSlxLMjuK9pIj6x70roQiiiihCKKKKEJI594r3NY16594r3NebGuLmV5UZ1pq+Bp1oNYMmcvZthvc5PfsKR8QNYN2VP7Mt48e6SBhKU7+HnoT69qp9cy6W3UiJ85KzNZcDi0vdTVLqOpiD8tnPc+i0uj6EbX5snHYdz9llqbUV1vcsrnvqCQo4aGQlPpikdmucu1XFuZDeKHkKzgdFDsalmt7fCu1sRqu0BCEO4EpkdUL9BRpDh3c7ulEqfmFGOCAofOoe1Zx1azJZG05PIK2LL1KKn8YDW8Fvv6KRu3fT07S9xukZ5EedcGfDdij6i4PMJ61EtF6d1U1dotyhWpX7o82XjyJwR671b9h0rZLIhIiQmy55uLGVH86fPbpWjGlumLXzHBHosYNbbWbJFXblrv7vT0VSv8OL7cLu7c5EqFFcdc8TkRlQBqRz9Nammw1xX77FKFo5FYjeXvmpuKKlM0uBgOM9eeqhS6zZl27sfDx04VZxNF6qtFqdt9ousNDbi+cqCSlZPvTXqyFrJ/TDdsudrcmLZd8RMtpwL29utXBWJG5VSH6VGWljXEDGE5HrcrZBI9oJBznHXP1XLbzbjThbdbW2sdUrTg/pU907Hg6Y0mu93aGmS/OUG2GF+aPM1aV607Z7w0pE6E2tZ/GBhQ/Oo5c7VdrTBDbcVq+29ndtl4fvG8dj51Vx6S6o9z85Hb2/ZXs3iBt6NseNpz1GefoVD9Thel3Lbe7C69C+NRzqiqOQn0x2qcaG11Cv4TFlBMafjBQo/Kv1B/lVV36betYX4JbhOFaPkbYQk4bHr2p9t/DyS2hYeujMe6Ib8ZthCslGPNR8qZrWbDZiYBln/uE9cpVHVWttuxJ2PJ9s+o91dAI6A17Vf8Odai4r/Y92cSJrfyoczs7j171P601ayywzcwrGW6ktSUxyD7rNH1j3pXSRH1D3pXUhRkUUUUIRRRRQhI3PvFe9R3XOo2dOWZchSkl93KWG+6u9P8pxLfiOOEJQnJUfSqVmrXxA125G+K+HitJUljJ6AdvUneq3UbLoWBsfzO6BW2k0m2JC+X5G9StfDi422TqV+ZeXx+0Xs/DOu7oCzTvqvRrTs96W8+60ltrLklRz8Q6eiUiorqbRl6sS1Olr4iODs8zuB79qsXhpb7nNtsW4Xt1byGv+DaXuEj+8e57VSU4nTE1pmdecrS6lKyDF2tKMcY/wBLDh1odNtjIm3bLjylc6GCcpQfIkd6sBIwkAJx6V6NxRWmr12V2BjFjbVyW3IZJD1KKKKKfUZAooooQiiiihCKx3B36f6VlRXEKL6m0++tbtzsL/wVzUjlUpAwHB2Pr61E7rqNcXRbz0wNIv7pMV1WMOcvc/lVqVAOLGkk3SEbtAbxNYGVhP8A5if61VXq72sc+HnHH+fqrvS7UckrIrHGR1/wfZUuy64y+h1pxSFpOQoHcGr44a6pTqC1BqQoCdHGHB/eHkqqHQhS3Q2hKlLJxypGSTUmsiL3pKZDvj8VxiMpfKoH8SfMEVmdLtSV5NxB291tteow3INoID/0/wCl0E39Sc7b0spst8lmXFYlR1hbTqQpB9DTnW7BBGQvLy0tOCiiiiuriKKKKEKA8Xbz+y9OOtNL5XpSi2nuB5moxw/01p6VaWLk3PecuTfzuJYcwoHtikXGN+Rd9aNWeCkurZTgJB/EdzUEjm5wLiUxvHZkNrIw2TnIO4GOtZK5dxcL3NyB0W907TS/T2sZJte7qfce/srbuL37Y1ZHt1qenR0uNk3Jp1HKkoHnjuemasJltDLKGmkhKEJASB5CoVwoE2dbXr3dHFOypB8JKlJwQhP+5NTfYdSK0FIZZ5ru6yWonbJ5Df09P3XuaK1l5gHBebB/zCsyQBkkAd6lhwPdV+COy9orUJEcnAfaJ7c4rb7UBwPC6QRyEUVipaEfWtKfc4rFD7KzyoebUewUDRuCNrvRbKKxWUpGVEAeprFL7CjypebUewUKNwHJRtd2C2UUdMVg4603944hH+ZQFBdjlcAJ4WVeKAKSlWN/KsW3mXPu3UL/AMqgarXiO7fm77mH8WGUoBT4WSD+lQ71wVot+N30U2jTdZl8vO0+613mTE0PqQ8toYdamuhxD6k7tpP1AVu1k9EOl7oq43xmciUoOQW04Km+wrZq60zLpw1YflpUqfGAdyvrjzB/KoMvh/qvwEutw23mykFJQ6Dke1Udl8zMtjZlrhn6ZWopMrShr5Zdr2nB98cY9FPuCF6Mu1OWl9WXIqgpGT+E+X61aFc+8OfjtO6/iw7iyqOt/wDdqSrzz0roKrXR5nPr7Xct6Km8QV2RWy+P5XdQiiiirVUaKKKKEKgmbrBicXbtOur3hNNy3kBWM4IUUj/SpbGXpnliy4d5iOmG08opVgLcUvfz/Oq51BZpd01TqmUwtAbhzZC3AT1HiKpt0vY5V3EmSy42EQwhTgV1IJrHxWJGPLAzOSV6HZowSxiXzNu1oBH7K+Y0tiw6LbmPEANtc4/xKVvVaSdR6l1POUxA8YjyQ1tgepqW8XFLZ0FGDf0hbYV/+aauAqmltXJWAXcpH5b1NuF89plYOw3HZUlJkUFOS4W7nZwMpExo7V63W3HiQOYFWX9wM0a41VOmXQ2m3OqbaaIbAQd1q6VbNxcDVvkOjqlpSh+Qrm2HNmm8iREaL0jxS4kBPMc57VF1CAUmiONx+LnqpelSu1B7pZWj4B09OqnzWh9UqjfECQhKiM8hdPNTdA1JqC1y3rPIlOpWcoys5KFeWK3o4h6vjf8AEW4kD+8wRUUuN1fu2o0zXmVMrddTkBJAyDUSURRYNcuB75U2vDNKXNtNaW9sYT3BTqXUct1iM88+tr7zLnKBXt7tepNPpTIleK0knZxDmQDUh4LrC77ecdMD/U1KuKyEK0VNKhukAj9akxaa2WqZy47hnuoU2ouhuisGDacdvVVrbndUanWtuNIdf8MfMC5y4FeXmz6lsTYkzEvIbz94h3ITTrwId5rrcEf/AAg/xqecSkIXoufzjYIzRX08T1DO5x3D3SrOoGtfFdrBtOO3qoLC15cWNK8jqueSVlDbyjvy96S2Wy6l1O0Z3xaktE45nHCM+wqGT3iLTBAPULz+tSiw67v0G1MW63W8OIbTgLDRVmosUvnPDbDiWgdlOmpuhjL6rRuJ79gtt5iag0dPZcckkc+6FoUSlXoa06g1HcZlwblsyXWkSEJISFYGfOtV+uWr9StNtyrY+tKDlPKwRTYqO+3+zIslPhvCTyFJO4GRsRSJQ4OLYiQwkcpUTGOaHTBpeM5xj0V9+B8Rp74d3Ky5F5VZ8yU1Xen5kG0aLSNQXRwlMhSmWmnT4hCTjlPptVotJKWUoPTAH8Koe+aNvExM67wAZDKJbqVND6kgK8hWlvGSJrXsGSBhZnSGRTOdFM/a0kFYy9SHUPEKzzW2PAS3JZbSM5UU84610ZXM9isUqHIsF4ecAbk3JtsNkEKBSsda6YpvRjIfMMnJIUjxI2FvlNhPwgEfwUUUUVdrMIooooQudRqRvT/EHUolQ/i4kmdIQ81nqPEVW+brexx7c9C05YjBMpSQ64ojpmozxLjqia8vTavxzHHR7KUVfzqPFRBGPI1iX2ZYnOYOxK9Rj02vZjbKc5IHfoenouktZW83rQDzLW6zHS62fVIz/Wqe4V6pa01qJYnlSIr6fDdV/cVnY1dfDuem56Nt0jIP7kNq9xsahet+HOnbjOMyJdUW591Z50fUhSvar2zWfKWTxchZKlchgEtOz8pJUnu+uNKptzoXdW1hxspwjc7jtVL2a5Q7Jfod6iuLfjNPFLuRgj/sVJLdwpta3QmTqlpwKVjDScGpUrh/okWc25EwpU6ebxvFypRTt7U3NXtWHAuaAQnoLWnUmljHlwdyn+LrnSMxkLFyjjIzyuAAimHX19sc3SFwfsr8ZyTGUgqW2kfLk96jCuE9nW+kR9VDDhwkKQM5p8tHDqxWu23O3Sb844JZbbdxgFBGSMfrT5FqVpa5gUbGnQPEkcpODxhNn2eXlO3O7LUeZSm0knvuanPFpXLoW4H/AAj/AFpFobTundJPS3IV2LqnQEr8VYOMU86kas2oLK7bH7i2lqQMcyFjNO16z46piPKj3LsMmoidny5CrP7PLnNfLiP/AK4/1qx+JquXQ9y/5VNehtL6e0q/Knwbot7mSG3C6sEDennULllvVnkWuRckNNvfIpSVbiuVqr46hiPKL96KbUBOw/D0/wCFzmhxUixYAJVEcySPJKv96sjhDrazQbQq2XZxMdxtZLS1J2IPlmn/AExo3SFjck8tz+LRJR4DjbygQQPSmO58LdMPyHlwNQKiIT8ymyQoJB7Zqui06zXcJGjqrmxq1C410MhIbyCpXcuJWkobalJneOrHRtNVHGV8ZxEhLbUpTMqUh1BV1wTmpvB4UaWiyEtXC8vPqwFBBUE5B6U8w9E6YiXy3z41wWFRXeRlrnBGRvynzqRLWs2C0yADBUWC5p9IOELiS4Y6hT9RwknsM1Rl01w5boy4tredaltXF1xwkfIpJUdqubUEwQLJNmK2DLKlb+1cqrdLi1uL+paio+5OaRrFl8LWtYepS/DNCOy575BkDCsiZrNjUszTcf4QxpTNyaU4Ej5TladxV/1yZo1CndX2hCd//GtH9Fg/yrrOnNGkfK17n+yb8S1oqz444+g6n+SiiiirpZhFFFFCFQH2hLZ8NqRi5pR8klHKr/Mn/aqx5hXSHGKyKvekZQZRmRGJda9cdRXLZnhJIV1GxrI6rAWTlw4K9K8N2xPUDDy3or3+z5ew7Hm2F1YCmz4zO/kdlf8AfrVgydNwnpplhx1LnjB0dCEkA/w3zXLek9TrsV/i3VlZHgufOP7yTsofpXWdluUa7WxifEWFsvIC0kHvVvpM4dH5Z5CzPiag6Cz5w+V3/aaEaRgMrS4w882tOfmGM7jBoGkLYn92lUgMkYKCoHPn18t96kmR3oq3ws1hR5GlYAfbkuOurdQQUqyB0wBt7AUSdKQXpDklL8lLziuZZC+p33/jUh86KEd1HE6QtQP1PnJBX825okaQtDp+lxsAggJV03/nUjo9KAcoTE1pqChlxlS3loVy9TjASdhWt7SducKytTvKp1ToSOgUa1XS6O/2wh2+BOacW2gqlxAoFQQo7KPb86kaFtkqCVpUUnBwehoRkqPjSVvbcQ6yt1K0kk+fUYrxej7UeYFT55/rHPse1SSiuZR9UxStNxJTiVuuvfK2lGMjfl6HNa2NKQGHUONvPhQcC/q3JHr61Ia0y32osdyU+4ENNpKlqJ2AHnQTjqUNG44CrzjzfBB02i1NLw9NV82D0QOtUQFbDNL+Jesk6h1NJmheIzZ8Nkdkj+tRdq6tOZKHM4OOlY3UJvPnJHC9U0SialUNdyepVo8ErYq463YfKctxAXFH16CulaqvgDZFW/S4uclBD85fMARuEDp/M1alaLS4DFAM91h/EFv8TddjhvRFFFFWKpEUUUUISF5IUXElOxJyD5iuaeJvCLUSNVTJenojT1sePjJKnUo8LO6k7nyNdMOfeK9zVf8AHK6Itmi1NkqWZKy0GQgq8XI+nI6d6h24I5WfH2Vlpd+epNmHrnoqCY4S8QHmkuM2ptxChlKkyEEEe+asjhZaeLGmo6rQbbEERauZLkh4KDfcbGkvCa9aq05aXGrkUyWV7sRVuHDCc7AHvVw6V1DGvsRS2mlMyWTh1lXUHG2D5g1X1Ia5fmNxyrjUdWtuj2TMaW/T7ouV/g6btKZepbnFYPRSwOVJPoKeIchiVGQ/GeQ80sZSpCsgiuT+JWoZ2p9SSHrhEcjIZcLIiKXzBvlOMkdzSvhtrW6aXuzIaRJlxXVhpcNKslWTgFI8jViLI3bVnnQHGV0vfbzDs7SXJfi8hSSShsqwB5nHSojF4p2SbbBMtsaTIy4UKQQEqGDjO/61Mbuw/PsshhhaWXnmCElxOQkkeYrn9hKbWV2y44hvxypGEJKQ5v8AVTV2zJAAWp+hVZYJDuQrJ07xEc1HrNzTsC3LjNtAOKkOg4Un8SR5Zp61LJvjmp7bDtkS4iO2pLkh9spSyU56KJ3OOw3qK8JLXNlX16/GU61DQjwkMgbOk/iPfFTjXc+fbdNyZVvjfEOIAC8HBSg7KUO5A8qdrSOdHvembUbWzbGJHcb9pCyXl6W4uO3cZACHXkIypWNglShSiTGiwbE/MYmCOw44JUp95zICepIIqJNJbejMyEJaMTw+b5k/MfzpouUnU950Fc7NatNSJUJ90ssulwBXId8gdgdqSLBIOAnvwbdzRuwCeqmsHiVouZbJFwZvjBZjKw4ScKz6JO5zWFm4n6MuyX1M3ptssILi0vJLZ5R579aqG9aKj2Ny3w7pa4zIMRHJIbOSpzqrn9jsK0XCzQ7gtqDEgRpUhSkoawOVKD6kdcmq9+oWGvDdoVt/TaBjJa4nrz07K9NM6ws2rI8o6buLbr7Ox5kEBJPQ4PUVAeJ8PiteLc7ZYcCE5GdPzvx1hJUntg028MbDqfh7errJu1rit21xslchCsgr6pSnG+M/pViWzVVwn21iWqMxD8VJUFPkjm9hUoyeZF+adp9lEc1lOzmsA9vQgnrhcz6i4Ya2tVtXcLlaFpiNbuKQ6klKe+xrzhXpKTq/VsWOGnW4jZC5S8ZSGx69zXSf9oZE68v2G4RmG0Pw1Fk4KkPHHkf5GnbQGn7bp7TcWLAYZbJby4ttGOYnc1Ebpcb5WvaegVu7xXZZWfC9g3O4IT9DYajMsx2EhLTYCEJHQAbCnGkaN1J96WVegYGFjSSTkoooorqEUUUUISNz7xXuagnGhE46ZakQ3glpiQkyG+TPiJ7Z8sGp459avc0juTEeRBeamoSqOtOFhXbvTUrN7S31S4n+W8O9FRiPCcYLgVlLoycK8v5U+8Lm7lL1amXGkLZgMNL8dAGzudkjPocmtM3QE+aqY9aHm2orSz4aHweZQ5QroCAc9KsPQcS3xLA2YTZSpSf32dyV43yKpqlJ7JNzlc3b8ckW1ndUJx/0z/ZK9uaiRIbEG5v/AEHdSXD1/Kkv2ebVC1XrH49UgqatpCwnBAcV6e3nUt+0LNRd9O2+Y5GUhoyy2wl5GFbfUrFNH2dXOWVdnYiCXmWkvpSgbrxnKfzpTrAbdEO3p6qbFpW/R3XS/qDjC6OccbbwVrQNsjJrmb7Sst9/WMNyK/4KvhtsHGUcxwT710Q/Ci363RXJsZ5vOHQ2pRSpBO+DiqA4xQLhM1/Kd/ZcktcqWY58IkKSkeX51YW634iLZnCp9LuijYExbux2VlfZ9uqJegYsVShzxwQCD1Gd/wCNWLIaafjuMvJC21pKVJPQiqW4EWZUm23C13SFLZZZkJfZVlTfzfiTkeWw2q1LnCuz89LUeWhm3LbKHUcnzj/KafiZsYGc4UWzIJpnSgYyc4VAaq1C9ZeIJskdpP7KW83g5OShR32ro20MRY9tZbhIAjpQOTByD61y/wAYWAjixLfYLgEdxpCEBBxhAFdBwjeY8OD+ymmX4chKVkPEpUwCMkY8xn9KiVWSRvcX8HhWGpS15IohDyB8X1SbjAY7OhbjMW0hUhlolhR6pV39qrj7ONzRdr1OVMU04620hTGB9B8yPU068c7ncIWh5AujSFTJq/h2WI+VIQ3nKlE9ztVS8E7k9adcx2mIjjAlDwipCSeVX4SR28vzqFamAvMGOiuNM04S6PPIee3PbldW6igu3KyyoTD3gPPIwhYAPKfKodCfU0lTE5lbxaHKMNcxSehBFTOzruCoRdujbLLwJ+VtWQAO5NUt9oe9yoy7bLtkxUcLW4hK2VY8QAbqJHX0qbqGGxl57Kk0qKSecQM/Up1aoDc/UTV2locZatraltoBwRkfiH8qlGlX0ybK1JQlSWnFKU2FDBCSTimDh7b0zNC2ta5chTT7CFuIKgfEJ65V1NSezILULwNsNqUgY7A7U/WbtYCO6i2yTK5p7HH8Jej6h70spIj6x70rqSoqKKKKEIooooQkbh/eK9zUcejvzdVrbVPW5b22ApUUJ2DmTglX8qkcqO84h1LZ5SsEBW21ILHCkxIojOxAhSR8ziXAQ4e/ff1pJGV0dMqE6nisjUM9MLU1yhEQzJeZjupKUlJCdwUnGxp6tsSM09ZH7dPeMZSVIcAUCJB5MgqPcb1ImLTFZdfcbgspW/8AeqwCV565NJbvbJK4TUe3xkNrbeQ42oKCUowoZ29RkfnSQxK3Z6Jt18zZHbUhd4ZiKSl5HheOAfmKgNs960WtFjsusX4EeNFhuy46FtoaZCc42O4HpUguNkh3FTKpsJqQWVcyPE35T3ApUYn7wL8JAWBgKwCRR5bc5wjzHbduei9HTpimmdJhqvdvjqfbL4LhDYUCoDA8qeQy4PL+NN7Wnrczc1XNuC0Ji88zv4t6Uk5SOPNhxb/It63223n0pdbQtWCryOKeFZ9hSeTZYcma1MfhsuyGvu3FDJT7UsDLnmB/SjCMqF3GXZZ8q6vsGM8tiOkurCASkhXcipJa7hEuUNMiC+2+0NiU+R7GlCLawhLgREZHiDC8JA5h696zjQUR0FDDDbST5IAAP6UAYRlIb81HetMoSkNLbDZUedAIGN/OmSzHT7d9jvQ029Dz8NJbLaUAq38qlbsXxmVNOtAoUClSScgg9abWNL2hhTCmrVHQpgkskdUe1JLSTnCU15DcZS91CXUKacSFIUCFDuD1qJ6psemJCrfDuEOE40w274bbn4Byk7VMgy4B0/jTdP0/b5r6pEq3svOlPKVK647da69u4YIXI3Fhy04WrS8WJE0/Cjwm0tx0NDw0p6AU5gV6xEDDKWWWwltAwlI6AVn4Tnb+NdAwMIc4k5KxR9Y96V0nS0sKBx596UUpJRRRRQhFFFFCEUUUUIRRRRQhFFFFCEUUUUIRRRRQhFFFFCEUUUUIRRRRQhFFFFCEUUUUIRRRRQhf/9k=" alt="CEMEI Vila da Paz" style="height:56px;width:auto;object-fit:contain;">
+    </div>
+  </div>
+  <div class="content">
+
+    <!-- DASHBOARD -->
+    <div class="page active" id="page-dashboard">
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="label">Turmas</div>
+          <div class="value" id="stat-turmas">0</div>
+          <div class="sub">cadastradas</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Alunos</div>
+          <div class="value" id="stat-alunos">0</div>
+          <div class="sub">no total</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Ed. Especial</div>
+          <div class="value" id="stat-especial">0</div>
+          <div class="sub">alunos</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Relatórios</div>
+          <div class="value" id="stat-relatorios">0</div>
+          <div class="sub">gerados</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Suas Turmas</h3>
+          <button class="btn btn-primary" onclick="goTo('turmas')">+ Nova Turma</button>
+        </div>
+        <div class="card-body" id="dashboard-turmas">
+          <div class="empty-state"><div class="icon">🏫</div><p>Nenhuma turma cadastrada ainda.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TURMAS -->
+    <div class="page" id="page-turmas">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+        <div></div>
+        <div style="display:flex;gap:8px;">
+          <button class="btn btn-outline" onclick="goTo('importar')">📥 Importar CSV</button>
+          <button class="btn btn-primary" onclick="openModalTurma()">+ Nova Turma</button>
+        </div>
+      </div>
+      <div id="accordion-turmas">
+        <div class="empty-state"><div class="icon">🏫</div><p>Nenhuma turma cadastrada.</p></div>
+      </div>
+    </div>
+
+    <!-- ALUNOS -->
+    <div class="page" id="page-alunos">
+      <div style="display:flex;gap:12px;align-items:center;margin-bottom:20px;flex-wrap:wrap;">
+        <select id="filtro-turma" class="form-group" style="padding:9px 14px;border:1.5px solid var(--cinza-borda);border-radius:8px;font-size:13px;background:white;min-width:180px;" onchange="renderAlunos()">
+          <option value="">Todas as turmas</option>
+        </select>
+        <div class="search-bar">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="busca-aluno" placeholder="Buscar aluno…" style="padding:9px 14px 9px 36px;border:1.5px solid var(--cinza-borda);border-radius:8px;font-size:13px;width:220px;" oninput="renderAlunos()">
+        </div>
+        <div style="margin-left:auto;display:flex;gap:8px;">
+          <button class="btn btn-outline" onclick="abrirModalImpressaoCards()">🖨️ Imprimir Cards</button>
+          <button class="btn btn-outline" onclick="goTo('importar')">📥 Importar CSV</button>
+          <button class="btn btn-primary" onclick="openModalAluno()">+ Novo Aluno</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <table>
+            <thead><tr><th>Nome</th><th>Turma</th><th>Ed. Especial</th><th>Diagnóstico</th><th>Relatório</th><th>Ações</th></tr></thead>
+            <tbody id="tabela-alunos"><tr><td colspan="6"><div class="empty-state"><div class="icon">👧</div><p>Nenhum aluno cadastrado.</p></div></td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- RELATÓRIOS -->
+    <div class="page" id="page-relatorios">
+      <div class="card">
+        <div class="card-header">
+          <h3>Relatórios Gerados</h3>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+            <select id="filtro-rel-turma" style="padding:8px 12px;border:1.5px solid var(--cinza-borda);border-radius:8px;font-size:13px;" onchange="renderRelatorios()">
+              <option value="">Todas as turmas</option>
+            </select>
+            <button class="btn btn-primary btn-sm" onclick="abrirModalLote()">✨ Gerar em lote</button>
+            <button class="btn btn-outline btn-sm" onclick="imprimirLote(document.getElementById('filtro-rel-turma').value)">🖨️ Imprimir turma (PDF)</button>
+            <button class="btn btn-outline btn-sm" onclick="abrirModalExportar()" title="Exportar para Google Sheets">📊 Exportar Sheets</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <table>
+            <thead><tr><th>Aluno</th><th>Turma</th><th>Data</th><th>Status</th><th>Ações</th></tr></thead>
+            <tbody id="tabela-relatorios"><tr><td colspan="5"><div class="empty-state"><div class="icon">📄</div><p>Nenhum relatório ainda.</p></div></td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- IMPORTAR -->
+    <div class="page" id="page-importar">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+        <div class="card">
+          <div class="card-header"><h3>📥 Importar Alunos via CSV</h3></div>
+          <div class="card-body" style="padding:24px;">
+            <p style="font-size:13px;color:var(--texto-suave);margin-bottom:16px;">
+              O arquivo CSV deve conter as colunas: <strong>nome, turma, educacao_especial, diagnostico</strong>
+            </p>
+            <div style="background:var(--cinza-bg);border-radius:8px;padding:12px;font-family:monospace;font-size:12px;margin-bottom:16px;color:var(--texto-suave);">
+              nome,turma,educacao_especial,diagnostico<br>
+              Ana Silva,Turma A,não,<br>
+              João Santos,Turma B,sim,TEA
+            </div>
+            <div class="upload-area" onclick="document.getElementById('csv-input').click()">
+              <input type="file" id="csv-input" accept=".csv" style="display:none" onchange="importCSV(this)">
+              <div class="upload-icon">📂</div>
+              <p><strong>Clique para selecionar</strong> ou arraste o arquivo CSV</p>
+              <p style="margin-top:6px;font-size:11px;">Apenas arquivos .csv</p>
+            </div>
+            <div id="import-result" style="margin-top:16px;"></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><h3>📋 Modelo CSV</h3></div>
+          <div class="card-body" style="padding:24px;">
+            <p style="font-size:13px;color:var(--texto-suave);margin-bottom:16px;">Baixe o modelo pronto para preencher:</p>
+            <button class="btn btn-outline" onclick="downloadCSVModel()" style="width:100%;justify-content:center;margin-bottom:20px;">⬇ Baixar modelo .csv</button>
+            <div class="divider"></div>
+            <p style="font-size:12px;font-weight:700;color:var(--texto-suave);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;">Legenda dos campos</p>
+            <table style="font-size:12px;">
+              <tr><td style="padding:6px 8px;font-weight:700;">nome</td><td style="padding:6px 8px;color:var(--texto-suave);">Nome completo do aluno</td></tr>
+              <tr><td style="padding:6px 8px;font-weight:700;">turma</td><td style="padding:6px 8px;color:var(--texto-suave);">Nome exato da turma</td></tr>
+              <tr><td style="padding:6px 8px;font-weight:700;">educacao_especial</td><td style="padding:6px 8px;color:var(--texto-suave);">sim / não</td></tr>
+              <tr><td style="padding:6px 8px;font-weight:700;">diagnostico</td><td style="padding:6px 8px;color:var(--texto-suave);">Ex: TEA, TDAH (deixe vazio se não)</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div><!-- /content -->
+</div><!-- /main -->
+
+
+
+<!-- MODAL TURMA -->
+<div class="modal-overlay" id="modal-turma">
+  <div class="modal" style="max-width:500px;">
+    <div class="modal-header">
+      <h2>🏫 Nova Turma</h2>
+      <button class="modal-close" onclick="closeModal('modal-turma')">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <div class="form-group form-full">
+          <label>Nome da Turma *</label>
+          <input type="text" id="turma-nome" placeholder="Ex: Turma A – Maternal II">
+        </div>
+        <div class="form-group">
+          <label>Faixa Etária</label>
+          <select id="turma-faixa">
+            <option value="2 anos">2 anos</option>
+            <option value="3 anos" selected>3 anos</option>
+            <option value="4 anos">4 anos</option>
+            <option value="5 anos">5 anos</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Turno</label>
+          <select id="turma-turno">
+            <option>Manhã</option>
+            <option>Tarde</option>
+            <option>Integral</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal('modal-turma')">Cancelar</button>
+      <button class="btn btn-primary" onclick="salvarTurma()">Salvar Turma</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL ALUNO -->
+<div class="modal-overlay" id="modal-aluno">
+  <div class="modal" style="max-width:520px;">
+    <div class="modal-header">
+      <h2>👧 Cadastrar Aluno</h2>
+      <button class="modal-close" onclick="closeModal('modal-aluno')">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <div class="form-group form-full">
+          <label>Nome Completo *</label>
+          <input type="text" id="aluno-nome" placeholder="Nome do aluno">
+        </div>
+        <div class="form-group form-full">
+          <label>Turma *</label>
+          <select id="aluno-turma"></select>
+        </div>
+        <div class="form-group form-full">
+          <label class="checkbox-row">
+            <input type="checkbox" id="aluno-especial" onchange="toggleDiag()">
+            Aluno da Educação Especial
+          </label>
+        </div>
+        <div class="form-group form-full" id="diag-group" style="display:none;">
+          <label>Diagnóstico</label>
+          <input type="text" id="aluno-diagnostico" placeholder="Ex: TEA, TDAH, Síndrome de Down…">
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal('modal-aluno')">Cancelar</button>
+      <button class="btn btn-primary" onclick="salvarAluno()">Salvar Aluno</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL AVALIAÇÃO / RELATÓRIO -->
+<div class="modal-overlay" id="modal-avaliacao">
+  <div class="modal">
+    <div class="modal-header">
+      <div>
+        <h2 id="aval-titulo">Avaliação</h2>
+        <div id="aval-subtitulo" style="font-size:12px;color:var(--texto-suave);margin-top:3px;"></div>
+      </div>
+      <button class="modal-close" onclick="closeModal('modal-avaliacao')">×</button>
+    </div>
+    <div class="modal-body">
+      <!-- TABS -->
+      <div class="tabs">
+        <div class="tab active" onclick="switchTab('avaliacao')">📋 Avaliação</div>
+        <div class="tab" onclick="switchTab('relatorio')">📝 Relatório</div>
+      </div>
+
+      <!-- TAB AVALIAÇÃO -->
+      <div id="tab-avaliacao">
+        <div class="legend mb-4">
+          <div class="legend-item"><div class="legend-dot" style="background:var(--satisfatorio)"></div> S = Satisfatório (70–100%)</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--desenvolvimento)"></div> D = Em desenvolvimento (50–70%)</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--nao-adquirido)"></div> N = Não adquirido (&lt;50%)</div>
+        </div>
+
+        <div class="avaliacao-section">
+          <h4>🤝 Socioafetivo e Emocional</h4>
+          <div id="criterios-socio-emocional"></div>
+        </div>
+        <div class="avaliacao-section">
+          <h4>🗣️ Linguagem Oral e Escrita</h4>
+          <div id="criterios-linguagem"></div>
+        </div>
+        <div class="avaliacao-section">
+          <h4>🧠 Aspectos Cognitivos e Matemáticos</h4>
+          <div id="criterios-cognitivo"></div>
+        </div>
+        <div class="avaliacao-section">
+          <h4>✏️ Desenvolvimento Motor (Fino)</h4>
+          <div id="criterios-motor-fino"></div>
+        </div>
+        <div class="avaliacao-section">
+          <h4>📝 Observações Adicionais</h4>
+          <div class="form-group">
+            <textarea id="obs-adicionais" placeholder="Informações complementares sobre o aluno que devem aparecer no relatório…" style="min-height:80px;"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB RELATÓRIO -->
+      <div id="tab-relatorio" style="display:none;">
+        <div style="display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;">
+          <button class="btn btn-primary" onclick="gerarRelatorio()" id="btn-gerar">✨ Gerar com IA</button>
+          <button class="btn btn-outline" onclick="copiarTexto()">📋 Copiar texto</button>
+          <button class="btn btn-outline" onclick="imprimirRelatorio()">🖨️ Imprimir</button>
+        </div>
+        <div id="relatorio-output">
+          <div class="empty-state"><div class="icon">✨</div><p>Clique em "Gerar com IA" para criar o parágrafo do relatório baseado nas avaliações.</p></div>
+        </div>
+        <div id="rel-edit-area" style="display:none;margin-top:16px;">
+          <div class="form-group">
+            <label>Editar texto do relatório:</label>
+            <textarea id="rel-texto-editavel" style="min-height:180px;font-family:'Lora',serif;font-size:14px;line-height:1.8;"></textarea>
+          </div>
+          <div style="display:flex;gap:8px;margin-top:10px;">
+            <button class="btn btn-primary btn-sm" onclick="salvarTextoEditado()">💾 Salvar edição</button>
+            <button class="btn btn-outline btn-sm" onclick="cancelarEdicao()">Cancelar</button>
+          </div>
+        </div>
+        <div id="rel-actions" style="display:none;margin-top:12px;">
+          <button class="btn btn-outline btn-sm" onclick="editarRelatorio()">✏️ Editar</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal('modal-avaliacao')">Fechar</button>
+      <button class="btn btn-primary" onclick="salvarAvaliacao()">💾 Salvar Avaliação</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL VER RELATÓRIO -->
+<div class="modal-overlay" id="modal-ver-relatorio">
+  <div class="modal">
+    <div class="modal-header">
+      <div>
+        <h2 id="ver-rel-titulo">Relatório</h2>
+        <div id="ver-rel-sub" style="font-size:12px;color:var(--texto-suave);margin-top:3px;"></div>
+      </div>
+      <button class="modal-close" onclick="closeModal('modal-ver-relatorio')">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="relatorio-box" id="ver-rel-texto"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="copiarRelatorioVer()">📋 Copiar</button>
+      <button class="btn btn-outline" onclick="imprimirVer()">🖨️ Imprimir</button>
+      <button class="btn btn-primary" onclick="closeModal('modal-ver-relatorio')">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL PANORAMA ALUNO -->
+<div class="modal-overlay modal-panorama" id="modal-panorama">
+  <div class="modal" style="max-width:620px;">
+    <div class="modal-header">
+      <h2>📊 Panorama do Aluno</h2>
+      <button class="modal-close" onclick="closeModal('modal-panorama')">×</button>
+    </div>
+    <div class="modal-body" id="panorama-body">
+      <!-- preenchido via JS -->
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline btn-sm" id="panorama-btn-avaliar" onclick="">📋 Avaliar</button>
+      <button class="btn btn-primary" onclick="closeModal('modal-panorama')">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL GERAR EM LOTE -->
+<div class="modal-overlay" id="modal-lote">
+  <div class="modal" style="max-width:580px;">
+    <div class="modal-header">
+      <div>
+        <h2>✨ Gerar Relatórios em Lote</h2>
+        <div style="font-size:12px;color:var(--texto-suave);margin-top:3px;" id="lote-subtitulo">Selecione a turma</div>
+      </div>
+      <button class="modal-close" onclick="closeModal('modal-lote')">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="lote-steps">
+        <div class="lote-step active" id="lstep-1">1. Turma</div>
+        <div class="lote-step" id="lstep-2">2. Alunos</div>
+        <div class="lote-step" id="lstep-3">3. Confirmar</div>
+      </div>
+
+      <!-- STEP 1: escolher turma -->
+      <div id="lote-step1">
+        <div style="font-size:13px;color:var(--texto-suave);margin-bottom:14px;">Escolha uma turma ou gere para <strong>todos os alunos</strong>:</div>
+        <div id="lote-turmas-lista"></div>
+      </div>
+
+      <!-- STEP 2: escolher alunos -->
+      <div id="lote-step2" style="display:none;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+          <span style="font-size:13px;color:var(--texto-suave);">Marque os alunos que deseja incluir:</span>
+          <div style="display:flex;gap:8px;">
+            <button class="btn btn-outline btn-sm" onclick="loteSelectAll(true)">Todos</button>
+            <button class="btn btn-outline btn-sm" onclick="loteSelectAll(false)">Nenhum</button>
+          </div>
+        </div>
+        <div class="card" style="max-height:320px;overflow-y:auto;">
+          <div id="lote-alunos-lista"></div>
+        </div>
+        <div style="margin-top:10px;font-size:12px;color:var(--texto-suave);" id="lote-sel-info"></div>
+      </div>
+
+      <!-- STEP 3: confirmar -->
+      <div id="lote-step3" style="display:none;">
+        <div style="background:var(--verde-menta);border:1.5px solid var(--verde-claro);border-radius:12px;padding:18px;font-size:13px;color:var(--verde-escuro);" id="lote-resumo"></div>
+        <div id="lote-progresso" style="display:none;margin-top:18px;">
+          <div style="font-size:13px;font-weight:600;color:var(--verde-escuro);margin-bottom:8px;" id="lote-prog-texto">Gerando…</div>
+          <div style="background:var(--cinza-borda);border-radius:99px;height:10px;overflow:hidden;">
+            <div id="lote-prog-bar" style="height:100%;background:var(--verde-claro);border-radius:99px;width:0%;transition:width .3s;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" id="lote-btn-voltar" onclick="loteVoltar()" style="display:none;">← Voltar</button>
+      <button class="btn btn-outline" onclick="closeModal('modal-lote')" id="lote-btn-cancelar">Cancelar</button>
+      <button class="btn btn-primary" id="lote-btn-prox" onclick="loteProximo()">Próximo →</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- MODAL EXPORTAR GOOGLE SHEETS -->
+<div class="modal-overlay" id="modal-exportar">
+  <div class="modal" style="max-width:560px;">
+    <div class="modal-header">
+      <div>
+        <h2>📊 Exportar para Google Sheets</h2>
+        <div style="font-size:12px;color:var(--texto-suave);margin-top:3px;" id="exp-subtitulo">Escolha o que exportar</div>
+      </div>
+      <button class="modal-close" onclick="closeModal('modal-exportar')">×</button>
+    </div>
+    <div class="modal-body">
+      <!-- filtro turma -->
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
+        <label style="font-size:12px;font-weight:700;color:var(--texto-suave);text-transform:uppercase;letter-spacing:.5px;white-space:nowrap;">Turma</label>
+        <select id="exp-filtro-turma" style="flex:1;padding:9px 12px;border:1.5px solid var(--cinza-borda);border-radius:8px;font-size:13px;">
+          <option value="">Todas as turmas</option>
+        </select>
+      </div>
+      <!-- opções -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;" id="exp-opcoes">
+        <div class="exp-card sel" id="exp-card-completo" onclick="expSel('completo')">
+          <div class="exp-card-icon">📋</div>
+          <div class="exp-card-title">Avaliações completas</div>
+          <div class="exp-card-desc">Todos os critérios S/D/N de cada aluno</div>
+        </div>
+        <div class="exp-card" id="exp-card-relatorios" onclick="expSel('relatorios')">
+          <div class="exp-card-icon">📝</div>
+          <div class="exp-card-title">Relatórios narrativos</div>
+          <div class="exp-card-desc">Nome, turma e texto do relatório gerado</div>
+        </div>
+        <div class="exp-card" id="exp-card-resumo" onclick="expSel('resumo')">
+          <div class="exp-card-icon">📊</div>
+          <div class="exp-card-title">Resumo por aluno</div>
+          <div class="exp-card-desc">Contagem de S, D e N por aluno</div>
+        </div>
+        <div class="exp-card" id="exp-card-tudo" onclick="expSel('tudo')">
+          <div class="exp-card-icon">🗂️</div>
+          <div class="exp-card-title">Tudo</div>
+          <div class="exp-card-desc">Avaliações + resumo + relatório numa planilha</div>
+        </div>
+      </div>
+      <!-- prévia -->
+      <div style="background:var(--cinza-bg);border:1.5px solid var(--cinza-borda);border-radius:10px;padding:14px;font-size:12px;">
+        <div style="font-weight:700;color:var(--texto-suave);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;">Prévia das colunas</div>
+        <div id="exp-preview" style="color:var(--texto);font-family:monospace;font-size:11px;line-height:1.8;word-break:break-all;"></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal('modal-exportar')">Cancelar</button>
+      <button class="btn btn-outline" onclick="expCopiarTSV()" title="Cola direto no Google Sheets com Ctrl+V">📋 Copiar (colar no Sheets)</button>
+      <button class="btn btn-primary" onclick="expBaixarCSV()">⬇ Baixar CSV</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL IMPRIMIR CARDS -->
+<div class="modal-overlay" id="modal-print-cards">
+  <div class="modal" style="max-width:640px;">
+    <div class="modal-header">
+      <div>
+        <h2>🖨️ Imprimir Cards de Acompanhamento</h2>
+        <div style="font-size:12px;color:var(--texto-suave);margin-top:3px;" id="print-cards-subtitulo">Selecione turma e alunos</div>
+      </div>
+      <button class="modal-close" onclick="closeModal('modal-print-cards')">×</button>
+    </div>
+    <div class="modal-body">
+
+      <!-- Filtro de turma -->
+      <div class="form-group" style="margin-bottom:16px;">
+        <label>Turma</label>
+        <select id="print-filtro-turma" onchange="renderPrintAlunosList()">
+          <option value="">Todas as turmas</option>
+        </select>
+      </div>
+
+      <!-- Busca -->
+      <div class="search-bar" style="margin-bottom:16px;">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="print-busca" placeholder="Buscar aluno…" style="padding:9px 14px 9px 36px;border:1.5px solid var(--cinza-borda);border-radius:8px;font-size:13px;width:100%;" oninput="renderPrintAlunosList()">
+      </div>
+
+      <!-- Ações de seleção -->
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+        <span style="font-size:12px;font-weight:700;color:var(--texto-suave);text-transform:uppercase;letter-spacing:.5px;" id="print-sel-label">Alunos</span>
+        <div style="display:flex;gap:6px;">
+          <button class="btn btn-outline btn-sm" onclick="printSelectAll(true)">Selecionar todos</button>
+          <button class="btn btn-outline btn-sm" onclick="printSelectAll(false)">Limpar seleção</button>
+        </div>
+      </div>
+
+      <!-- Lista de alunos -->
+      <div class="card" style="max-height:300px;overflow-y:auto;">
+        <div id="print-alunos-lista"></div>
+      </div>
+
+      <!-- Opções de impressão -->
+      <div style="margin-top:16px;padding:14px;background:var(--cinza-bg);border-radius:10px;border:1.5px solid var(--cinza-borda);">
+        <div style="font-size:12px;font-weight:700;color:var(--texto-suave);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;">Opções do card</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:13px;">
+          <label style="display:flex;align-items:center;gap:8px;cursor:pointer;">
+            <input type="checkbox" id="print-opt-aval" checked style="accent-color:var(--verde);width:15px;height:15px;">
+            📋 Critérios de avaliação
+          </label>
+          <label style="display:flex;align-items:center;gap:8px;cursor:pointer;">
+            <input type="checkbox" id="print-opt-rel" checked style="accent-color:var(--verde);width:15px;height:15px;">
+            📝 Relatório narrativo
+          </label>
+          <label style="display:flex;align-items:center;gap:8px;cursor:pointer;">
+            <input type="checkbox" id="print-opt-presenca" checked style="accent-color:var(--verde);width:15px;height:15px;">
+            📅 Grade de presença semanal
+          </label>
+          <label style="display:flex;align-items:center;gap:8px;cursor:pointer;">
+            <input type="checkbox" id="print-opt-obs" checked style="accent-color:var(--verde);width:15px;height:15px;">
+            🗒️ Bloco de observações livres
+          </label>
+        </div>
+      </div>
+
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal('modal-print-cards')">Cancelar</button>
+      <button class="btn btn-primary" id="print-cards-btn" onclick="executarImpressaoCards()">
+        🖨️ <span id="print-cards-btn-label">Imprimir</span>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+// ===================== SUPABASE =====================
+const { createClient } = supabase;
+let db = null;          // inicializado após carregar config.json
+
+// ===================== STATE =====================
+let state = { turmas: [], alunos: [], avaliacoes: {}, relatorios: {} };
+let currentAlunoId = null;
+let currentTab = 'avaliacao';
+
+async function loadState() {
+  const [{ data: turmas }, { data: alunos }, { data: avals }, { data: rels }] = await Promise.all([
+    db.from('turmas').select('*'),
+    db.from('alunos').select('*'),
+    db.from('avaliacoes').select('*'),
+    db.from('relatorios').select('*'),
+  ]);
+  state.turmas  = turmas  || [];
+  state.alunos  = (alunos || []).map(a => ({ ...a, turmaId: a.turma_id }));
+  state.avaliacoes = {};
+  (avals || []).forEach(av => { state.avaliacoes[av.aluno_id] = av.dados; });
+  state.relatorios = {};
+  (rels  || []).forEach(r  => { state.relatorios[r.aluno_id]  = r.texto; });
+  renderDashboard();
+}
+
+async function saveState() {
+  // Turmas
+  if (state.turmas.length)
+    await db.from('turmas').upsert(state.turmas.map(({ turmaId, ...t }) => t));
+
+  // Alunos — converte turmaId → turma_id
+  if (state.alunos.length)
+    await db.from('alunos').upsert(
+      state.alunos.map(({ turmaId, ...a }) => ({ ...a, turma_id: turmaId }))
+    );
+
+  // Avaliações
+  const avals = Object.entries(state.avaliacoes).map(([aluno_id, dados]) => ({ aluno_id, dados }));
+  if (avals.length) await db.from('avaliacoes').upsert(avals);
+
+  // Relatórios
+  const rels = Object.entries(state.relatorios).map(([aluno_id, texto]) => ({ aluno_id, texto }));
+  if (rels.length) await db.from('relatorios').upsert(rels);
+}
+
+// ===================== CRITÉRIOS =====================
+const CRITERIOS = {
+  socioEmocional: [
+    { id: 'se1', texto: 'Pede para ir brincar com outras crianças se nenhuma criança estiver por perto, como: "Posso brincar com o Davi?"' },
+    { id: 'se2', texto: 'Gosta de ser um ajudante' },
+    { id: 'se3', texto: 'Identifica e enfrenta situações de conflitos, respeitando as outras crianças e adultos' },
+    { id: 'se4', texto: 'Brinca com a imaginação e a criatividade' },
+  ],
+  linguagem: [
+    { id: 'l1', texto: 'Fala frases com quatro ou mais palavras' },
+    { id: 'l2', texto: 'Fala palavras de músicas e histórias experenciadas' },
+    { id: 'l3', texto: 'Escreve seu nome com auxílio da ficha' },
+    { id: 'l4', texto: 'Registra letras com algum controle sobre o tamanho' },
+  ],
+  cognitivo: [
+    { id: 'c1', texto: 'Nomeia cores de itens' },
+    { id: 'c2', texto: 'Nomeia alguns números' },
+    { id: 'c3', texto: 'Faz estimativas' },
+    { id: 'c4', texto: 'Realiza a classificação, sequência e série de objetos' },
+    { id: 'c5', texto: 'Identifica formas geométricas básicas (quadrado, círculo, retângulo e triângulo), relacionando-as com os objetos no entorno' },
+  ],
+  motorFino: [
+    { id: 'mf1', texto: 'Segura o lápis ou giz de cera entre as polpas digitais dos dedos polegar, indicador e médio (não com o punho)' },
+  ],
+};
+
+function renderCriterios(containerId, lista, alunoAval) {
+  const c = document.getElementById(containerId);
+  c.innerHTML = lista.map(item => `
+    <div class="criterio-row">
+      <div class="criterio-texto ${item.destaque ? 'destaque' : ''}">${item.texto}</div>
+      <div class="radio-group">
+        <button class="radio-btn s ${alunoAval && alunoAval[item.id] === 'S' ? 'sel' : ''}" onclick="setAval('${item.id}', 'S', this)">S</button>
+        <button class="radio-btn d ${alunoAval && alunoAval[item.id] === 'D' ? 'sel' : ''}" onclick="setAval('${item.id}', 'D', this)">D</button>
+        <button class="radio-btn n ${alunoAval && alunoAval[item.id] === 'N' ? 'sel' : ''}" onclick="setAval('${item.id}', 'N', this)">N</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function setAval(id, val, btn) {
+  const group = btn.closest('.radio-group');
+  group.querySelectorAll('.radio-btn').forEach(b => b.classList.remove('sel'));
+  btn.classList.add('sel');
+  if (!state.avaliacoes[currentAlunoId]) state.avaliacoes[currentAlunoId] = {};
+  state.avaliacoes[currentAlunoId][id] = val;
+}
+
+// ===================== NAVEGAÇÃO =====================
+const pageNames = { dashboard:'Início', turmas:'Turmas', alunos:'Alunos', relatorios:'Relatórios', importar:'Importar CSV' };
+
+function toggleSidebar() {
+  const sidebar  = document.querySelector('.sidebar');
+  const overlay  = document.getElementById('sidebar-overlay');
+  const hamburger = document.getElementById('hamburger');
+  sidebar.classList.toggle('open');
+  overlay.classList.toggle('open');
+  hamburger.classList.toggle('open');
+}
+
+function closeSidebar() {
+  document.querySelector('.sidebar').classList.remove('open');
+  document.getElementById('sidebar-overlay').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+}
+
+function goTo(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.querySelectorAll('.nav-item')[['dashboard','alunos','relatorios','turmas'].indexOf(page)]?.classList.add('active');
+  document.getElementById('page-title').textContent = pageNames[page];
+  closeSidebar();
+  if (page === 'dashboard') renderDashboard();
+  if (page === 'turmas') renderTurmas();
+  if (page === 'alunos') renderAlunos();
+  if (page === 'relatorios') renderRelatorios();
+  if (page === 'alunos' || page === 'relatorios') populateFiltroTurma();
+}
+
+// ===================== MODAIS =====================
+function openModal(id) { document.getElementById(id).classList.add('open'); }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+
+function switchTab(tab) {
+  currentTab = tab;
+  document.querySelectorAll('.tabs .tab').forEach((t, i) => t.classList.toggle('active', ['avaliacao','relatorio'][i] === tab));
+  document.getElementById('tab-avaliacao').style.display = tab === 'avaliacao' ? '' : 'none';
+  document.getElementById('tab-relatorio').style.display = tab === 'relatorio' ? '' : 'none';
+}
+
+// ===================== TURMAS =====================
+let editingTurmaId = null;
+function openModalTurma(id = null) {
+  editingTurmaId = id;
+  if (id) {
+    const t = state.turmas.find(t => t.id === id);
+    document.getElementById('turma-nome').value = t.nome;
+    document.getElementById('turma-faixa').value = t.faixa;
+    document.getElementById('turma-turno').value = t.turno;
+    document.querySelector('#modal-turma h2').textContent = '✏️ Editar Turma';
+  } else {
+    document.getElementById('turma-nome').value = '';
+    document.querySelector('#modal-turma h2').textContent = '🏫 Nova Turma';
+  }
+  openModal('modal-turma');
+}
+
+async function salvarTurma() {
+  const nome = document.getElementById('turma-nome').value.trim();
+  if (!nome) { toast('Informe o nome da turma.'); return; }
+  const obj = { nome, faixa: document.getElementById('turma-faixa').value, turno: document.getElementById('turma-turno').value };
+  if (editingTurmaId) {
+    const t = state.turmas.find(t => t.id === editingTurmaId);
+    Object.assign(t, obj);
+    await db.from('turmas').upsert({ id: editingTurmaId, ...obj });
+  } else {
+    const id = Date.now().toString();
+    state.turmas.push({ id, ...obj });
+    await db.from('turmas').insert({ id, ...obj });
+  }
+  closeModal('modal-turma'); renderTurmas(); toast('Turma salva! ✅');
+}
+
+async function excluirTurma(id) {
+  if (!confirm('Excluir esta turma? Os alunos vinculados também serão removidos.')) return;
+  state.turmas = state.turmas.filter(t => t.id !== id);
+  state.alunos = state.alunos.filter(a => a.turmaId !== id);
+  await db.from('turmas').delete().eq('id', id);
+  renderTurmas(); toast('Turma removida.');
+}
+
+function renderTurmas() {
+  const container = document.getElementById('accordion-turmas');
+  if (!state.turmas.length) {
+    container.innerHTML = '<div class="empty-state"><div class="icon">🏫</div><p>Nenhuma turma cadastrada.</p></div>';
+    return;
+  }
+  container.innerHTML = state.turmas.map(t => {
+    const alunos = state.alunos.filter(a => a.turmaId === t.id).sort((a,b) => a.nome.localeCompare(b.nome));
+    const count = alunos.length;
+    const rels = alunos.filter(a => state.relatorios[a.id]).length;
+    const alunosHTML = count === 0
+      ? '<div class="acc-empty">Nenhum aluno nesta turma.</div>'
+      : alunos.map(a => `
+        <div class="acc-aluno-row">
+          <div class="acc-aluno-nome">
+            ${a.nome}
+            ${a.especial ? '<span class="badge badge-especial" style="font-size:10px;">⭐ Ed. Esp.</span>' : ''}
+            ${state.relatorios[a.id] ? '<span class="badge badge-sat" style="font-size:10px;">✅</span>' : ''}
+          </div>
+          <div class="acc-actions">
+            <button class="btn btn-primary btn-sm" onclick="openAvaliacao('${a.id}')">📋 Avaliar</button>
+            <button class="btn btn-outline btn-sm" onclick="openModalAluno('${a.id}')">✏️</button>
+            <button class="btn btn-danger btn-sm" onclick="excluirAluno('${a.id}');renderTurmas()">🗑️</button>
+          </div>
+        </div>`).join('');
+    return `<div class="accordion-turma">
+      <div class="accordion-header" onclick="toggleAcc('acc-body-${t.id}', this)">
+        <div class="acc-left">
+          <div>
+            <div class="acc-nome">🏫 ${t.nome}</div>
+            <div class="acc-info">${t.turno} · ${t.faixa} · ${count} aluno${count!==1?'s':''} · ${rels} relatório${rels!==1?'s':''}</div>
+          </div>
+        </div>
+        <div class="acc-header-actions">
+          <button class="btn btn-outline btn-sm" onclick="event.stopPropagation();openModalAluno();document.getElementById('aluno-turma').value='${t.id}'">+ Aluno</button>
+          <button class="btn btn-outline btn-sm" onclick="event.stopPropagation();openModalTurma('${t.id}')">✏️</button>
+          <button class="btn btn-danger btn-sm" onclick="event.stopPropagation();excluirTurma('${t.id}')">🗑️</button>
+          <span class="acc-arrow">▼</span>
+        </div>
+      </div>
+      <div class="accordion-body" id="acc-body-${t.id}">${alunosHTML}</div>
+    </div>`;
+  }).join('');
+}
+
+function toggleAcc(bodyId, header) {
+  const body = document.getElementById(bodyId);
+  body.classList.toggle('open');
+  header.classList.toggle('open');
+}
+
+// ===================== ALUNOS =====================
+let editingAlunoId = null;
+function openModalAluno(id = null) {
+  editingAlunoId = id;
+  populateSelectTurmas('aluno-turma');
+  if (id) {
+    const a = state.alunos.find(a => a.id === id);
+    document.getElementById('aluno-nome').value = a.nome;
+    document.getElementById('aluno-turma').value = a.turmaId;
+    document.getElementById('aluno-especial').checked = a.especial;
+    document.getElementById('aluno-diagnostico').value = a.diagnostico || '';
+    document.getElementById('diag-group').style.display = a.especial ? '' : 'none';
+    document.querySelector('#modal-aluno h2').textContent = '✏️ Editar Aluno';
+  } else {
+    document.getElementById('aluno-nome').value = '';
+    document.getElementById('aluno-especial').checked = false;
+    document.getElementById('aluno-diagnostico').value = '';
+    document.getElementById('diag-group').style.display = 'none';
+    document.querySelector('#modal-aluno h2').textContent = '👧 Cadastrar Aluno';
+  }
+  openModal('modal-aluno');
+}
+
+function toggleDiag() {
+  document.getElementById('diag-group').style.display = document.getElementById('aluno-especial').checked ? '' : 'none';
+}
+
+async function salvarAluno() {
+  const nome = document.getElementById('aluno-nome').value.trim();
+  const turmaId = document.getElementById('aluno-turma').value;
+  if (!nome) { toast('Informe o nome do aluno.'); return; }
+  if (!turmaId) { toast('Selecione uma turma.'); return; }
+  const obj = { nome, turmaId, especial: document.getElementById('aluno-especial').checked, diagnostico: document.getElementById('aluno-diagnostico').value.trim() };
+  const dbObj = { nome: obj.nome, turma_id: obj.turmaId, especial: obj.especial, diagnostico: obj.diagnostico };
+  if (editingAlunoId) {
+    const a = state.alunos.find(a => a.id === editingAlunoId);
+    Object.assign(a, obj);
+    await db.from('alunos').upsert({ id: editingAlunoId, ...dbObj });
+  } else {
+    const id = Date.now().toString();
+    state.alunos.push({ id, ...obj });
+    await db.from('alunos').insert({ id, ...dbObj });
+  }
+  closeModal('modal-aluno'); renderAlunos(); toast('Aluno salvo! ✅');
+}
+
+async function excluirAluno(id) {
+  if (!confirm('Excluir este aluno?')) return;
+  state.alunos = state.alunos.filter(a => a.id !== id);
+  delete state.avaliacoes[id]; delete state.relatorios[id];
+  await db.from('alunos').delete().eq('id', id);
+  renderAlunos(); toast('Aluno removido.');
+}
+
+function renderAlunos() {
+  const filtro = document.getElementById('filtro-turma').value;
+  const busca = (document.getElementById('busca-aluno').value || '').toLowerCase();
+  const tbody = document.getElementById('tabela-alunos');
+  let lista = state.alunos.filter(a => (!filtro || a.turmaId === filtro) && (!busca || a.nome.toLowerCase().includes(busca)));
+  if (!lista.length) { tbody.innerHTML = '<tr><td colspan="6"><div class="empty-state"><div class="icon">👧</div><p>Nenhum aluno encontrado.</p></div></td></tr>'; return; }
+  lista.sort((a, b) => a.nome.localeCompare(b.nome));
+  tbody.innerHTML = lista.map(a => {
+    const turma = state.turmas.find(t => t.id === a.turmaId);
+    const temRel = !!state.relatorios[a.id];
+    return `<tr>
+      <td><span class="nome-clicavel" onclick="abrirPanorama('${a.id}')">${a.nome}</span></td>
+      <td><span class="badge badge-turma">${turma ? turma.nome : '—'}</span></td>
+      <td>${a.especial ? '<span class="badge badge-especial">⭐ Especial</span>' : '<span style="color:var(--texto-suave);font-size:12px;">—</span>'}</td>
+      <td style="font-size:12px;color:var(--texto-suave);">${a.diagnostico || '—'}</td>
+      <td>${temRel ? '<span class="badge badge-sat">✅ Gerado</span>' : '<span class="badge" style="background:#f0f0f0;color:#888;">Pendente</span>'}</td>
+      <td style="display:flex;gap:5px;">
+        <button class="btn btn-primary btn-sm" onclick="openAvaliacao('${a.id}')">📋 Avaliar</button>
+        <button class="btn btn-outline btn-sm" onclick="imprimirCardAluno('${a.id}')" title="Imprimir card de acompanhamento">🖨️</button>
+        <button class="btn btn-outline btn-sm" onclick="openModalAluno('${a.id}')">✏️</button>
+        <button class="btn btn-danger btn-sm" onclick="excluirAluno('${a.id}')">🗑️</button>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+function populateSelectTurmas(selectId) {
+  const sel = document.getElementById(selectId);
+  sel.innerHTML = '<option value="">Selecione a turma</option>' + state.turmas.map(t => `<option value="${t.id}">${t.nome}</option>`).join('');
+}
+
+function populateFiltroTurma() {
+  ['filtro-turma', 'filtro-rel-turma'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = '<option value="">Todas as turmas</option>' + state.turmas.map(t => `<option value="${t.id}">${t.nome}</option>`).join('');
+  });
+}
+
+// ===================== AVALIAÇÃO =====================
+function openAvaliacao(alunoId) {
+  currentAlunoId = alunoId;
+  const aluno = state.alunos.find(a => a.id === alunoId);
+  const turma = state.turmas.find(t => t.id === aluno.turmaId);
+  const aval = state.avaliacoes[alunoId] || {};
+  document.getElementById('aval-titulo').textContent = aluno.nome;
+  document.getElementById('aval-subtitulo').textContent = (turma ? turma.nome : '') + (aluno.especial ? ` · ⭐ Ed. Especial${aluno.diagnostico ? ' – ' + aluno.diagnostico : ''}` : '');
+  renderCriterios('criterios-socio-emocional', CRITERIOS.socioEmocional, aval);
+  renderCriterios('criterios-linguagem', CRITERIOS.linguagem, aval);
+  renderCriterios('criterios-cognitivo', CRITERIOS.cognitivo, aval);
+  renderCriterios('criterios-motor-fino', CRITERIOS.motorFino, aval);
+  document.getElementById('obs-adicionais').value = aval.obs || '';
+  // Reset relatório tab
+  const rel = state.relatorios[alunoId];
+  document.getElementById('relatorio-output').innerHTML = rel
+    ? `<div class="relatorio-box">${rel}</div>`
+    : '<div class="empty-state"><div class="icon">✨</div><p>Clique em "Gerar com IA" para criar o parágrafo do relatório.</p></div>';
+  document.getElementById('rel-edit-area').style.display = 'none';
+  document.getElementById('rel-actions').style.display = rel ? '' : 'none';
+  switchTab('avaliacao');
+  openModal('modal-avaliacao');
+}
+
+async function salvarAvaliacao() {
+  if (!state.avaliacoes[currentAlunoId]) state.avaliacoes[currentAlunoId] = {};
+  state.avaliacoes[currentAlunoId].obs = document.getElementById('obs-adicionais').value;
+  syncStart();
+  await db.from('avaliacoes').upsert({ aluno_id: currentAlunoId, dados: state.avaliacoes[currentAlunoId] });
+  syncOk();
+  toast('Avaliação salva! ✅'); closeModal('modal-avaliacao'); renderAlunos();
+}
+
+// ===================== IA – GERAR RELATÓRIO =====================
+function buildPrompt(aluno, aval, turma) {
+  function descCriterio(lista, avalObj) {
+    return lista.map(c => `- ${c.texto}: ${avalObj[c.id] === 'S' ? 'Satisfatório' : avalObj[c.id] === 'D' ? 'Em desenvolvimento' : avalObj[c.id] === 'N' ? 'Não adquirido' : 'Não avaliado'}`).join('\n');
+  }
+  return `Você é a Prof.ª R1 Bernadete, da CEMEI Vila da Paz, Contagem/MG. Seu texto será inserido como parte de um relatório maior redigido pela professora regente. Esta é uma turma de crianças de quatro anos.
+
+INSTRUÇÕES OBRIGATÓRIAS:
+- Escreva um texto entre 80 e 100 palavras. Seja sintético e objetivo — não detalhe cada item avaliado individualmente, apresente uma visão geral do desenvolvimento da criança.
+- Use linguagem formal, clara e acessível para a família, sem jargões pedagógicos excessivos.
+- Baseie-se EXCLUSIVAMENTE nos dados de avaliação abaixo. Não invente nem suponha informações não registradas.
+- Estruture em parágrafo corrido (sem subtítulos ou listas), abordando na sequência:
+  1. Estágio atual de desenvolvimento da criança (síntese dos aspectos socioafetivos, linguagem, cognitivo e motor fino — agrupe os aspectos, não liste um a um).
+  2. Pontos ainda em desenvolvimento que serão trabalhados na CEMEI, de forma construtiva e respeitosa.
+  3. Breve orientação prática para a família contribuir em casa (1 frase).
+- Use o nome da criança naturalmente ao longo do texto.
+- NÃO inclua título, saudação, assinatura ou introdução. Comece direto pelo relato.
+- Se a criança tem diagnóstico de educação especial, mencione com sensibilidade, focando nas potencialidades.
+${aluno.especial && aluno.diagnostico ? `- Diagnóstico da criança: ${aluno.diagnostico}` : ''}
+
+NOME DA CRIANÇA: ${aluno.nome}
+TURMA: ${turma ? turma.nome : ''}
+
+AVALIAÇÕES REGISTRADAS:
+
+SOCIOAFETIVO E EMOCIONAL:
+${descCriterio(CRITERIOS.socioEmocional, aval)}
+
+LINGUAGEM ORAL E ESCRITA:
+${descCriterio(CRITERIOS.linguagem, aval)}
+
+ASPECTOS COGNITIVOS E MATEMÁTICOS:
+${descCriterio(CRITERIOS.cognitivo, aval)}
+
+MOTOR FINO:
+${descCriterio(CRITERIOS.motorFino, aval)}
+
+${aval.obs ? 'OBSERVAÇÕES DA PROFESSORA: ' + aval.obs : ''}
+
+Escreva apenas o texto do relatório, sem título, sem introdução, sem assinatura.`;
+}
+
+async function gerarRelatorio() {
+  const aluno = state.alunos.find(a => a.id === currentAlunoId);
+  const aval = state.avaliacoes[currentAlunoId] || {};
+  const turma = state.turmas.find(t => t.id === aluno.turmaId);
+  const prompt = buildPrompt(aluno, aval, turma);
+
+  const outDiv = document.getElementById('relatorio-output');
+  outDiv.innerHTML = '<div class="relatorio-loading"><span class="spin">⏳</span><br><br>A IA está gerando o relatório…</div>';
+  document.getElementById('btn-gerar').disabled = true;
+
+  try {
+    const res = await fetch('/api/gerar-relatorio', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ prompt })
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Erro na API');
+    const texto = data.texto || '';
+    if (!texto) throw new Error('Resposta vazia');
+    state.relatorios[currentAlunoId] = texto;
+    syncStart();
+    await db.from('relatorios').upsert({ aluno_id: currentAlunoId, texto, atualizado_em: new Date().toISOString() });
+    syncOk();
+    outDiv.innerHTML = `<div class="relatorio-box">${texto}</div>`;
+    document.getElementById('rel-actions').style.display = '';
+    toast('Relatório gerado com sucesso! ✅');
+  } catch (e) {
+    outDiv.innerHTML = '<div class="empty-state"><div class="icon">⚠️</div><p>Erro ao gerar relatório. Verifique sua conexão.</p></div>';
+  }
+  document.getElementById('btn-gerar').disabled = false;
+}
+
+// ===================== GERAÇÃO EM LOTE =====================
+let loteEmAndamento = false;
+
+async function gerarLote(turmaId) {
+  if (loteEmAndamento) { toast('Aguarde, geração em andamento…'); return; }
+  const alunos = state.alunos.filter(a => (!turmaId || a.turmaId === turmaId) && state.avaliacoes[a.id]);
+  if (!alunos.length) { toast('Nenhum aluno com avaliação para gerar.'); return; }
+  if (!confirm(`Gerar relatórios para ${alunos.length} aluno(s)? Isso pode levar alguns minutos.`)) return;
+  loteEmAndamento = true;
+  let ok = 0, erro = 0;
+  for (const aluno of alunos) {
+    const aval = state.avaliacoes[aluno.id] || {};
+    const turma = state.turmas.find(t => t.id === aluno.turmaId);
+    const prompt = buildPrompt(aluno, aval, turma);
+    try {
+      const res = await fetch('/api/gerar-relatorio', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt })
+      });
+      const data = await res.json();
+      if (!res.ok || !data.texto) throw new Error();
+      state.relatorios[aluno.id] = data.texto;
+      await db.from('relatorios').upsert({ aluno_id: aluno.id, texto: data.texto, atualizado_em: new Date().toISOString() });
+      ok++;
+    } catch { erro++; }
+    toast(`Gerados: ${ok} ✅  Erros: ${erro} ❌  de ${alunos.length}`);
+  }
+  loteEmAndamento = false;
+  renderRelatorios(); renderAlunos(); renderDashboard();
+  toast(`Concluído! ${ok} gerados, ${erro} com erro.`);
+}
+
+// ===================== IMPRESSÃO EM LOTE (PDF) =====================
+function imprimirLote(turmaId) {
+  const alunos = state.alunos
+    .filter(a => (!turmaId || a.turmaId === turmaId) && state.relatorios[a.id])
+    .sort((a, b) => a.nome.localeCompare(b.nome));
+  if (!alunos.length) { toast('Nenhum relatório gerado para imprimir.'); return; }
+  const turma = turmaId ? state.turmas.find(t => t.id === turmaId) : null;
+  const win = window.open('', '_blank');
+  const linhas = alunos.map(a => {
+    const t = state.turmas.find(t => t.id === a.turmaId);
+    return `<div class="aluno-bloco">
+      <div class="aluno-header">
+        <strong>${a.nome}</strong>
+        <span>${t ? t.nome : ''}</span>
+        ${a.especial ? `<span class="esp">⭐ Ed. Especial${a.diagnostico ? ' – ' + a.diagnostico : ''}</span>` : ''}
+      </div>
+      <div class="aluno-texto">${state.relatorios[a.id]}</div>
+    </div>`;
+  }).join('');
+  win.document.write(`<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
+    <title>Relatórios – ${turma ? turma.nome : 'Todos os alunos'}</title>
+    <style>
+      @page { size: A4; margin: 1.5cm; }
+      body { font-family: Georgia, serif; font-size: 12pt; color: #1c2e26; }
+      h1 { font-size: 14pt; color: #1b4332; border-bottom: 2px solid #52b788; padding-bottom: 6px; margin-bottom: 4px; }
+      .meta { font-size: 10pt; color: #5a7a68; margin-bottom: 20px; }
+      .aluno-bloco { margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid #ccc; page-break-inside: avoid; }
+      .aluno-bloco:last-child { border-bottom: none; }
+      .aluno-header { display: flex; gap: 12px; align-items: baseline; margin-bottom: 6px; flex-wrap: wrap; }
+      .aluno-header strong { font-size: 12pt; color: #1b4332; }
+      .aluno-header span { font-size: 10pt; color: #5a7a68; }
+      .esp { background: #fef3e2; color: #a05c00; padding: 1px 6px; border-radius: 4px; font-size: 9pt; }
+      .aluno-texto { font-size: 11pt; line-height: 1.7; text-align: justify; }
+    </style>
+  </head><body>
+    <h1>Relatórios Educação Infantil – CEMEI Vila da Paz</h1>
+    <p class="meta">${turma ? turma.nome + ' · ' : ''}1º Semestre 2026 · Prof.ª R1 Bernadete · ${alunos.length} aluno(s)</p>
+    ${linhas}
+  </body></html>`);
+  win.document.close();
+  win.print();
+}
+
+function editarRelatorio() {
+  const texto = state.relatorios[currentAlunoId] || '';
+  document.getElementById('rel-texto-editavel').value = texto;
+  document.getElementById('rel-edit-area').style.display = '';
+  document.getElementById('rel-actions').style.display = 'none';
+  document.getElementById('relatorio-output').style.display = 'none';
+}
+async function salvarTextoEditado() {
+  const novo = document.getElementById('rel-texto-editavel').value;
+  state.relatorios[currentAlunoId] = novo;
+  await db.from('relatorios').upsert({ aluno_id: currentAlunoId, texto: novo, atualizado_em: new Date().toISOString() });
+  document.getElementById('relatorio-output').innerHTML = `<div class="relatorio-box">${novo}</div>`;
+  document.getElementById('relatorio-output').style.display = '';
+  document.getElementById('rel-edit-area').style.display = 'none';
+  document.getElementById('rel-actions').style.display = '';
+  toast('Texto salvo! ✅');
+}
+function cancelarEdicao() {
+  document.getElementById('rel-edit-area').style.display = 'none';
+  document.getElementById('relatorio-output').style.display = '';
+  document.getElementById('rel-actions').style.display = '';
+}
+
+function copiarTexto() {
+  const texto = state.relatorios[currentAlunoId];
+  if (!texto) { toast('Gere o relatório primeiro.'); return; }
+  navigator.clipboard.writeText(texto).then(() => toast('Texto copiado! 📋'));
+}
+
+function imprimirRelatorio() {
+  const aluno = state.alunos.find(a => a.id === currentAlunoId);
+  const texto = state.relatorios[currentAlunoId];
+  if (!texto) { toast('Gere o relatório primeiro.'); return; }
+  const win = window.open('', '_blank');
+  win.document.write(`<html><head><title>Relatório - ${aluno.nome}</title>
+  <style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;font-size:14px;line-height:1.8;color:#1c2e26;}
+  h2{font-size:18px;color:#1b4332;border-bottom:2px solid #52b788;padding-bottom:8px;}
+  .meta{font-size:12px;color:#5a7a68;margin:8px 0 24px;}
+  p{margin:0;}</style></head><body>
+  <h2>Relatório Educação Infantil – CEMEI Vila da Paz</h2>
+  <p class="meta">Aluno: <strong>${aluno.nome}</strong> &nbsp;|&nbsp; 1º Semestre 2026 &nbsp;|&nbsp; Prof.ª Bernadete</p>
+  <p>${texto}</p>
+  </body></html>`);
+  win.document.close(); win.print();
+}
+
+// ===================== VER RELATÓRIO =====================
+function verRelatorio(alunoId) {
+  const aluno = state.alunos.find(a => a.id === alunoId);
+  const turma = state.turmas.find(t => t.id === aluno.turmaId);
+  document.getElementById('ver-rel-titulo').textContent = aluno.nome;
+  document.getElementById('ver-rel-sub').textContent = turma ? turma.nome : '';
+  document.getElementById('ver-rel-texto').textContent = state.relatorios[alunoId] || '';
+  openModal('modal-ver-relatorio');
+}
+function copiarRelatorioVer() {
+  const txt = document.getElementById('ver-rel-texto').textContent;
+  navigator.clipboard.writeText(txt).then(() => toast('Copiado! 📋'));
+}
+function imprimirVer() {
+  const titulo = document.getElementById('ver-rel-titulo').textContent;
+  const texto = document.getElementById('ver-rel-texto').textContent;
+  const win = window.open('', '_blank');
+  win.document.write(`<html><head><title>Relatório</title><style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;font-size:14px;line-height:1.8;}h2{color:#1b4332;border-bottom:2px solid #52b788;padding-bottom:8px;}</style></head><body><h2>Relatório – ${titulo}</h2><p>${texto}</p></body></html>`);
+  win.document.close(); win.print();
+}
+
+// ===================== RELATÓRIOS PAGE =====================
+function renderRelatorios() {
+  const filtro = document.getElementById('filtro-rel-turma').value;
+  const tbody = document.getElementById('tabela-relatorios');
+  const lista = state.alunos.filter(a => (!filtro || a.turmaId === filtro) && state.relatorios[a.id]);
+  if (!lista.length) { tbody.innerHTML = '<tr><td colspan="5"><div class="empty-state"><div class="icon">📄</div><p>Nenhum relatório gerado ainda.</p></div></td></tr>'; return; }
+  lista.sort((a, b) => a.nome.localeCompare(b.nome));
+  tbody.innerHTML = lista.map(a => {
+    const turma = state.turmas.find(t => t.id === a.turmaId);
+    return `<tr>
+      <td><strong>${a.nome}</strong>${a.especial ? ' <span class="badge badge-especial" style="font-size:10px;">⭐</span>' : ''}</td>
+      <td><span class="badge badge-turma">${turma ? turma.nome : '—'}</span></td>
+      <td style="font-size:12px;color:var(--texto-suave);">—</td>
+      <td><span class="badge badge-sat">✅ Gerado</span></td>
+      <td style="display:flex;gap:6px;">
+        <button class="btn btn-outline btn-sm" onclick="verRelatorio('${a.id}')">👁️ Ver</button>
+        <button class="btn btn-primary btn-sm" onclick="openAvaliacao('${a.id}');setTimeout(()=>switchTab('relatorio'),100)">✏️ Editar</button>
+        <button class="btn btn-outline btn-sm" onclick="imprimirRelatorioById('${a.id}')">🖨️</button>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+function imprimirRelatorioById(id) {
+  const aluno = state.alunos.find(a => a.id === id);
+  const texto = state.relatorios[id];
+  const win = window.open('', '_blank');
+  win.document.write(`<html><head><title>Relatório - ${aluno.nome}</title><style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;font-size:14px;line-height:1.8;color:#1c2e26;}h2{font-size:18px;color:#1b4332;border-bottom:2px solid #52b788;padding-bottom:8px;}</style></head><body><h2>Relatório – CEMEI Vila da Paz</h2><p style="font-size:12px;color:#5a7a68;margin:8px 0 24px;">Aluno: <strong>${aluno.nome}</strong></p><p>${texto}</p></body></html>`);
+  win.document.close(); win.print();
+}
+
+// ===================== PANORAMA ALUNO =====================
+function abrirPanorama(alunoId) {
+  const aluno = state.alunos.find(a => a.id === alunoId);
+  if (!aluno) return;
+  const turma = state.turmas.find(t => t.id === aluno.turmaId);
+  const aval = state.avaliacoes[alunoId] || {};
+  const rel = state.relatorios[alunoId] || '';
+
+  // contar S, D, N em todos os critérios
+  const todosCriterios = [...CRITERIOS.socioEmocional, ...CRITERIOS.linguagem, ...CRITERIOS.cognitivo, ...CRITERIOS.motorFino];
+  let cS = 0, cD = 0, cN = 0, cTotal = todosCriterios.length;
+  todosCriterios.forEach(c => {
+    if (aval[c.id] === 'S') cS++;
+    else if (aval[c.id] === 'D') cD++;
+    else if (aval[c.id] === 'N') cN++;
+  });
+
+  // barras por área
+  function areaCounts(lista) {
+    let s=0,d=0,n=0;
+    lista.forEach(c => { if(aval[c.id]==='S') s++; else if(aval[c.id]==='D') d++; else if(aval[c.id]==='N') n++; });
+    return { s, d, n, total: lista.length };
+  }
+  const areas = [
+    { nome: '🤝 Socioafetivo', counts: areaCounts(CRITERIOS.socioEmocional) },
+    { nome: '🗣️ Linguagem', counts: areaCounts(CRITERIOS.linguagem) },
+    { nome: '🧠 Cognitivo', counts: areaCounts(CRITERIOS.cognitivo) },
+    { nome: '✏️ Motor Fino', counts: areaCounts(CRITERIOS.motorFino) },
+  ];
+
+  function barra(val, total, cor) {
+    const pct = total ? Math.round(val/total*100) : 0;
+    return `<div class="panorama-barra-bg"><div class="panorama-barra-fill" style="width:${pct}%;background:${cor};"></div></div><div class="panorama-barra-pct">${pct}%</div>`;
+  }
+
+  const barrasHTML = areas.map(a => {
+    const t = a.counts.total;
+    const pctS = t ? Math.round(a.counts.s/t*100) : 0;
+    return `<div style="margin-bottom:10px;">
+      <div style="font-size:12px;font-weight:600;color:var(--texto);margin-bottom:4px;">${a.nome}</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div class="panorama-barra-bg" style="flex:1;">
+          <div class="panorama-barra-fill" style="width:${pctS}%;background:${pctS>=70?'var(--satisfatorio)':pctS>=50?'var(--desenvolvimento)':'var(--nao-adquirido)'};"></div>
+        </div>
+        <span style="font-size:11px;color:var(--texto-suave);width:30px;">${a.counts.s}/${t} S</span>
+      </div>
+    </div>`;
+  }).join('');
+
+  const temAval = cS+cD+cN > 0;
+
+  document.getElementById('panorama-body').innerHTML = `
+    <div class="panorama-header">
+      <div class="panorama-avatar">${aluno.nome.charAt(0).toUpperCase()}</div>
+      <div>
+        <div class="panorama-nome">${aluno.nome}</div>
+        <div class="panorama-turma">${turma ? turma.nome : '—'}</div>
+        ${aluno.especial ? `<div class="panorama-diag">⭐ Ed. Especial${aluno.diagnostico ? ' · ' + aluno.diagnostico : ''}</div>` : ''}
+      </div>
+    </div>
+
+    ${temAval ? `
+    <div class="panorama-section-title">Resumo da Avaliação (${cTotal} critérios)</div>
+    <div class="panorama-scores">
+      <div class="score-box s"><div class="score-val">${cS}</div><div class="score-label">Satisfatório</div></div>
+      <div class="score-box d"><div class="score-val">${cD}</div><div class="score-label">Desenv.</div></div>
+      <div class="score-box n"><div class="score-val">${cN}</div><div class="score-label">Não adq.</div></div>
+    </div>
+    <div class="panorama-section-title">Desempenho por Área</div>
+    <div style="margin-bottom:20px;">${barrasHTML}</div>
+    ` : `<div class="panorama-sem-rel" style="margin-bottom:20px;"><div style="font-size:28px;margin-bottom:8px;">📋</div><p>Nenhuma avaliação registrada para este aluno ainda.</p></div>`}
+
+    <div class="panorama-section-title">Relatório Narrativo</div>
+    ${rel
+      ? `<div class="panorama-rel">${rel}</div>`
+      : `<div class="panorama-sem-rel"><div style="font-size:28px;margin-bottom:8px;">✨</div><p>Relatório ainda não gerado.<br><span style="font-size:12px;">Abra a avaliação para gerar com IA.</span></p></div>`}
+  `;
+
+  document.getElementById('panorama-btn-avaliar').onclick = () => { closeModal('modal-panorama'); openAvaliacao(alunoId); };
+  openModal('modal-panorama');
+}
+
+// ===================== MODAL GERAR EM LOTE =====================
+let loteStep = 1;
+let loteTurmaId = null; // null = todas
+let loteAlunosSel = [];
+
+function abrirModalLote() {
+  loteStep = 1;
+  loteTurmaId = null;
+  loteAlunosSel = [];
+  renderLoteStep1();
+  document.getElementById('lote-btn-voltar').style.display = 'none';
+  document.getElementById('lote-btn-prox').textContent = 'Próximo →';
+  document.getElementById('lote-btn-prox').disabled = false;
+  document.getElementById('lote-btn-cancelar').style.display = '';
+  openModal('modal-lote');
+}
+
+function renderLoteStep1() {
+  // atualizar steps
+  ['lstep-1','lstep-2','lstep-3'].forEach((id,i) => {
+    document.getElementById(id).className = 'lote-step' + (i===0?' active':'');
+  });
+  document.getElementById('lote-step1').style.display = '';
+  document.getElementById('lote-step2').style.display = 'none';
+  document.getElementById('lote-step3').style.display = 'none';
+  document.getElementById('lote-subtitulo').textContent = 'Passo 1 de 3 — Selecione a turma';
+
+  const lista = document.getElementById('lote-turmas-lista');
+  // Opção "Todas"
+  const todasAlunosComAval = state.alunos.filter(a => state.avaliacoes[a.id]).length;
+  let html = `<div class="lote-turma-card ${loteTurmaId===null?'sel':''}" onclick="selecionarLoteTurma(null, this)">
+    <div class="lc-nome">🌐 Todas as turmas</div>
+    <div class="lc-info">${todasAlunosComAval} aluno(s) com avaliação</div>
+  </div>`;
+  html += state.turmas.map(t => {
+    const cnt = state.alunos.filter(a => a.turmaId === t.id && state.avaliacoes[a.id]).length;
+    return `<div class="lote-turma-card ${loteTurmaId===t.id?'sel':''}" onclick="selecionarLoteTurma('${t.id}', this)">
+      <div class="lc-nome">🏫 ${t.nome}</div>
+      <div class="lc-info">${t.turno} · ${t.faixa} · ${cnt} aluno(s) com avaliação</div>
+    </div>`;
+  }).join('');
+  lista.innerHTML = html;
+}
+
+function selecionarLoteTurma(turmaId, el) {
+  loteTurmaId = turmaId;
+  document.querySelectorAll('#lote-turmas-lista .lote-turma-card').forEach(c => c.classList.remove('sel'));
+  el.classList.add('sel');
+}
+
+function renderLoteStep2() {
+  ['lstep-1','lstep-2','lstep-3'].forEach((id,i) => {
+    document.getElementById(id).className = 'lote-step' + (i<1?' done':i===1?' active':'');
+  });
+  document.getElementById('lote-step1').style.display = 'none';
+  document.getElementById('lote-step2').style.display = '';
+  document.getElementById('lote-step3').style.display = 'none';
+  document.getElementById('lote-subtitulo').textContent = 'Passo 2 de 3 — Selecione os alunos';
+
+  const alunos = state.alunos
+    .filter(a => (loteTurmaId===null || a.turmaId===loteTurmaId) && state.avaliacoes[a.id])
+    .sort((a,b) => a.nome.localeCompare(b.nome));
+
+  if (!loteAlunosSel.length) loteAlunosSel = alunos.map(a => a.id);
+
+  const lista = document.getElementById('lote-alunos-lista');
+  if (!alunos.length) {
+    lista.innerHTML = '<div class="acc-empty">Nenhum aluno com avaliação nesta seleção.</div>';
+    return;
+  }
+  lista.innerHTML = alunos.map(a => {
+    const temRel = !!state.relatorios[a.id];
+    const sel = loteAlunosSel.includes(a.id);
+    return `<label class="lote-aluno-item">
+      <input type="checkbox" id="lchk-${a.id}" ${sel?'checked':''} onchange="loteToggleAluno('${a.id}', this.checked)">
+      <label for="lchk-${a.id}" style="flex:1;cursor:pointer;">${a.nome}</label>
+      ${temRel ? '<span class="badge badge-sat" style="font-size:10px;">✅ já tem</span>' : ''}
+    </label>`;
+  }).join('');
+  atualizarLoteSelInfo();
+}
+
+function loteToggleAluno(id, checked) {
+  if (checked && !loteAlunosSel.includes(id)) loteAlunosSel.push(id);
+  if (!checked) loteAlunosSel = loteAlunosSel.filter(x => x !== id);
+  atualizarLoteSelInfo();
+}
+
+function loteSelectAll(val) {
+  const alunos = state.alunos.filter(a => (loteTurmaId===null || a.turmaId===loteTurmaId) && state.avaliacoes[a.id]);
+  loteAlunosSel = val ? alunos.map(a => a.id) : [];
+  alunos.forEach(a => { const chk = document.getElementById('lchk-'+a.id); if(chk) chk.checked = val; });
+  atualizarLoteSelInfo();
+}
+
+function atualizarLoteSelInfo() {
+  const info = document.getElementById('lote-sel-info');
+  if (info) info.textContent = `${loteAlunosSel.length} aluno(s) selecionado(s)`;
+}
+
+function renderLoteStep3() {
+  ['lstep-1','lstep-2','lstep-3'].forEach((id,i) => {
+    document.getElementById(id).className = 'lote-step' + (i<2?' done':' active');
+  });
+  document.getElementById('lote-step1').style.display = 'none';
+  document.getElementById('lote-step2').style.display = 'none';
+  document.getElementById('lote-step3').style.display = '';
+  document.getElementById('lote-subtitulo').textContent = 'Passo 3 de 3 — Confirmar';
+  document.getElementById('lote-progresso').style.display = 'none';
+
+  const turmaLabel = loteTurmaId ? (state.turmas.find(t=>t.id===loteTurmaId)?.nome || '') : 'Todas as turmas';
+  document.getElementById('lote-resumo').innerHTML = `
+    <div style="font-size:14px;font-weight:700;margin-bottom:8px;">🚀 Pronto para gerar!</div>
+    <div>Turma: <strong>${turmaLabel}</strong></div>
+    <div style="margin-top:4px;">Alunos selecionados: <strong>${loteAlunosSel.length}</strong></div>
+    <div style="margin-top:8px;font-size:12px;color:var(--texto-suave);">Relatórios já existentes serão <strong>substituídos</strong>.</div>
+  `;
+  document.getElementById('lote-btn-prox').textContent = '✨ Gerar Relatórios';
+}
+
+function loteProximo() {
+  if (loteStep === 1) {
+    loteStep = 2;
+    renderLoteStep2();
+    document.getElementById('lote-btn-voltar').style.display = '';
+  } else if (loteStep === 2) {
+    if (!loteAlunosSel.length) { toast('Selecione ao menos um aluno.'); return; }
+    loteStep = 3;
+    renderLoteStep3();
+  } else if (loteStep === 3) {
+    executarLote();
+  }
+}
+
+function loteVoltar() {
+  if (loteStep === 2) {
+    loteStep = 1;
+    renderLoteStep1();
+    document.getElementById('lote-btn-voltar').style.display = 'none';
+    document.getElementById('lote-btn-prox').textContent = 'Próximo →';
+  } else if (loteStep === 3) {
+    loteStep = 2;
+    renderLoteStep2();
+    document.getElementById('lote-btn-prox').textContent = 'Próximo →';
+  }
+}
+
+async function executarLote() {
+  if (loteEmAndamento) return;
+  if (!loteAlunosSel.length) return;
+  loteEmAndamento = true;
+  document.getElementById('lote-btn-prox').disabled = true;
+  document.getElementById('lote-btn-voltar').style.display = 'none';
+  document.getElementById('lote-btn-cancelar').style.display = 'none';
+  document.getElementById('lote-progresso').style.display = '';
+
+  const alunosFiltro = state.alunos.filter(a => loteAlunosSel.includes(a.id));
+  let ok = 0, erro = 0;
+  for (let i = 0; i < alunosFiltro.length; i++) {
+    const aluno = alunosFiltro[i];
+    const aval = state.avaliacoes[aluno.id] || {};
+    const turma = state.turmas.find(t => t.id === aluno.turmaId);
+    const prompt = buildPrompt(aluno, aval, turma);
+    const pct = Math.round(i/alunosFiltro.length*100);
+    document.getElementById('lote-prog-bar').style.width = pct + '%';
+    document.getElementById('lote-prog-texto').textContent = `Gerando ${i+1} de ${alunosFiltro.length}: ${aluno.nome}…`;
+    try {
+      const res = await fetch('/api/gerar-relatorio', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ prompt }) });
+      const data = await res.json();
+      if (!res.ok || !data.texto) throw new Error();
+      state.relatorios[aluno.id] = data.texto;
+      await db.from('relatorios').upsert({ aluno_id: aluno.id, texto: data.texto, atualizado_em: new Date().toISOString() });
+      ok++;
+    } catch { erro++; }
+    toast(`Gerados: ${ok} ✅  Erros: ${erro} ❌`);
+  }
+  document.getElementById('lote-prog-bar').style.width = '100%';
+  document.getElementById('lote-prog-texto').textContent = `Concluído! ${ok} gerado(s), ${erro} com erro.`;
+  document.getElementById('lote-resumo').innerHTML = `<div style="font-size:14px;font-weight:700;margin-bottom:8px;">✅ Geração concluída!</div>
+    <div>Relatórios gerados: <strong>${ok}</strong></div>
+    ${erro ? `<div style="color:var(--nao-adquirido);margin-top:4px;">Erros: <strong>${erro}</strong></div>` : ''}`;
+  document.getElementById('lote-btn-cancelar').textContent = 'Fechar';
+  document.getElementById('lote-btn-cancelar').style.display = '';
+  document.getElementById('lote-btn-prox').style.display = 'none';
+  loteEmAndamento = false;
+  renderRelatorios(); renderAlunos(); renderDashboard();
+}
+
+
+// ===================== IMPRIMIR CARDS DE ACOMPANHAMENTO =====================
+
+function gerarHTMLCardImpressao(aluno, opts) {
+  opts = opts || { aval: true, rel: true, presenca: true, obs: true };
+  const turma = state.turmas.find(t => t.id === aluno.turmaId);
+  const aval = state.avaliacoes[aluno.id] || {};
+  const rel = state.relatorios[aluno.id] || '';
+
+  const todosCriterios = [
+    ...CRITERIOS.socioEmocional,
+    ...CRITERIOS.linguagem,
+    ...CRITERIOS.cognitivo,
+    ...CRITERIOS.motorFino
+  ];
+
+  let cS=0, cD=0, cN=0;
+  todosCriterios.forEach(c => {
+    if (aval[c.id]==='S') cS++;
+    else if (aval[c.id]==='D') cD++;
+    else if (aval[c.id]==='N') cN++;
+  });
+
+  const areas = [
+    { label: 'Socioafetivo', emoji: '🤝', lista: CRITERIOS.socioEmocional },
+    { label: 'Linguagem', emoji: '🗣️', lista: CRITERIOS.linguagem },
+    { label: 'Cognitivo', emoji: '🧠', lista: CRITERIOS.cognitivo },
+    { label: 'Motor Fino', emoji: '✏️', lista: CRITERIOS.motorFino },
+  ];
+
+  const figuraMap = {};
+
+  const areasBlocos = areas.map(area => {
+    const rows = area.lista.map(c => {
+      const val = aval[c.id] || '';
+      const cor = val==='S' ? '#2d6a4f' : val==='D' ? '#e9891a' : val==='N' ? '#c1121f' : '#aaa';
+      const bg  = val==='S' ? '#d8f3dc' : val==='D' ? '#fef3e2' : val==='N' ? '#ffe0e0' : '#f5f5f5';
+      return `<tr>
+        <td style="padding:5px 8px;font-size:9.5pt;border-bottom:1px solid #e8e8e8;line-height:1.4;">${c.texto}</td>
+        <td style="padding:5px 8px;text-align:center;border-bottom:1px solid #e8e8e8;white-space:nowrap;">
+          <span style="background:${bg};color:${cor};font-weight:700;font-size:9pt;padding:2px 7px;border-radius:5px;">${val || '—'}</span>
+        </td>
+        <td style="padding:5px 8px;border-bottom:1px solid #e8e8e8;width:120px;">
+          <div style="border-bottom:1px dotted #ccc;height:14px;margin-bottom:3px;"></div>
+        </td>
+      </tr>`;
+    }).join('');
+
+    return `<div style="margin-bottom:12pt;break-inside:avoid;page-break-inside:avoid;">
+      <div style="background:#1b4332;color:white;padding:5px 10px;border-radius:6px 6px 0 0;font-weight:700;font-size:10pt;">${area.emoji} ${area.label}</div>
+      <table style="width:100%;border-collapse:collapse;border:1px solid #ddd;border-top:none;border-radius:0 0 6px 6px;overflow:hidden;">
+        <thead>
+          <tr style="background:#f0f7f0;">
+            <th style="padding:5px 8px;font-size:9pt;text-align:left;color:#5a7a68;font-weight:600;border-bottom:1px solid #ddd;">Critério</th>
+            <th style="padding:5px 8px;font-size:9pt;text-align:center;color:#5a7a68;font-weight:600;border-bottom:1px solid #ddd;width:45px;">Aval.</th>
+            <th style="padding:5px 8px;font-size:9pt;text-align:left;color:#5a7a68;font-weight:600;border-bottom:1px solid #ddd;width:120px;">Anotação</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
+  }).join('');
+
+  // Seção de linhas para anotações livres
+  const linhasAnotacao = Array(10).fill(0).map(() =>
+    `<div style="border-bottom:1px solid #d0d0d0;height:20px;margin-bottom:2px;"></div>`
+  ).join('');
+
+  const semanas = ['Sem. 1','Sem. 2','Sem. 3','Sem. 4','Sem. 5','Sem. 6','Sem. 7','Sem. 8'];
+  const tabelaSemanas = `<table style="width:100%;border-collapse:collapse;font-size:9pt;">
+    <tr style="background:#f0f7f0;">
+      ${semanas.map(s => `<th style="border:1px solid #ddd;padding:5px;text-align:center;font-weight:600;color:#2d6a4f;">${s}</th>`).join('')}
+    </tr>
+    <tr>
+      ${semanas.map(() => `<td style="border:1px solid #ddd;height:32px;"></td>`).join('')}
+    </tr>
+  </table>`;
+
+  return `
+    <!-- CABEÇALHO DO CARD -->
+    <div style="border:2.5px solid #2d6a4f;border-radius:12pt;margin-bottom:0;">
+
+      <!-- Topo verde -->
+      <div style="background:#1b4332;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;break-inside:avoid;page-break-inside:avoid;">
+        <div>
+          <div style="color:#52b788;font-size:8pt;letter-spacing:2px;text-transform:uppercase;font-weight:700;">CEMEI Vila da Paz · Contagem/MG</div>
+          <div style="color:white;font-size:15pt;font-weight:700;font-family:Georgia,serif;margin-top:2px;">${aluno.nome}</div>
+          <div style="color:rgba(255,255,255,.7);font-size:9pt;margin-top:3px;">
+            ${turma ? turma.nome + ' · ' + turma.turno + ' · ' + turma.faixa : ''}
+            ${aluno.especial ? ' · <span style="color:#f9c74f;font-weight:700;">⭐ Ed. Especial' + (aluno.diagnostico ? ' – ' + aluno.diagnostico : '') + '</span>' : ''}
+          </div>
+        </div>
+        <div style="text-align:right;">
+          <div style="color:rgba(255,255,255,.5);font-size:8pt;">1º Semestre 2026</div>
+          <div style="color:rgba(255,255,255,.5);font-size:8pt;margin-top:4px;">Prof.ª R1 - BERNADETE</div>
+          <div style="display:flex;gap:6px;margin-top:8px;justify-content:flex-end;">
+            <span style="background:${cS>0?'#d8f3dc':'#f0f0f0'};color:${cS>0?'#1b4332':'#aaa'};padding:3px 8px;border-radius:6px;font-size:9pt;font-weight:700;">${cS} S</span>
+            <span style="background:${cD>0?'#fef3e2':'#f0f0f0'};color:${cD>0?'#a05c00':'#aaa'};padding:3px 8px;border-radius:6px;font-size:9pt;font-weight:700;">${cD} D</span>
+            <span style="background:${cN>0?'#ffe0e0':'#f0f0f0'};color:${cN>0?'#c1121f':'#aaa'};padding:3px 8px;border-radius:6px;font-size:9pt;font-weight:700;">${cN} N</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Corpo do card -->
+      <div style="padding:14px 16px;background:white;">
+
+        <!-- Legenda -->
+        ${opts.aval ? `<div style="display:flex;gap:16px;margin-bottom:12pt;font-size:8.5pt;color:#5a7a68;break-inside:avoid;page-break-inside:avoid;">
+          <span><strong style="color:#2d6a4f;">S</strong> = Satisfatório (70–100%)</span>
+          <span><strong style="color:#e9891a;">D</strong> = Em desenvolvimento (50–70%)</span>
+          <span><strong style="color:#c1121f;">N</strong> = Não adquirido (&lt;50%)</span>
+          <span style="margin-left:auto;color:#aaa;font-style:italic;">Coluna "Anotação" para registros diários</span>
+        </div>` : ''}
+
+        <!-- Critérios por área -->
+        ${opts.aval ? areasBlocos : ''}
+
+        <!-- Relatório narrativo -->
+        ${opts.rel && rel ? `<div style="margin-bottom:14pt;break-inside:avoid;page-break-inside:avoid;">
+          <div style="background:#1b4332;color:white;padding:5px 10px;border-radius:6px 6px 0 0;font-weight:700;font-size:10pt;">📝 Relatório Narrativo</div>
+          <div style="border:1px solid #ddd;border-top:none;border-radius:0 0 6px 6px;padding:10px 12px;font-size:10pt;line-height:1.7;font-family:Georgia,serif;color:#1c2e26;background:#fafff9;">${rel}</div>
+        </div>` : ''}
+
+        <!-- Presença semanal -->
+        ${opts.presenca ? `<div style="margin-bottom:14pt;break-inside:avoid;page-break-inside:avoid;">
+          <div style="background:#1b4332;color:white;padding:5px 10px;border-radius:6px 6px 0 0;font-weight:700;font-size:10pt;">📅 Acompanhamento de Presença / Participação</div>
+          <div style="border:1px solid #ddd;border-top:none;border-radius:0 0 6px 6px;padding:10px 12px;">
+            ${tabelaSemanas}
+          </div>
+        </div>` : ''}
+
+        <!-- Anotações livres -->
+        ${opts.obs ? `<div style="break-inside:avoid;page-break-inside:avoid;">
+          <div style="background:#1b4332;color:white;padding:5px 10px;border-radius:6px 6px 0 0;font-weight:700;font-size:10pt;">🗒️ Observações e Anotações do Dia a Dia</div>
+          <div style="border:1px solid #ddd;border-top:none;border-radius:0 0 6px 6px;padding:12px 12px 6px;">
+            ${linhasAnotacao}
+          </div>
+        </div>` : ''}
+
+      </div><!-- fim corpo -->
+    </div><!-- fim card -->
+  `;
+}
+
+function imprimirCardAluno(alunoId) {
+  const aluno = state.alunos.find(a => a.id === alunoId);
+  if (!aluno) return;
+  abrirJanelaImpressao([aluno], { aval: true, rel: true, presenca: true, obs: true });
+}
+
+function imprimirCardsAlunos() { abrirModalImpressaoCards(); }
+
+let printCardsSel = [];
+
+function abrirModalImpressaoCards() {
+  // popular filtro turma
+  const sel = document.getElementById('print-filtro-turma');
+  sel.innerHTML = '<option value="">Todas as turmas</option>' +
+    state.turmas.map(t => `<option value="${t.id}">${t.nome}</option>`).join('');
+  // herdar filtro ativo da página Alunos
+  const filtroAtual = document.getElementById('filtro-turma').value;
+  if (filtroAtual) sel.value = filtroAtual;
+  document.getElementById('print-busca').value = '';
+  printCardsSel = [];
+  renderPrintAlunosList();
+  openModal('modal-print-cards');
+}
+
+function renderPrintAlunosList() {
+  const filtro  = document.getElementById('print-filtro-turma').value;
+  const busca   = (document.getElementById('print-busca').value || '').toLowerCase();
+  const alunos  = state.alunos
+    .filter(a => (!filtro || a.turmaId === filtro) && (!busca || a.nome.toLowerCase().includes(busca)))
+    .sort((a, b) => a.nome.localeCompare(b.nome));
+
+  // NÃO pré-seleciona automaticamente — respeita a seleção atual do usuário
+
+  const lista = document.getElementById('print-alunos-lista');
+  if (!alunos.length) {
+    lista.innerHTML = '<div class="acc-empty">Nenhum aluno encontrado.</div>';
+    atualizarPrintLabel(0);
+    return;
+  }
+
+  lista.innerHTML = alunos.map(a => {
+    const turma  = state.turmas.find(t => t.id === a.turmaId);
+    const temRel = !!state.relatorios[a.id];
+    const sel    = printCardsSel.includes(a.id);
+    return `<label class="lote-aluno-item">
+      <input type="checkbox" id="pchk-${a.id}" ${sel ? 'checked' : ''} onchange="printToggleAluno('${a.id}', this.checked)">
+      <label for="pchk-${a.id}" style="flex:1;cursor:pointer;">
+        <strong>${a.nome}</strong>
+        ${turma ? `<span style="color:var(--texto-suave);font-size:11px;margin-left:6px;">${turma.nome}</span>` : ''}
+        ${a.especial ? '<span class="badge badge-especial" style="font-size:9px;margin-left:4px;">⭐ Esp.</span>' : ''}
+      </label>
+      ${temRel ? '<span class="badge badge-sat" style="font-size:10px;">✅ rel.</span>' : ''}
+    </label>`;
+  }).join('');
+
+  atualizarPrintLabel(printCardsSel.filter(id => alunos.find(a => a.id === id)).length);
+}
+
+function printToggleAluno(id, checked) {
+  if (checked && !printCardsSel.includes(id)) printCardsSel.push(id);
+  if (!checked) printCardsSel = printCardsSel.filter(x => x !== id);
+  // recount visíveis
+  const filtro = document.getElementById('print-filtro-turma').value;
+  const busca  = (document.getElementById('print-busca').value || '').toLowerCase();
+  const visiveis = state.alunos.filter(a => (!filtro || a.turmaId === filtro) && (!busca || a.nome.toLowerCase().includes(busca)));
+  atualizarPrintLabel(printCardsSel.filter(id => visiveis.find(a => a.id === id)).length);
+}
+
+function printSelectAll(val) {
+  const filtro = document.getElementById('print-filtro-turma').value;
+  const busca  = (document.getElementById('print-busca').value || '').toLowerCase();
+  const visiveis = state.alunos.filter(a => (!filtro || a.turmaId === filtro) && (!busca || a.nome.toLowerCase().includes(busca)));
+  visiveis.forEach(a => {
+    if (val && !printCardsSel.includes(a.id)) printCardsSel.push(a.id);
+    if (!val) printCardsSel = printCardsSel.filter(id => id !== a.id);
+    const chk = document.getElementById('pchk-' + a.id);
+    if (chk) chk.checked = val;
+  });
+  atualizarPrintLabel(val ? visiveis.length : 0);
+}
+
+function atualizarPrintLabel(n) {
+  document.getElementById('print-sel-label').textContent = `${n} aluno(s) selecionado(s)`;
+  document.getElementById('print-cards-btn-label').textContent = `Imprimir ${n} card${n !== 1 ? 's' : ''}`;
+  document.getElementById('print-cards-btn').disabled = n === 0;
+}
+
+function executarImpressaoCards() {
+  if (!printCardsSel.length) { toast('Selecione ao menos um aluno.'); return; }
+  const lista = state.alunos
+    .filter(a => printCardsSel.includes(a.id))
+    .sort((a, b) => a.nome.localeCompare(b.nome));
+  const opts = {
+    aval:     document.getElementById('print-opt-aval').checked,
+    rel:      document.getElementById('print-opt-rel').checked,
+    presenca: document.getElementById('print-opt-presenca').checked,
+    obs:      document.getElementById('print-opt-obs').checked,
+  };
+  closeModal('modal-print-cards');
+  abrirJanelaImpressao(lista, opts);
+}
+
+function abrirJanelaImpressao(lista, opts) {
+  opts = opts || { aval: true, rel: true, presenca: true, obs: true };
+  const win = window.open('', '_blank');
+  const cards = lista.map((a, i) => `
+    ${i > 0 ? '<div style="page-break-before:always;"></div>' : ''}
+    ${gerarHTMLCardImpressao(a, opts)}
+  `).join('');
+
+  win.document.write(`<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cards de Acompanhamento – CEMEI Vila da Paz</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    @page { size: A4; margin: 1cm 1.2cm; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'DM Sans', Arial, sans-serif;
+      background: white;
+      color: #1c2e26;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    @media screen {
+      body { background: #f0f0f0; padding: 20px; }
+      .card-wrapper { background: white; max-width: 780px; margin: 0 auto 32px; padding: 20px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,.12); }
+    }
+    @media print {
+      body { background: white; padding: 0; }
+      .card-wrapper { padding: 0; }
+      .no-print { display: none !important; }
+    }
+  
+
+  .tema-opt {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 14px; cursor: pointer; font-size: 13px;
+    color: var(--texto); transition: background .15s;
+  }
+  .tema-opt:hover { background: var(--verde-menta); }
+  .tema-opt input[type=checkbox] { accent-color: var(--verde); width:15px; height:15px; cursor:pointer; }
+
+  /* PLANEJAMENTO */
+  .semana-card {
+    background: white; border-radius: var(--radius); box-shadow: var(--shadow);
+    border: 1px solid var(--cinza-borda); margin-bottom: 16px; overflow: hidden;
+  }
+  .semana-card-header {
+    background: var(--verde-escuro); color: white; padding: 14px 20px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .semana-card-header h4 { font-family: "Lora", serif; font-size: 15px; }
+  .semana-card-header .sub { font-size: 11px; color: rgba(255,255,255,.6); margin-top:2px; }
+  .semana-card table { width: 100%; }
+  .plan-dia-row td { vertical-align: top; font-size: 12px; padding: 10px 12px; }
+  .plan-dia-row td:first-child { font-weight: 700; color: var(--verde-escuro); white-space: nowrap; width: 80px; }
+  .plan-dia-row td:nth-child(2) { width: 90px; color: #1a6fa3; font-weight: 600; font-size: 11px; }
+  .plan-dia-input { width: 100%; border: 1.5px solid var(--cinza-borda); border-radius: 6px; padding: 7px 10px; font-size: 12px; font-family: "DM Sans", sans-serif; resize: vertical; min-height: 54px; background: var(--cinza-bg); transition: border-color .2s; }
+  .plan-dia-input:focus { outline: none; border-color: var(--verde-claro); background: white; }
+  .plan-cod-input { width: 100%; border: 1.5px solid var(--cinza-borda); border-radius: 6px; padding: 7px 10px; font-size: 11px; font-family: monospace; resize: vertical; min-height: 40px; background: var(--cinza-bg); }
+  .plan-cod-input:focus { outline: none; border-color: var(--verde-claro); background: white; }
+
+</style>
+</head>
+<body>
+  <!-- Barra de ação (só na tela) -->
+  <div class="no-print" style="position:sticky;top:0;z-index:99;background:#1b4332;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;border-radius:0 0 10px 10px;box-shadow:0 4px 12px rgba(0,0,0,.2);max-width:780px;margin:0 auto 16px;">
+    <div style="color:white;font-weight:700;font-size:14px;">🖨️ ${lista.length} card${lista.length!==1?'s':''} de acompanhamento</div>
+    <button onclick="window.print()" style="background:#52b788;color:white;border:none;padding:9px 20px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;">🖨️ Imprimir / Salvar PDF</button>
+  </div>
+
+  <div class="card-wrapper">
+    ${cards}
+  </div>
+</body>
+</html>`);
+  win.document.close();
+}
+
+
+// ===================== EXPORTAR GOOGLE SHEETS =====================
+let expTipo = 'completo';
+
+function abrirModalExportar() {
+  expTipo = 'completo';
+  // popular filtro turma
+  const sel = document.getElementById('exp-filtro-turma');
+  sel.innerHTML = '<option value="">Todas as turmas</option>' +
+    state.turmas.map(t => `<option value="${t.id}">${t.nome}</option>`).join('');
+  sel.onchange = expAtualizarPreview;
+  expSel('completo');
+  openModal('modal-exportar');
+}
+
+function expSel(tipo) {
+  expTipo = tipo;
+  ['completo','relatorios','resumo','tudo'].forEach(t => {
+    document.getElementById('exp-card-' + t).classList.toggle('sel', t === tipo);
+  });
+  expAtualizarPreview();
+}
+
+function expAtualizarPreview() {
+  const preview = document.getElementById('exp-preview');
+  const cols = expColunas();
+  preview.innerHTML = cols.map((c,i) => `<span style="background:${i%2===0?'#e8f4e8':'#f0f7f0'};padding:1px 6px;border-radius:4px;margin:2px;display:inline-block;">${c}</span>`).join(' ');
+  const turmaId = document.getElementById('exp-filtro-turma').value;
+  const alunos = state.alunos.filter(a => !turmaId || a.turmaId === turmaId);
+  document.getElementById('exp-subtitulo').textContent =
+    `${alunos.length} aluno(s) · ${cols.length} colunas`;
+}
+
+function expColunas() {
+  const base = ['Nome', 'Turma', 'Turno', 'Faixa Etária', 'Ed. Especial', 'Diagnóstico'];
+  if (expTipo === 'relatorios') return [...base, 'Relatório'];
+  if (expTipo === 'resumo') return [...base, 'Total S', 'Total D', 'Total N', 'Critérios Avaliados', 'Status Relatório'];
+  const criteriosCols = [
+    ...CRITERIOS.socioEmocional,
+    ...CRITERIOS.linguagem,
+    ...CRITERIOS.cognitivo,
+    ...CRITERIOS.motorFino
+  ].map(c => c.texto.substring(0, 40));
+  const obsCols = ['Observações'];
+  if (expTipo === 'completo') return [...base, ...criteriosCols, ...obsCols];
+  // tudo
+  return [...base, ...criteriosCols, ...obsCols, 'Total S', 'Total D', 'Total N', 'Status Relatório', 'Relatório'];
+}
+
+function expGerarLinhas(sep) {
+  const turmaId = document.getElementById('exp-filtro-turma').value;
+  const alunos = state.alunos
+    .filter(a => !turmaId || a.turmaId === turmaId)
+    .sort((a, b) => a.nome.localeCompare(b.nome));
+
+  const todosCriterios = [
+    ...CRITERIOS.socioEmocional,
+    ...CRITERIOS.linguagem,
+    ...CRITERIOS.cognitivo,
+    ...CRITERIOS.motorFino
+  ];
+
+  function esc(val) {
+    if (sep === '\t') return String(val || '').replace(/\t/g, ' ').replace(/\n/g, ' ');
+    const s = String(val || '');
+    if (s.includes(',') || s.includes('"') || s.includes('\n'))
+      return '"' + s.replace(/"/g, '""') + '"';
+    return s;
+  }
+
+  const header = expColunas();
+  const rows = [header.map(esc).join(sep)];
+
+  alunos.forEach(a => {
+    const turma = state.turmas.find(t => t.id === a.turmaId);
+    const aval = state.avaliacoes[a.id] || {};
+    const rel = state.relatorios[a.id] || '';
+    const base = [
+      a.nome,
+      turma ? turma.nome : '',
+      turma ? turma.turno : '',
+      turma ? turma.faixa : '',
+      a.especial ? 'Sim' : 'Não',
+      a.diagnostico || ''
+    ];
+
+    let cS=0, cD=0, cN=0;
+    todosCriterios.forEach(c => {
+      if (aval[c.id]==='S') cS++;
+      else if (aval[c.id]==='D') cD++;
+      else if (aval[c.id]==='N') cN++;
+    });
+
+    if (expTipo === 'relatorios') {
+      rows.push([...base, rel].map(esc).join(sep));
+      return;
+    }
+    if (expTipo === 'resumo') {
+      const avaliados = cS+cD+cN;
+      rows.push([...base, cS, cD, cN, avaliados, rel ? 'Gerado' : 'Pendente'].map(esc).join(sep));
+      return;
+    }
+    // completo ou tudo
+    const criterioVals = todosCriterios.map(c => aval[c.id] || '');
+    const obs = aval.obs || '';
+    if (expTipo === 'completo') {
+      rows.push([...base, ...criterioVals, obs].map(esc).join(sep));
+    } else {
+      // tudo
+      rows.push([...base, ...criterioVals, obs, cS, cD, cN, rel ? 'Gerado' : 'Pendente', rel].map(esc).join(sep));
+    }
+  });
+
+  return rows.join('\n');
+}
+
+function expBaixarCSV() {
+  const csv = expGerarLinhas(',');
+  const turmaId = document.getElementById('exp-filtro-turma').value;
+  const turma = turmaId ? state.turmas.find(t => t.id === turmaId) : null;
+  const nome = `CEMEI_${expTipo}_${turma ? turma.nome.replace(/\s+/g,'_') : 'todas'}_${new Date().toISOString().slice(0,10)}.csv`;
+  const bom = '\uFEFF'; // BOM para Excel/Sheets reconhecer UTF-8
+  const blob = new Blob([bom + csv], { type: 'text/csv;charset=utf-8;' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = nome;
+  a.click();
+  toast('CSV baixado! Importe no Google Sheets via Arquivo → Importar ✅');
+}
+
+function expCopiarTSV() {
+  const tsv = expGerarLinhas('\t');
+  navigator.clipboard.writeText(tsv).then(() => {
+    toast('Copiado! Cole no Google Sheets com Ctrl+V 📋');
+    closeModal('modal-exportar');
+  }).catch(() => toast('Erro ao copiar. Use "Baixar CSV".'));
+}
+
+
+
+// ===================== DIGITAÇÃO POR VOZ =====================
+(function() {
+  var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SpeechRecognition) return; // navegador não suporta
+  var _rec = null;
+  var _activeBtn = null;
+
+  window.voiceInput = function(btn, taId) {
+    var ta = document.getElementById(taId);
+    if (!ta) return;
+
+    // Se já está gravando nesse campo, para
+    if (_activeBtn === btn && _rec) {
+      _rec.stop();
+      return;
+    }
+
+    // Para qualquer gravação anterior
+    if (_rec) { try { _rec.stop(); } catch(e){} }
+    if (_activeBtn) { _activeBtn.classList.remove('gravando'); _activeBtn.title = 'Falar'; }
+
+    _rec = new SpeechRecognition();
+    _rec.lang = 'pt-BR';
+    _rec.continuous = true;
+    _rec.interimResults = false;
+
+    _activeBtn = btn;
+    btn.classList.add('gravando');
+    btn.title = 'Parar gravação';
+
+    _rec.onresult = function(e) {
+      var texto = '';
+      for (var i = e.resultIndex; i < e.results.length; i++) {
+        if (e.results[i].isFinal) texto += e.results[i][0].transcript;
+      }
+      if (texto) {
+        var cursor = ta.selectionStart;
+        var atual = ta.value;
+        // Adiciona espaço se já tem conteúdo
+        var sep = (atual && cursor > 0 && atual[cursor-1] !== ' ' && atual[cursor-1] !== '\n') ? ' ' : '';
+        ta.value = atual.slice(0, cursor) + sep + texto + atual.slice(cursor);
+        ta.selectionStart = ta.selectionEnd = cursor + sep.length + texto.length;
+        ta.dispatchEvent(new Event('input'));
+      }
+    };
+
+    _rec.onerror = function(e) {
+      btn.classList.remove('gravando');
+      btn.title = 'Falar';
+      _activeBtn = null; _rec = null;
+      if (e.error !== 'aborted') toast('⚠️ Microfone: ' + e.error);
+    };
+
+    _rec.onend = function() {
+      btn.classList.remove('gravando');
+      btn.title = 'Falar';
+      _activeBtn = null; _rec = null;
+    };
+
+    try { _rec.start(); } catch(e) { toast('⚠️ Não foi possível acessar o microfone.'); }
+  };
+
+  // Verifica suporte e esconde botões se não suportar
+  window._voiceSupported = true;
+})();
+if (typeof window._voiceSupported === 'undefined') {
+  // Sem suporte — define stub para não quebrar
+  window.voiceInput = function() { toast('⚠️ Seu navegador não suporta reconhecimento de voz. Use Chrome ou Edge.'); };
+}
+
+// ===================== HABILIDADES BNCC EDUCAÇÃO INFANTIL =====================
+const BNCC_EI_HABILIDADES = [
+  // O EU, O OUTRO E O NÓS
+  { cod: 'EI02EO01', desc: 'Demonstrar atitudes de cuidado e solidariedade na interação com crianças e adultos.' },
+  { cod: 'EI02EO02', desc: 'Demonstrar imagem positiva de si e confiança em sua capacidade para enfrentar dificuldades e desafios.' },
+  { cod: 'EI02EO03', desc: 'Compartilhar objetos e espaços com crianças da mesma faixa etária e adultos.' },
+  { cod: 'EI02EO04', desc: 'Comunicar-se com colegas e adultos, buscando compreendê-los e fazendo-se compreender.' },
+  { cod: 'EI02EO05', desc: 'Perceber que as pessoas possuem características físicas diferentes, respeitando essas diferenças.' },
+  { cod: 'EI02EO06', desc: 'Respeitar regras básicas de convívio social nas interações e brincadeiras.' },
+  { cod: 'EI02EO07', desc: 'Resolver conflitos nas interações e brincadeiras com orientação do adulto.' },
+  // CORPO, GESTOS E MOVIMENTOS
+  { cod: 'EI02CG01', desc: 'Apropriar-se de gestos e movimentos de sua cultura no cuidado de si e nos jogos e brincadeiras.' },
+  { cod: 'EI02CG02', desc: 'Deslocar seu corpo no espaço, orientando-se por noções espaciais.' },
+  { cod: 'EI02CG03', desc: 'Explorar formas de deslocamento no espaço, combinando movimentos.' },
+  { cod: 'EI02CG04', desc: 'Demonstrar progressiva independência no cuidado do próprio corpo.' },
+  { cod: 'EI02CG05', desc: 'Desenvolver habilidades manuais para desenhar, pintar, rasgar e manipular objetos.' },
+  // TRAÇOS, SONS, CORES E FORMAS
+  { cod: 'EI02TS01', desc: 'Criar sons com materiais, objetos e instrumentos musicais.' },
+  { cod: 'EI02TS02', desc: 'Utilizar materiais variados explorando cores, texturas, formas e volumes.' },
+  { cod: 'EI02TS03', desc: 'Utilizar diferentes fontes sonoras em brincadeiras cantadas e músicas.' },
+  // ESCUTA, FALA, PENSAMENTO E IMAGINAÇÃO
+  { cod: 'EI02EF01', desc: 'Dialogar com crianças e adultos expressando desejos, sentimentos e opiniões.' },
+  { cod: 'EI02EF02', desc: 'Identificar e criar diferentes sons e reconhecer rimas.' },
+  { cod: 'EI02EF03', desc: 'Demonstrar interesse ao ouvir histórias, poemas e canções.' },
+  { cod: 'EI02EF04', desc: 'Formular e responder perguntas sobre histórias narradas.' },
+  { cod: 'EI02EF05', desc: 'Relatar experiências e fatos acontecidos com apoio do adulto.' },
+  { cod: 'EI02EF06', desc: 'Criar e contar histórias oralmente.' },
+  { cod: 'EI02EF07', desc: 'Manusear diferentes portadores textuais reconhecendo seus usos sociais.' },
+  { cod: 'EI02EF08', desc: 'Manipular livros e outros materiais impressos.' },
+  { cod: 'EI02EF09', desc: 'Manusear instrumentos e suportes de escrita em brincadeiras.' },
+  // ESPAÇOS, TEMPOS, QUANTIDADES, RELAÇÕES E TRANSFORMAÇÕES
+  { cod: 'EI02ET01', desc: 'Explorar e descrever semelhanças e diferenças entre objetos.' },
+  { cod: 'EI02ET02', desc: 'Observar e descrever fenômenos naturais e situações do cotidiano.' },
+  { cod: 'EI02ET03', desc: 'Compartilhar observações e hipóteses sobre situações investigadas.' },
+  { cod: 'EI02ET04', desc: 'Identificar relações espaciais.' },
+  { cod: 'EI02ET05', desc: 'Classificar objetos considerando atributos como cor, tamanho e forma.' },
+  { cod: 'EI02ET06', desc: 'Utilizar conceitos básicos de tempo.' },
+  { cod: 'EI02ET07', desc: 'Contar oralmente objetos, pessoas e elementos.' },
+  { cod: 'EI02ET08', desc: 'Registrar quantidades por meio de marcas, desenhos ou números.' },
+  { cod: 'EI02ET09', desc: 'Explorar transformações em materiais, seres vivos e natureza.' },
+];
+
+const BNCC_GRUPOS = [
+  { label: 'O EU, O OUTRO E O NÓS', prefixo: 'EO' },
+  { label: 'CORPO, GESTOS E MOVIMENTOS', prefixo: 'CG' },
+  { label: 'TRAÇOS, SONS, CORES E FORMAS', prefixo: 'TS' },
+  { label: 'ESCUTA, FALA, PENSAMENTO E IMAGINAÇÃO', prefixo: 'EF' },
+  { label: 'ESPAÇOS, TEMPOS, QUANTIDADES, RELAÇÕES E TRANSFORMAÇÕES', prefixo: 'ET' },
+];
+
+// Estado dos dropdowns de habilidades: uid -> Set de códigos selecionados
+const habState = {};
+// Callbacks: uid -> function() chamada quando habilidades mudam
+const habCallbacks = {};
+
+/**
+ * Cria e retorna um elemento DOM completo do widget de habilidades.
+ * uid: string única para este widget
+ * selecionados: array de códigos já marcados
+ * onChange: function(codigosArray) chamada quando a seleção muda
+ */
+function criarHabWidget(uid, selecionados, onChange) {
+  habState[uid] = new Set(selecionados || []);
+  habCallbacks[uid] = onChange || function(){};
+
+  var wrapper = document.createElement('div');
+  wrapper.className = 'hab-wrapper';
+
+  // Trigger (botão que mostra as tags)
+  var trigger = document.createElement('button');
+  trigger.type = 'button';
+  trigger.className = 'hab-trigger';
+  trigger.style.width = '100%';
+  trigger.innerHTML = '<span class="hab-placeholder">Selecionar habilidade…</span>';
+  trigger.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var isOpen = dropdown.classList.contains('open');
+    // fecha todos
+    document.querySelectorAll('.hab-dropdown.open').forEach(function(el){ el.classList.remove('open'); });
+    document.querySelectorAll('.hab-trigger.open').forEach(function(el){ el.classList.remove('open'); });
+    if (!isOpen) {
+      dropdown.classList.add('open');
+      trigger.classList.add('open');
+      searchInput.value = '';
+      renderOpcoes('');
+      setTimeout(function(){ searchInput.focus(); }, 40);
+    }
+  });
+  wrapper.appendChild(trigger);
+
+  // Dropdown
+  var dropdown = document.createElement('div');
+  dropdown.className = 'hab-dropdown';
+
+  // Campo de busca
+  var searchWrap = document.createElement('div');
+  searchWrap.className = 'hab-search-wrap';
+  var searchInput = document.createElement('input');
+  searchInput.type = 'text';
+  searchInput.className = 'hab-search';
+  searchInput.placeholder = '🔍 Buscar código ou descrição…';
+  searchInput.addEventListener('input', function(){ renderOpcoes(this.value); });
+  searchWrap.appendChild(searchInput);
+  dropdown.appendChild(searchWrap);
+
+  // Campo personalizado
+  var customWrap = document.createElement('div');
+  customWrap.className = 'hab-custom-wrap';
+  var customInput = document.createElement('input');
+  customInput.type = 'text';
+  customInput.className = 'hab-custom-input';
+  customInput.placeholder = 'Código personalizado (Ex: EI02CG05)…';
+  customInput.addEventListener('keydown', function(e){
+    if (e.key === 'Enter') { e.preventDefault(); addCustom(); }
+  });
+  var customBtn = document.createElement('button');
+  customBtn.type = 'button';
+  customBtn.className = 'hab-custom-btn';
+  customBtn.textContent = '+ Add';
+  customBtn.addEventListener('click', addCustom);
+  customWrap.appendChild(customInput);
+  customWrap.appendChild(customBtn);
+  dropdown.appendChild(customWrap);
+
+  // Lista de opções
+  var listEl = document.createElement('div');
+  listEl.className = 'hab-list';
+  dropdown.appendChild(listEl);
+
+  wrapper.appendChild(dropdown);
+
+  // ---- funções internas ----
+  function renderOpcoes(filtro) {
+    var q = (filtro || '').toLowerCase().trim();
+    var html = '';
+    BNCC_GRUPOS.forEach(function(g) {
+      var items = BNCC_EI_HABILIDADES.filter(function(h) {
+        var grupoMatch = q && g.label.toLowerCase().indexOf(q) !== -1;
+        return h.cod.indexOf(g.prefixo) !== -1 &&
+          (!q || grupoMatch || h.cod.toLowerCase().indexOf(q) !== -1 || h.desc.toLowerCase().indexOf(q) !== -1);
+      });
+      if (!items.length) return;
+      html += '<div class="hab-group-label">' + g.label + '</div>';
+      items.forEach(function(h) {
+        var chk = habState[uid].has(h.cod);
+        // encode uid e cod para uso seguro no onclick inline
+        var safeUid = uid.replace(/'/g, "\\'");
+        var safeCod = h.cod.replace(/'/g, "\\'");
+        html += '<label class="hab-option' + (chk ? ' selected' : '') + '" onclick="event.stopPropagation()">' +
+          '<input type="checkbox"' + (chk ? ' checked' : '') +
+          ' data-uid="' + uid + '" data-cod="' + h.cod + '">' +
+          '<span class="hab-option-code">' + h.cod + '</span>' +
+          '<span class="hab-option-desc">' + h.desc.replace(/&/g,'&amp;').replace(/</g,'&lt;') + '</span>' +
+          '</label>';
+      });
+    });
+    if (!html) html = '<div style="padding:14px;text-align:center;font-size:12px;color:#aaa;">Nenhuma habilidade encontrada.</div>';
+    listEl.innerHTML = html;
+    // Bind checkboxes via addEventListener (sem inline handlers problemáticos)
+    listEl.querySelectorAll('input[type=checkbox]').forEach(function(chk) {
+      chk.addEventListener('change', function() {
+        var cod = this.getAttribute('data-cod');
+        if (this.checked) habState[uid].add(cod);
+        else habState[uid].delete(cod);
+        // Atualiza visual do label
+        this.closest('.hab-option').classList.toggle('selected', this.checked);
+        atualizarTrigger();
+        disparaChange();
+      });
+    });
+  }
+
+  function addCustom() {
+    var val = customInput.value.trim().toUpperCase();
+    if (!val) return;
+    habState[uid].add(val);
+    customInput.value = '';
+    atualizarTrigger();
+    renderOpcoes(searchInput.value);
+    disparaChange();
+    toast('"' + val + '" adicionada! ✅');
+  }
+
+  function atualizarTrigger() {
+    var sel = Array.from(habState[uid]);
+    if (!sel.length) {
+      trigger.innerHTML = '<span class="hab-placeholder">Selecionar habilidade…</span>';
+    } else {
+      trigger.innerHTML = sel.map(function(cod) {
+        return '<span class="hab-tag">' + cod +
+          '<span class="hab-tag-remove">×</span></span>';
+      }).join('');
+      // Bind remoção
+      trigger.querySelectorAll('.hab-tag-remove').forEach(function(btn, i) {
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          habState[uid].delete(sel[i]);
+          atualizarTrigger();
+          renderOpcoes(searchInput.value);
+          disparaChange();
+        });
+      });
+    }
+  }
+
+  function disparaChange() {
+    habCallbacks[uid](Array.from(habState[uid]));
+  }
+
+  // Renderiza estado inicial
+  atualizarTrigger();
+
+  return wrapper;
+}
+
+// Fechar dropdowns ao clicar fora
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.hab-wrapper')) {
+    document.querySelectorAll('.hab-dropdown.open').forEach(function(el){ el.classList.remove('open'); });
+    document.querySelectorAll('.hab-trigger.open').forEach(function(el){ el.classList.remove('open'); });
+  }
+});
+
+// ===================== TEMA MULTISELECT =====================
+function toggleTemaDropdown() {
+  const dd = document.getElementById('plan-tema-dropdown');
+  dd.style.display = dd.style.display === 'none' ? 'block' : 'none';
+}
+// fechar ao clicar fora
+document.addEventListener('click', e => {
+  const wrapper = document.getElementById('plan-tema-wrapper');
+  if (wrapper && !wrapper.contains(e.target)) {
+    const dd = document.getElementById('plan-tema-dropdown');
+    if (dd) dd.style.display = 'none';
+  }
+});
+function atualizarTemaLabel() {
+  const checks = document.querySelectorAll('#plan-tema-dropdown input[type=checkbox]:checked');
+  const temas = Array.from(checks).map(c => c.value);
+  const label = document.getElementById('plan-tema-label');
+  if (temas.length === 0) {
+    label.textContent = 'Tema do mês…';
+    label.style.color = '#999';
+  } else {
+    label.textContent = temas.join(' · ');
+    label.style.color = 'var(--texto)';
+  }
+}
+function getTemaAtual() {
+  const checks = document.querySelectorAll('#plan-tema-dropdown input[type=checkbox]:checked');
+  return Array.from(checks).map(c => c.value).join(' · ');
+}
+function setTemaDropdown(temaStr) {
+  // Desmarca todos
+  document.querySelectorAll('#plan-tema-dropdown input[type=checkbox]').forEach(c => c.checked = false);
+  if (!temaStr) { atualizarTemaLabel(); return; }
+  const partes = temaStr.split(' · ');
+  document.querySelectorAll('#plan-tema-dropdown input[type=checkbox]').forEach(c => {
+    if (partes.includes(c.value)) c.checked = true;
+  });
+  atualizarTemaLabel();
+}
+
+// ===================== TOAST =====================
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg; el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 2800);
+}
+
+// ===================== LOGIN (Supabase Auth) =====================
+async function doLogin() {
+  const email = document.getElementById('login-user').value.trim();
+  const senha = document.getElementById('login-pass').value.trim();
+  const err   = document.getElementById('login-error');
+  const btn   = document.querySelector('.login-btn');
+  btn.textContent = 'Entrando…'; btn.disabled = true;
+  const { error } = await db.auth.signInWithPassword({ email, password: senha });
+  btn.textContent = 'Entrar'; btn.disabled = false;
+  if (error) {
+    err.style.display = 'block';
+    document.getElementById('login-pass').value = '';
+  } else {
+    document.getElementById('login-screen').style.display = 'none';
+    err.style.display = 'none';
+    await loadState();
+  }
+}
+
+// Permitir Enter no campo senha
+document.getElementById('login-pass').addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+
+async function fazerLogout() {
+  await db.auth.signOut();
+  location.reload();
+}
+
+// ===================== INIT =====================
+// Carrega config.json → inicializa Supabase → verifica sessão
+(async () => {
+  try {
+    const res = await fetch('./config.json');
+    if (!res.ok) throw new Error('config.json não encontrado');
+    const cfg = await res.json();
+    db = createClient(cfg.supabaseUrl, cfg.supabaseKey);
+  } catch (err) {
+    document.body.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;flex-direction:column;gap:12px;">
+      <div style="font-size:40px;">⚠️</div>
+      <div style="font-size:16px;color:#c1121f;font-weight:700;">Arquivo config.json não encontrado.</div>
+      <div style="font-size:13px;color:#555;">Certifique-se de que config.json está na mesma pasta do index.html.</div>
+    </div>`;
+    return;
+  }
+
+  const { data } = await db.auth.getSession();
+  if (data.session) {
+    document.getElementById('login-screen').style.display = 'none';
+    loadState();
+  }
+})();
+</script>
+</body>
+</html>
