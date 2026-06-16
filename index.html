@@ -1621,25 +1621,36 @@ function buildPrompt(aluno, aval, turma) {
   function descCriterio(lista, avalObj) {
     return lista.map(c => `- ${c.texto}: ${avalObj[c.id] === 'S' ? 'Satisfatório' : avalObj[c.id] === 'D' ? 'Em desenvolvimento' : avalObj[c.id] === 'N' ? 'Não adquirido' : 'Não avaliado'}`).join('\n');
   }
-  return `Você é a Prof.ª R1 Bernadete Gomes, da CEMEI Vila da Paz, Contagem/MG. Seu texto será inserido como parte de um relatório maior redigido pela professora regente. Esta é uma turma de crianças de quatro anos.
+  return `Você é a Prof.ª R1 Bernadete Gomes, da CEMEI Vila da Paz, Contagem/MG. Você irá redigir um relatório narrativo sobre o desenvolvimento de uma criança de quatro anos, com base EXCLUSIVAMENTE nos dados de avaliação fornecidos abaixo.
 
-INSTRUÇÕES OBRIGATÓRIAS:
-- Escreva um texto entre 80 e 100 palavras. Seja sintético e objetivo — não detalhe cada item avaliado individualmente, apresente uma visão geral do desenvolvimento da criança.
-- Use linguagem formal, clara e acessível para a família, sem jargões pedagógicos excessivos.
-- Baseie-se EXCLUSIVAMENTE nos dados de avaliação abaixo. Não invente nem suponha informações não registradas.
-- Estruture em parágrafo corrido (sem subtítulos ou listas), abordando na sequência:
-  1. Estágio atual de desenvolvimento da criança (síntese dos aspectos socioafetivos, linguagem, cognitivo e motor fino — agrupe os aspectos, não liste um a um).
-  2. Pontos ainda em desenvolvimento que serão trabalhados na CEMEI, de forma construtiva e respeitosa.
-  3. Breve orientação prática para a família contribuir em casa (1 frase).
+REGRAS ABSOLUTAS:
+- Use APENAS as informações presentes nos dados de avaliação. PROIBIDO inventar, presumir ou acrescentar qualquer detalhe que não esteja registrado.
+- Se um critério estiver como "Não avaliado", ignore-o completamente — não mencione nem implique nada sobre ele.
+- Use linguagem formal, clara e acessível para a família, sem jargões pedagógicos.
 - Use o nome da criança naturalmente ao longo do texto.
-- NÃO inclua título, saudação, assinatura ou introdução. Comece direto pelo relato.
-- Se a criança tem diagnóstico de educação especial, mencione com sensibilidade, focando nas potencialidades.
-${aluno.especial && aluno.diagnostico ? `- Diagnóstico da criança: ${aluno.diagnostico}` : ''}
+- NÃO inclua título, saudação ou assinatura.
+${aluno.especial && aluno.diagnostico ? `- A criança tem diagnóstico de: ${aluno.diagnostico}. Mencione com sensibilidade, focando nas potencialidades.` : ''}
+
+ESTRUTURA DE SAÍDA OBRIGATÓRIA — exatamente 3 blocos separados por linha em branco, mais observação:
+
+1º PARÁGRAFO (máx. 7 linhas):
+Redija com base apenas nos dados de SOCIOAFETIVO E EMOCIONAL que estiverem avaliados. Transforme os resultados em texto corrido e coerente. Não acrescente nada que não esteja nos dados.
+
+2º PARÁGRAFO (máx. 7 linhas):
+Redija com base apenas nos dados de LINGUAGEM ORAL E ESCRITA e ASPECTOS COGNITIVOS E MATEMÁTICOS que estiverem avaliados. Transforme os resultados em texto corrido e coerente. Não acrescente nada que não esteja nos dados.
+
+[3º parágrafo: deixe exatamente esta linha:]
+____________________________________________________________________________________________
+
+4º PARÁGRAFO (máx. 7 linhas):
+Redija uma perspectiva de continuidade do desenvolvimento, apoiando-se estritamente nos pontos "Em desenvolvimento" ou "Não adquirido" registrados nos dados. Se não houver nenhum ponto em desenvolvimento, escreva apenas uma frase de encerramento positivo baseada no que foi avaliado como Satisfatório.
+
+OBS.: ${aval.obs ? aval.obs : '—'}
 
 NOME DA CRIANÇA: ${aluno.nome}
 TURMA: ${turma ? turma.nome : ''}
 
-AVALIAÇÕES REGISTRADAS:
+DADOS DE AVALIAÇÃO:
 
 SOCIOAFETIVO E EMOCIONAL:
 ${descCriterio(CRITERIOS.socioEmocional, aval)}
@@ -1650,12 +1661,45 @@ ${descCriterio(CRITERIOS.linguagem, aval)}
 ASPECTOS COGNITIVOS E MATEMÁTICOS:
 ${descCriterio(CRITERIOS.cognitivo, aval)}
 
-MOTOR FINO:
+MOTOR FINO (não incluir no relatório — responsabilidade da Prof.ª R2):
 ${descCriterio(CRITERIOS.motorFino, aval)}
 
-${aval.obs ? 'OBSERVAÇÕES DA PROFESSORA: ' + aval.obs : ''}
+Escreva APENAS o relatório no formato indicado. Nenhum comentário extra, nenhuma informação além dos dados fornecidos.`;
+}
 
-Escreva apenas o texto do relatório, sem título, sem introdução, sem assinatura.`;
+function formatarRelatorio(texto) {
+  // Converte quebras de linha em parágrafos HTML e destaca o espaço do R2
+  const linhas = texto.split(/\n\n+/);
+  return linhas.map(bloco => {
+    const trimmed = bloco.trim();
+    if (!trimmed) return '';
+    // Detecta o espaço reservado ao R2 (linha de underscores ou vazia após 2º parágrafo)
+    if (/^[_]{10,}$/.test(trimmed)) {
+      return `<div style="border:2px dashed #e9891a;border-radius:8px;padding:14px 16px;margin:10px 0;background:#fef3e2;color:#a05c00;font-size:13px;font-style:italic;min-height:80px;">
+        <strong>3º Parágrafo — Prof.ª R2</strong><br><span style="color:#c8860a;">(A ser preenchido pela professora R2 — Desenvolvimento Motor, Cognitivo e Esquema Corporal)</span>
+      </div>`;
+    }
+    // OBS destaque
+    if (/^OBS\.:/.test(trimmed)) {
+      return `<p style="margin-top:12px;padding:8px 12px;background:#ede0f7;border-left:3px solid #6b3fa0;border-radius:4px;font-size:13px;">${trimmed}</p>`;
+    }
+    return `<p style="margin-bottom:10px;text-align:justify;">${trimmed.replace(/\n/g,'<br>')}</p>`;
+  }).join('');
+}
+
+function formatarRelatorioPrint(texto) {
+  const blocos = texto.split(/\n\n+/);
+  return blocos.map(bloco => {
+    const trimmed = bloco.trim();
+    if (!trimmed) return '';
+    if (/^[_]{10,}$/.test(trimmed)) {
+      return `<div class="r2-bloco"><div class="r2-label">3º Parágrafo — Prof.ª R2 (Desenvolvimento Motor, Cognitivo e Esquema Corporal)</div></div>`;
+    }
+    if (/^OBS\.:/.test(trimmed)) {
+      return `<div class="obs-bloco">${trimmed}</div>`;
+    }
+    return `<p>${trimmed.replace(/\n/g,'<br>')}</p>`;
+  }).join('');
 }
 
 async function gerarRelatorio() {
@@ -1682,7 +1726,7 @@ async function gerarRelatorio() {
     syncStart();
     await db.from('relatorios').upsert({ aluno_id: currentAlunoId, texto, atualizado_em: new Date().toISOString() });
     syncOk();
-    outDiv.innerHTML = `<div class="relatorio-box">${texto}</div>`;
+    outDiv.innerHTML = `<div class="relatorio-box">${formatarRelatorio(texto)}</div>`;
     document.getElementById('rel-actions').style.display = '';
     toast('Relatório gerado com sucesso! ✅');
   } catch (e) {
@@ -1734,13 +1778,14 @@ function imprimirLote(turmaId) {
   const win = window.open('', '_blank');
   const linhas = alunos.map(a => {
     const t = state.turmas.find(t => t.id === a.turmaId);
+    const textoFormatado = formatarRelatorioPrint(state.relatorios[a.id] || '');
     return `<div class="aluno-bloco">
       <div class="aluno-header">
         <strong>${a.nome}</strong>
         <span>${t ? t.nome : ''}</span>
         ${a.especial ? `<span class="esp">⭐ Ed. Especial${a.diagnostico ? ' – ' + a.diagnostico : ''}</span>` : ''}
       </div>
-      <div class="aluno-texto">${state.relatorios[a.id]}</div>
+      <div class="aluno-texto">${textoFormatado}</div>
     </div>`;
   }).join('');
   win.document.write(`<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
@@ -1750,13 +1795,17 @@ function imprimirLote(turmaId) {
       body { font-family: Georgia, serif; font-size: 12pt; color: #1c1026; }
       h1 { font-size: 14pt; color: #3b1f6b; border-bottom: 2px solid #a47dd4; padding-bottom: 6px; margin-bottom: 4px; }
       .meta { font-size: 10pt; color: #6b5a7a; margin-bottom: 20px; }
-      .aluno-bloco { margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid #ccc; page-break-inside: avoid; }
+      .aluno-bloco { margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid #ccc; page-break-inside: avoid; }
       .aluno-bloco:last-child { border-bottom: none; }
       .aluno-header { display: flex; gap: 12px; align-items: baseline; margin-bottom: 6px; flex-wrap: wrap; }
       .aluno-header strong { font-size: 12pt; color: #3b1f6b; }
       .aluno-header span { font-size: 10pt; color: #6b5a7a; }
       .esp { background: #fef3e2; color: #a05c00; padding: 1px 6px; border-radius: 4px; font-size: 9pt; }
       .aluno-texto { font-size: 11pt; line-height: 1.7; text-align: justify; }
+      .aluno-texto p { margin-bottom: 8pt; }
+      .r2-bloco { border: 1.5pt dashed #b0781a; border-radius: 4pt; padding: 8pt 10pt; margin: 8pt 0; min-height: 60pt; background: #fffbf3; }
+      .r2-label { font-size: 9pt; color: #b0781a; font-style: italic; margin-bottom: 4pt; }
+      .obs-bloco { margin-top: 8pt; padding: 6pt 10pt; background: #f0e8f8; border-left: 3pt solid #6b3fa0; border-radius: 3pt; font-size: 10pt; }
     </style>
   </head><body>
     <h1>Relatórios Educação Infantil – CEMEI Vila da Paz</h1>
@@ -1819,18 +1868,21 @@ function verRelatorio(alunoId) {
   const turma = state.turmas.find(t => t.id === aluno.turmaId);
   document.getElementById('ver-rel-titulo').textContent = aluno.nome;
   document.getElementById('ver-rel-sub').textContent = turma ? turma.nome : '';
-  document.getElementById('ver-rel-texto').textContent = state.relatorios[alunoId] || '';
+  const textoRaw = state.relatorios[alunoId] || '';
+  document.getElementById('ver-rel-texto').setAttribute('data-raw', textoRaw);
+  document.getElementById('ver-rel-texto').innerHTML = textoRaw ? formatarRelatorio(textoRaw) : '';
   openModal('modal-ver-relatorio');
 }
 function copiarRelatorioVer() {
-  const txt = document.getElementById('ver-rel-texto').textContent;
+  const txt = document.getElementById('ver-rel-texto').getAttribute('data-raw') || document.getElementById('ver-rel-texto').textContent;
   navigator.clipboard.writeText(txt).then(() => toast('Copiado! 📋'));
 }
 function imprimirVer() {
   const titulo = document.getElementById('ver-rel-titulo').textContent;
-  const texto = document.getElementById('ver-rel-texto').textContent;
+  const texto = document.getElementById('ver-rel-texto').getAttribute('data-raw') || '';
   const win = window.open('', '_blank');
-  win.document.write(`<html><head><title>Relatório</title><style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;font-size:14px;line-height:1.8;}h2{color:#3b1f6b;border-bottom:2px solid #a47dd4;padding-bottom:8px;}</style></head><body><h2>Relatório – ${titulo}</h2><p>${texto}</p></body></html>`);
+  const htmlRel = formatarRelatorioPrint(texto);
+  win.document.write(`<html><head><title>Relatório</title><style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;font-size:14px;line-height:1.8;}h2{color:#3b1f6b;border-bottom:2px solid #a47dd4;padding-bottom:8px;}.r2-bloco{border:1.5px dashed #b0781a;border-radius:4px;padding:10px 14px;margin:8px 0;min-height:60px;background:#fffbf3;}.r2-label{font-size:11px;color:#b0781a;font-style:italic;}.obs-bloco{margin-top:8px;padding:6px 10px;background:#f0e8f8;border-left:3px solid #6b3fa0;}p{text-align:justify;}</style></head><body><h2>Relatório – ${titulo}</h2>${htmlRel}</body></html>`);
   win.document.close(); win.print();
 }
 
@@ -1939,7 +1991,7 @@ function abrirPanorama(alunoId) {
 
     <div class="panorama-section-title">Relatório Narrativo</div>
     ${rel
-      ? `<div class="panorama-rel">${rel}</div>`
+      ? `<div class="panorama-rel">${formatarRelatorio(rel)}</div>`
       : `<div class="panorama-sem-rel"><div style="font-size:28px;margin-bottom:8px;">✨</div><p>Relatório ainda não gerado.<br><span style="font-size:12px;">Abra a avaliação para gerar com IA.</span></p></div>`}
   `;
 
