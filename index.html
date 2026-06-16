@@ -734,7 +734,7 @@
       <div class="card">
         <div class="card-header">
           <h3>Suas Turmas</h3>
-          <button class="btn btn-primary" onclick="goTo('turmas')">+ Nova Turma</button>
+          <button class="btn btn-primary" id="btn-nova-turma-dash" onclick="goTo('turmas')">+ Nova Turma</button>
         </div>
         <div class="card-body" id="dashboard-turmas">
           <div class="empty-state"><div class="icon">🏫</div><p>Nenhuma turma cadastrada ainda.</p></div>
@@ -748,7 +748,7 @@
         <div></div>
         <div style="display:flex;gap:8px;">
           <button class="btn btn-outline" onclick="goTo('importar')">📥 Importar CSV</button>
-          <button class="btn btn-primary" onclick="openModalTurma()">+ Nova Turma</button>
+          <button class="btn btn-primary" id="btn-nova-turma" onclick="openModalTurma()">+ Nova Turma</button>
         </div>
       </div>
       <div id="accordion-turmas">
@@ -867,12 +867,7 @@
         </div>
         <div class="form-group">
           <label>Faixa Etária</label>
-          <select id="turma-faixa">
-            <option value="2 anos">2 anos</option>
-            <option value="3 anos" selected>3 anos</option>
-            <option value="4 anos">4 anos</option>
-            <option value="5 anos">5 anos</option>
-          </select>
+          <input type="text" id="turma-faixa" value="4 anos" readonly style="background:var(--verde-menta);color:var(--verde-escuro);font-weight:600;cursor:not-allowed;">
         </div>
         <div class="form-group">
           <label>Turno</label>
@@ -1305,6 +1300,41 @@ const CRITERIOS = {
   ],
 };
 
+// ===================== DASHBOARD =====================
+function renderDashboard() {
+  const totalAlunos = state.alunos.length;
+  const totalRels = Object.keys(state.relatorios).length;
+  const totalAvals = Object.keys(state.avaliacoes).length;
+  const totalTurmas = state.turmas.length;
+
+  document.getElementById('stat-alunos').textContent = totalAlunos;
+  document.getElementById('stat-relatorios').textContent = totalRels;
+  document.getElementById('stat-especial').textContent = state.alunos.filter(a => a.especial).length;
+  document.getElementById('stat-turmas').textContent = totalTurmas;
+
+  // Botão Nova Turma
+  const btnDash = document.getElementById('btn-nova-turma-dash');
+  if (btnDash) btnDash.style.display = totalTurmas >= 1 ? 'none' : '';
+
+  // Lista de turmas no dashboard
+  const cont = document.getElementById('dashboard-turmas');
+  if (!state.turmas.length) {
+    cont.innerHTML = '<div class="empty-state"><div class="icon">🏫</div><p>Nenhuma turma cadastrada ainda.</p></div>';
+    return;
+  }
+  cont.innerHTML = state.turmas.map(t => {
+    const alunos = state.alunos.filter(a => a.turmaId === t.id);
+    const rels = alunos.filter(a => state.relatorios[a.id]).length;
+    return `<div style="display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--cinza-borda);">
+      <div>
+        <div style="font-weight:600;color:var(--verde-escuro);">🏫 ${t.nome}</div>
+        <div style="font-size:12px;color:var(--texto-suave);margin-top:2px;">${t.turno} · ${t.faixa} · ${alunos.length} aluno(s) · ${rels} relatório(s)</div>
+      </div>
+      <button class="btn btn-outline btn-sm" onclick="goTo('turmas')">Ver</button>
+    </div>`;
+  }).join('');
+}
+
 function renderCriterios(containerId, lista, alunoAval) {
   const c = document.getElementById(containerId);
   c.innerHTML = lista.map(item => `
@@ -1390,6 +1420,7 @@ function openModalTurma(id = null) {
 async function salvarTurma() {
   const nome = document.getElementById('turma-nome').value.trim();
   if (!nome) { toast('Informe o nome da turma.'); return; }
+  if (!editingTurmaId && state.turmas.length >= 1) { toast('Apenas uma turma de 4 anos é permitida.'); return; }
   const obj = { nome, faixa: document.getElementById('turma-faixa').value, turno: document.getElementById('turma-turno').value };
   if (editingTurmaId) {
     const t = state.turmas.find(t => t.id === editingTurmaId);
@@ -1413,6 +1444,8 @@ async function excluirTurma(id) {
 
 function renderTurmas() {
   const container = document.getElementById('accordion-turmas');
+  const btnNova = document.getElementById('btn-nova-turma');
+  if (btnNova) btnNova.style.display = state.turmas.length >= 1 ? 'none' : '';
   if (!state.turmas.length) {
     container.innerHTML = '<div class="empty-state"><div class="icon">🏫</div><p>Nenhuma turma cadastrada.</p></div>';
     return;
@@ -2546,6 +2579,62 @@ function expGerarLinhas(sep) {
   });
 
   return rows.join('\n');
+}
+
+// ===================== MODELO CSV =====================
+function downloadCSVModel() {
+  const bom = '\uFEFF';
+  const header = 'nome,turma,educacao_especial,diagnostico';
+  const exemplo = 'Ana Silva,Turma A,não,\nPedro Santos,Turma B,sim,TEA';
+  const csv = bom + header + '\n' + exemplo;
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'modelo_alunos.csv';
+  document.body.appendChild(a); a.click();
+  document.body.removeChild(a); URL.revokeObjectURL(url);
+  toast('Modelo baixado! ✅');
+}
+
+// ===================== IMPORTAR CSV =====================
+async function importCSV(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const text = await file.text();
+  const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
+  if (lines.length < 2) { toast('CSV vazio ou sem dados.'); return; }
+  const header = lines[0].toLowerCase().split(',').map(h => h.trim().replace(/['"]/g,''));
+  const iNome = header.indexOf('nome');
+  const iTurma = header.indexOf('turma');
+  const iEsp = header.indexOf('educacao_especial');
+  const iDiag = header.indexOf('diagnostico');
+  if (iNome === -1 || iTurma === -1) { toast('CSV deve ter colunas "nome" e "turma".'); return; }
+  let ok = 0, erros = 0;
+  for (let i = 1; i < lines.length; i++) {
+    const cols = lines[i].split(',').map(c => c.trim().replace(/^"|"$/g,''));
+    const nome = cols[iNome]; if (!nome) continue;
+    const turmaNome = cols[iTurma] || '';
+    const especial = iEsp !== -1 ? (cols[iEsp] || '').toLowerCase() === 'sim' : false;
+    const diagnostico = iDiag !== -1 ? (cols[iDiag] || '') : '';
+    // encontrar ou criar turma
+    let turma = state.turmas.find(t => t.nome.toLowerCase() === turmaNome.toLowerCase());
+    if (!turma && turmaNome) {
+      const id = 'turma_' + Date.now() + '_' + i;
+      turma = { id, nome: turmaNome, faixa: '4 anos', turno: 'Manhã' };
+      state.turmas.push(turma);
+      await db.from('turmas').insert({ id, nome: turmaNome, faixa: '4 anos', turno: 'Manhã' });
+    }
+    try {
+      const id = 'aluno_' + Date.now() + '_' + i;
+      const obj = { id, nome, turmaId: turma ? turma.id : '', especial, diagnostico };
+      state.alunos.push(obj);
+      await db.from('alunos').insert({ id, nome, turma_id: obj.turmaId, especial, diagnostico });
+      ok++;
+    } catch(e) { erros++; }
+  }
+  renderAlunos(); renderTurmas(); renderDashboard();
+  toast(`Importados: ${ok} aluno(s)${erros ? ', ' + erros + ' com erro' : ''} ✅`);
+  input.value = '';
 }
 
 function expBaixarCSV() {
