@@ -712,6 +712,90 @@
   .tema-opt:hover { background: var(--verde-menta); }
   .tema-opt input[type=checkbox] { accent-color: var(--verde); width:15px; height:15px; cursor:pointer; }
 
+  /* ===================== TUTORIAL ===================== */
+  .tut-hero {
+    text-align: center; padding: 32px 20px 24px;
+    background: linear-gradient(135deg, var(--verde-escuro) 0%, #5a2e9c 100%);
+    border-radius: var(--radius); margin-bottom: 20px; color: white;
+  }
+  .tut-hero-icon { font-size: 40px; margin-bottom: 10px; }
+  .tut-hero-title { font-family: 'Lora', serif; font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+  .tut-hero-sub { font-size: 13px; opacity: .75; }
+
+  .tut-section {
+    background: white; border-radius: var(--radius);
+    border: 1px solid var(--cinza-borda); margin-bottom: 12px;
+    box-shadow: var(--shadow); overflow: hidden;
+  }
+  .tut-section-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 20px; cursor: pointer; user-select: none;
+    transition: background .15s;
+  }
+  .tut-section-header:hover { background: var(--verde-menta); }
+  .tut-section-left { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 700; color: var(--verde-escuro); }
+  .tut-num {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--verde); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; flex-shrink: 0;
+  }
+  .tut-arrow { font-size: 12px; color: var(--texto-suave); transition: transform .2s; }
+  .tut-section-header.collapsed .tut-arrow { transform: rotate(-90deg); }
+  .tut-section-body { padding: 0 20px 18px; display: none; }
+  .tut-section-body.open { display: block; }
+  .tut-step {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 10px 0; border-bottom: 1px solid var(--cinza-borda);
+    font-size: 13.5px; line-height: 1.6; color: var(--texto);
+  }
+  .tut-step:last-of-type { border-bottom: none; }
+  .tut-step-num {
+    width: 24px; height: 24px; border-radius: 50%;
+    background: var(--verde-menta); color: var(--verde-escuro);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 800; flex-shrink: 0; margin-top: 2px;
+  }
+  .tut-btn-inline {
+    display: inline-flex; align-items: center;
+    background: var(--verde-menta); color: var(--verde-escuro);
+    border: 1px solid var(--cinza-borda); border-radius: 6px;
+    padding: 2px 9px; font-size: 12px; font-weight: 600; white-space: nowrap;
+  }
+  .tut-btn-inline.tut-btn-danger { background: #ffe0e0; color: var(--nao-adquirido); border-color: #ffc0c0; }
+  .tut-icon-inline { font-size: 16px; font-weight: 700; }
+  .tut-tip {
+    background: #fffbea; border-left: 3px solid var(--amarelo);
+    border-radius: 0 8px 8px 0; padding: 10px 14px;
+    font-size: 12.5px; color: #5a4000; margin-top: 10px; line-height: 1.55;
+  }
+  .tut-legend-block { display: flex; flex-direction: column; gap: 6px; margin: 10px 0 6px 36px; }
+  .tut-legend-item { display: flex; align-items: center; gap: 8px; font-size: 13px; padding: 6px 12px; border-radius: 8px; }
+  .tut-legend-item strong { font-size: 14px; width: 20px; flex-shrink: 0; }
+  .tut-legend-item span { font-size: 11px; opacity: .7; }
+  .tut-s { background: #ede0f7; color: var(--verde-escuro); }
+  .tut-d { background: #fef3e2; color: #a05c00; }
+  .tut-n { background: #ffe0e0; color: var(--nao-adquirido); }
+  .tut-footer { text-align: center; padding: 28px 20px; color: var(--texto-suave); font-size: 13px; }
+  .tut-footer-icon { font-size: 32px; margin-bottom: 8px; }
+
+  /* ===================== RODAPÉ AUTORIA ===================== */
+  .autoria-footer {
+    text-align: center; padding: 18px 20px 8px;
+    font-size: 12px; color: var(--texto-suave);
+    border-top: 1px solid var(--cinza-borda); margin-top: 32px;
+  }
+  .autoria-footer strong { color: var(--verde-escuro); }
+
+  @media (max-width: 600px) {
+    .tut-hero { padding: 24px 16px 18px; }
+    .tut-hero-title { font-size: 18px; }
+    .tut-section-header { padding: 13px 14px; }
+    .tut-section-left { font-size: 13px; gap: 10px; }
+    .tut-section-body { padding: 0 14px 14px; }
+    .tut-step { font-size: 13px; gap: 10px; }
+    .tut-legend-block { margin-left: 0; }
+  }
 
 </style>
 </head>
@@ -750,6 +834,7 @@
     <div class="nav-item" onclick="goTo('alunos')"><span class="icon">👧</span> Alunos</div>
     <div class="nav-item" onclick="goTo('relatorios')"><span class="icon">📄</span> Relatórios</div>
     <div class="nav-item" onclick="goTo('turmas')"><span class="icon">🏫</span> Turmas</div>
+    <div class="nav-item" onclick="goTo('tutorial')"><span class="icon">📖</span> Tutorial</div>
 
   </nav>
   <div class="sidebar-footer">
@@ -925,6 +1010,197 @@
       </div>
     </div>
 
+
+    <!-- TUTORIAL -->
+    <div class="page" id="page-tutorial">
+      <div class="tut-hero">
+        <div class="tut-hero-icon">📖</div>
+        <h2 class="tut-hero-title">Como usar a plataforma</h2>
+        <p class="tut-hero-sub">Guia completo · passo a passo · todas as funcionalidades</p>
+      </div>
+
+      <!-- SEÇÃO 1 -->
+      <div class="tut-section">
+        <div class="tut-section-header" onclick="toggleTut(this)">
+          <div class="tut-section-left"><span class="tut-num">1</span><span>Primeiro acesso e login</span></div>
+          <span class="tut-arrow">▼</span>
+        </div>
+        <div class="tut-section-body open">
+          <div class="tut-step"><span class="tut-step-num">1</span><div><strong>Abra a plataforma</strong> no navegador do celular ou computador.</div></div>
+          <div class="tut-step"><span class="tut-step-num">2</span><div>Na tela de login, insira o <strong>e-mail</strong> e a <strong>senha</strong> fornecidos pela coordenação.</div></div>
+          <div class="tut-step"><span class="tut-step-num">3</span><div>Clique em <span class="tut-btn-inline">Entrar</span>. O sistema abrirá automaticamente o painel inicial.</div></div>
+          <div class="tut-tip">💡 <strong>Dica:</strong> se a senha estiver errada, a mensagem "Usuário ou senha incorretos" aparecerá em vermelho. Verifique se o Caps Lock está desligado.</div>
+        </div>
+      </div>
+
+      <!-- SEÇÃO 2 -->
+      <div class="tut-section">
+        <div class="tut-section-header" onclick="toggleTut(this)">
+          <div class="tut-section-left"><span class="tut-num">2</span><span>Navegando pela plataforma</span></div>
+          <span class="tut-arrow">▼</span>
+        </div>
+        <div class="tut-section-body open">
+          <div class="tut-step"><span class="tut-step-num">1</span><div>No <strong>celular</strong>, toque no ícone <span class="tut-icon-inline">☰</span> (canto superior esquerdo) para abrir o menu lateral.</div></div>
+          <div class="tut-step"><span class="tut-step-num">2</span><div>No <strong>computador</strong>, o menu lateral já aparece fixo à esquerda.</div></div>
+          <div class="tut-step"><span class="tut-step-num">3</span><div>As seções disponíveis são: <strong>🏠 Início</strong>, <strong>👧 Alunos</strong>, <strong>📄 Relatórios</strong>, <strong>🏫 Turmas</strong> e <strong>📖 Tutorial</strong>.</div></div>
+          <div class="tut-tip">💡 O indicador colorido no topo mostra se os dados estão sendo salvos automaticamente na nuvem.</div>
+        </div>
+      </div>
+
+      <!-- SEÇÃO 3 -->
+      <div class="tut-section">
+        <div class="tut-section-header" onclick="toggleTut(this)">
+          <div class="tut-section-left"><span class="tut-num">3</span><span>Cadastrando turmas</span></div>
+          <span class="tut-arrow">▼</span>
+        </div>
+        <div class="tut-section-body open">
+          <div class="tut-step"><span class="tut-step-num">1</span><div>Acesse <strong>🏫 Turmas</strong> no menu lateral.</div></div>
+          <div class="tut-step"><span class="tut-step-num">2</span><div>Clique em <span class="tut-btn-inline">+ Nova Turma</span>.</div></div>
+          <div class="tut-step"><span class="tut-step-num">3</span><div>Preencha o <strong>nome da turma</strong> (ex: Turma A, Borboletas…). A faixa etária (4 anos) e turno (Integral) já estão pré-definidos.</div></div>
+          <div class="tut-step"><span class="tut-step-num">4</span><div>Clique em <span class="tut-btn-inline">Salvar Turma</span>. A turma aparecerá na lista.</div></div>
+          <div class="tut-tip">💡 Crie todas as turmas <em>antes</em> de cadastrar os alunos — cada aluno precisa estar vinculado a uma turma.</div>
+        </div>
+      </div>
+
+      <!-- SEÇÃO 4 -->
+      <div class="tut-section">
+        <div class="tut-section-header" onclick="toggleTut(this)">
+          <div class="tut-section-left"><span class="tut-num">4</span><span>Cadastrando alunos</span></div>
+          <span class="tut-arrow">▼</span>
+        </div>
+        <div class="tut-section-body open">
+          <div class="tut-step"><span class="tut-step-num">1</span><div>Acesse <strong>👧 Alunos</strong> no menu.</div></div>
+          <div class="tut-step"><span class="tut-step-num">2</span><div>Clique em <span class="tut-btn-inline">+ Novo Aluno</span>.</div></div>
+          <div class="tut-step"><span class="tut-step-num">3</span><div>Preencha o <strong>nome completo</strong> e selecione a <strong>turma</strong> do aluno.</div></div>
+          <div class="tut-step"><span class="tut-step-num">4</span><div>Se o aluno for da <strong>Educação Especial</strong>, marque a caixa e informe o diagnóstico (ex: TEA, TDAH, Síndrome de Down).</div></div>
+          <div class="tut-step"><span class="tut-step-num">5</span><div>Clique em <span class="tut-btn-inline">Salvar Aluno</span>.</div></div>
+          <div class="tut-tip">💡 <strong>Importação em massa:</strong> se preferir, acesse <strong>Turmas → Importar CSV</strong> para cadastrar vários alunos de uma vez com uma planilha. A planilha deve ter as colunas: <em>nome</em>, <em>turma</em>, <em>educacao_especial</em> e <em>diagnostico</em>.</div>
+        </div>
+      </div>
+
+      <!-- SEÇÃO 5 -->
+      <div class="tut-section">
+        <div class="tut-section-header" onclick="toggleTut(this)">
+          <div class="tut-section-left"><span class="tut-num">5</span><span>Editando e excluindo alunos</span></div>
+          <span class="tut-arrow">▼</span>
+        </div>
+        <div class="tut-section-body open">
+          <div class="tut-step"><span class="tut-step-num">1</span><div>Na lista de <strong>👧 Alunos</strong>, localize o aluno desejado.</div></div>
+          <div class="tut-step"><span class="tut-step-num">2</span><div>Clique no botão <span class="tut-btn-inline">✏️ Editar</span> para alterar o nome, turma ou diagnóstico.</div></div>
+          <div class="tut-step"><span class="tut-step-num">3</span><div>Para remover, clique em <span class="tut-btn-inline tut-btn-danger">🗑️ Excluir</span> e confirme. <strong>Atenção:</strong> a exclusão também remove a avaliação e o relatório do aluno.</div></div>
+          <div class="tut-tip">💡 Use a barra de busca no topo da lista para encontrar rapidamente um aluno pelo nome.</div>
+        </div>
+      </div>
+
+      <!-- SEÇÃO 6 -->
+      <div class="tut-section">
+        <div class="tut-section-header" onclick="toggleTut(this)">
+          <div class="tut-section-left"><span class="tut-num">6</span><span>Avaliando um aluno</span></div>
+          <span class="tut-arrow">▼</span>
+        </div>
+        <div class="tut-section-body open">
+          <div class="tut-step"><span class="tut-step-num">1</span><div>Na lista de alunos, clique em <span class="tut-btn-inline">📋 Avaliar</span> ao lado do nome.</div></div>
+          <div class="tut-step"><span class="tut-step-num">2</span><div>A janela de avaliação abrirá na aba <strong>📋 Avaliação</strong>.</div></div>
+          <div class="tut-step"><span class="tut-step-num">3</span><div>Para cada critério, selecione uma opção:</div></div>
+          <div class="tut-legend-block">
+            <div class="tut-legend-item tut-s"><strong>S</strong> Satisfatório <span>(70–100%)</span></div>
+            <div class="tut-legend-item tut-d"><strong>D</strong> Em desenvolvimento <span>(50–70%)</span></div>
+            <div class="tut-legend-item tut-n"><strong>N</strong> Não adquirido <span>(&lt;50%)</span></div>
+          </div>
+          <div class="tut-step"><span class="tut-step-num">4</span><div>As áreas avaliadas são: <strong>Socioafetivo e Emocional</strong>, <strong>Linguagem Oral e Escrita</strong>, <strong>Aspectos Cognitivos e Matemáticos</strong> e <strong>Desenvolvimento Motor</strong>.</div></div>
+          <div class="tut-step"><span class="tut-step-num">5</span><div>Ao final, preencha o campo <strong>Observações Adicionais</strong> se quiser acrescentar alguma informação complementar.</div></div>
+          <div class="tut-step"><span class="tut-step-num">6</span><div>Clique em <span class="tut-btn-inline">💾 Salvar Avaliação</span>. Os dados são salvos automaticamente na nuvem.</div></div>
+        </div>
+      </div>
+
+      <!-- SEÇÃO 7 -->
+      <div class="tut-section">
+        <div class="tut-section-header" onclick="toggleTut(this)">
+          <div class="tut-section-left"><span class="tut-num">7</span><span>Gerando o relatório com IA</span></div>
+          <span class="tut-arrow">▼</span>
+        </div>
+        <div class="tut-section-body open">
+          <div class="tut-step"><span class="tut-step-num">1</span><div>Na janela de avaliação do aluno, clique na aba <strong>📝 Relatório</strong>.</div></div>
+          <div class="tut-step"><span class="tut-step-num">2</span><div>Clique em <span class="tut-btn-inline">✨ Gerar com IA</span>. O sistema usará a avaliação preenchida para criar um texto narrativo personalizado.</div></div>
+          <div class="tut-step"><span class="tut-step-num">3</span><div>Aguarde alguns segundos enquanto o texto é gerado.</div></div>
+          <div class="tut-step"><span class="tut-step-num">4</span><div>O relatório aparecerá na tela. Revise o texto com atenção.</div></div>
+          <div class="tut-step"><span class="tut-step-num">5</span><div>Se precisar ajustar, clique em <span class="tut-btn-inline">✏️ Editar</span>, faça as alterações e salve.</div></div>
+          <div class="tut-tip">⚠️ <strong>Importante:</strong> a avaliação precisa estar preenchida <em>antes</em> de gerar o relatório. Sem avaliação, a IA não terá informações para trabalhar.</div>
+        </div>
+      </div>
+
+      <!-- SEÇÃO 8 -->
+      <div class="tut-section">
+        <div class="tut-section-header" onclick="toggleTut(this)">
+          <div class="tut-section-left"><span class="tut-num">8</span><span>Geração em lote (vários alunos)</span></div>
+          <span class="tut-arrow">▼</span>
+        </div>
+        <div class="tut-section-body open">
+          <div class="tut-step"><span class="tut-step-num">1</span><div>Acesse <strong>📄 Relatórios</strong> no menu.</div></div>
+          <div class="tut-step"><span class="tut-step-num">2</span><div>Clique em <span class="tut-btn-inline">✨ Gerar em lote</span>.</div></div>
+          <div class="tut-step"><span class="tut-step-num">3</span><div><strong>Passo 1:</strong> selecione a turma (ou "Todas as turmas").</div></div>
+          <div class="tut-step"><span class="tut-step-num">4</span><div><strong>Passo 2:</strong> marque os alunos que deseja incluir (ou use "Marcar todos").</div></div>
+          <div class="tut-step"><span class="tut-step-num">5</span><div><strong>Passo 3:</strong> revise o resumo e clique em <span class="tut-btn-inline">Gerar relatórios</span>. O progresso aparecerá em tempo real.</div></div>
+          <div class="tut-tip">💡 Só aparecem alunos que já possuem avaliação preenchida. A geração pode levar alguns minutos dependendo da quantidade.</div>
+        </div>
+      </div>
+
+      <!-- SEÇÃO 9 -->
+      <div class="tut-section">
+        <div class="tut-section-header" onclick="toggleTut(this)">
+          <div class="tut-section-left"><span class="tut-num">9</span><span>Imprimindo e baixando relatórios</span></div>
+          <span class="tut-arrow">▼</span>
+        </div>
+        <div class="tut-section-body open">
+          <div class="tut-step"><span class="tut-step-num">1</span><div>Na aba <strong>📝 Relatório</strong> de um aluno, use os botões:<br>
+            <span class="tut-btn-inline">🖨️ Imprimir</span> — abre a janela de impressão do navegador (salvar como PDF também funciona aqui).<br>
+            <span class="tut-btn-inline">📄 Baixar .docx</span> — baixa um arquivo Word editável com o relatório formatado.
+          </div></div>
+          <div class="tut-step"><span class="tut-step-num">2</span><div>Na página <strong>📄 Relatórios</strong>, clique em <span class="tut-btn-inline">🖨️ Imprimir turma (PDF)</span> para imprimir todos os relatórios de uma turma de uma vez.</div></div>
+          <div class="tut-step"><span class="tut-step-num">3</span><div>O botão <span class="tut-btn-inline">📋 Copiar texto</span> copia o relatório para a área de transferência — útil para colar no sistema da escola.</div></div>
+          <div class="tut-tip">💡 O arquivo .docx já vem formatado com o cabeçalho da escola, nome do aluno e assinatura da pedagoga — pronto para entregar.</div>
+        </div>
+      </div>
+
+      <!-- SEÇÃO 10 -->
+      <div class="tut-section">
+        <div class="tut-section-header" onclick="toggleTut(this)">
+          <div class="tut-section-left"><span class="tut-num">10</span><span>Panorama do aluno</span></div>
+          <span class="tut-arrow">▼</span>
+        </div>
+        <div class="tut-section-body open">
+          <div class="tut-step"><span class="tut-step-num">1</span><div>Na lista de alunos, clique em <span class="tut-btn-inline">👁️ Ver</span> para abrir o panorama completo.</div></div>
+          <div class="tut-step"><span class="tut-step-num">2</span><div>O panorama mostra o <strong>resumo da avaliação</strong> (quantos S, D e N), o <strong>desempenho por área</strong> em barras e o <strong>relatório narrativo</strong> gerado.</div></div>
+          <div class="tut-step"><span class="tut-step-num">3</span><div>Clique em <span class="tut-btn-inline">✏️ Avaliar</span> para ir direto à avaliação do aluno.</div></div>
+        </div>
+      </div>
+
+      <!-- SEÇÃO 11 -->
+      <div class="tut-section">
+        <div class="tut-section-header" onclick="toggleTut(this)">
+          <div class="tut-section-left"><span class="tut-num">11</span><span>Exportando para Google Sheets</span></div>
+          <span class="tut-arrow">▼</span>
+        </div>
+        <div class="tut-section-body open">
+          <div class="tut-step"><span class="tut-step-num">1</span><div>Na página <strong>📄 Relatórios</strong>, clique em <span class="tut-btn-inline">📊 Exportar Sheets</span>.</div></div>
+          <div class="tut-step"><span class="tut-step-num">2</span><div>Informe a <strong>URL da planilha Google</strong> e o <strong>token de acesso</strong> quando solicitado.</div></div>
+          <div class="tut-step"><span class="tut-step-num">3</span><div>Os dados serão enviados automaticamente para a planilha configurada.</div></div>
+          <div class="tut-tip">💡 Essa funcionalidade exige configuração prévia da planilha. Contate o desenvolvedor para suporte.</div>
+        </div>
+      </div>
+
+      <!-- RODAPÉ DO TUTORIAL -->
+      <div class="tut-footer">
+        <div class="tut-footer-icon">✅</div>
+        <p>Dúvidas? Entre em contato com o desenvolvedor da plataforma.</p>
+      </div>
+
+    </div><!-- /page-tutorial -->
+
+    <!-- RODAPÉ DE AUTORIA (todas as páginas) -->
+    <div class="autoria-footer">
+      Produzido e desenvolvido pelo Professor <strong>Everton Correa</strong>
+    </div>
 
   </div><!-- /content -->
 </div><!-- /main -->
@@ -1435,7 +1711,7 @@ function setAval(id, val, btn) {
 }
 
 // ===================== NAVEGAÇÃO =====================
-const pageNames = { dashboard:'Início', turmas:'Turmas', alunos:'Alunos', relatorios:'Relatórios', importar:'Importar CSV' };
+const pageNames = { dashboard:'Início', turmas:'Turmas', alunos:'Alunos', relatorios:'Relatórios', importar:'Importar CSV', tutorial:'📖 Tutorial' };
 
 function toggleSidebar() {
   const sidebar  = document.querySelector('.sidebar');
@@ -1456,7 +1732,7 @@ function goTo(page) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + page).classList.add('active');
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-  document.querySelectorAll('.nav-item')[['dashboard','alunos','relatorios','turmas'].indexOf(page)]?.classList.add('active');
+  document.querySelectorAll('.nav-item')[['dashboard','alunos','relatorios','turmas','tutorial'].indexOf(page)]?.classList.add('active');
   document.getElementById('page-title').textContent = pageNames[page];
   closeSidebar();
   if (page === 'dashboard') renderDashboard();
@@ -1469,6 +1745,13 @@ function goTo(page) {
 // ===================== MODAIS =====================
 function openModal(id) { document.getElementById(id).classList.add('open'); }
 function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+
+// ===================== TUTORIAL ACCORDION =====================
+function toggleTut(header) {
+  header.classList.toggle('collapsed');
+  const body = header.nextElementSibling;
+  body.classList.toggle('open');
+}
 
 function switchTab(tab) {
   currentTab = tab;
