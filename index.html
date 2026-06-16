@@ -7,6 +7,7 @@
 <title>Relatórios CEMEI Vila da Paz</title>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js"></script>
 <style>
   :root {
     --verde: #6b3fa0;
@@ -973,6 +974,7 @@
           <button class="btn btn-primary" onclick="gerarRelatorio()" id="btn-gerar">✨ Gerar com IA</button>
           <button class="btn btn-outline" onclick="copiarTexto()">📋 Copiar texto</button>
           <button class="btn btn-outline" onclick="imprimirRelatorio()">🖨️ Imprimir</button>
+          <button class="btn btn-outline" onclick="baixarDocx()">📄 Baixar .docx</button>
         </div>
         <div id="relatorio-output">
           <div class="empty-state"><div class="icon">✨</div><p>Clique em "Gerar com IA" para criar o parágrafo do relatório baseado nas avaliações.</p></div>
@@ -1015,6 +1017,7 @@
     <div class="modal-footer">
       <button class="btn btn-outline" onclick="copiarRelatorioVer()">📋 Copiar</button>
       <button class="btn btn-outline" onclick="imprimirVer()">🖨️ Imprimir</button>
+      <button class="btn btn-outline" onclick="baixarDocxVer()">📄 Baixar .docx</button>
       <button class="btn btn-primary" onclick="closeModal('modal-ver-relatorio')">Fechar</button>
     </div>
   </div>
@@ -1900,6 +1903,7 @@ function renderRelatorios() {
         <button class="btn btn-outline btn-sm" onclick="verRelatorio('${a.id}')">👁️ Ver</button>
         <button class="btn btn-primary btn-sm" onclick="openAvaliacao('${a.id}');setTimeout(()=>switchTab('relatorio'),100)">✏️ Editar</button>
         <button class="btn btn-outline btn-sm" onclick="imprimirRelatorioById('${a.id}')">🖨️</button>
+        <button class="btn btn-outline btn-sm" onclick="baixarDocxById('${a.id}')" title="Baixar .docx">📄</button>
       </td>
     </tr>`;
   }).join('');
@@ -3038,6 +3042,95 @@ function setTemaDropdown(temaStr) {
   });
   atualizarTemaLabel();
 }
+
+
+// ===================== DOWNLOAD .DOCX =====================
+function stripHtml(html) {
+  return html
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<\/p>/gi, '\n')
+    .replace(/<p[^>]*>/gi, '')
+    .replace(/<[^>]+>/g, '')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&#39;/g, "'")
+    .replace(/&quot;/g, '"')
+    .trim();
+}
+
+async function gerarDocxBlob(nomeAluno, textoRaw) {
+  const { Document, Packer, Paragraph, TextRun, AlignmentType } = docx;
+  const textoLimpo = stripHtml(textoRaw || '');
+  const paragrafos = textoLimpo.split('\n').filter(l => l.trim().length > 0);
+  const doc = new Document({
+    styles: { default: { document: { run: { font: 'Arial', size: 22 } } } },
+    sections: [{
+      properties: {
+        page: {
+          size: { width: 11906, height: 16838 },
+          margin: { top: 1134, right: 1134, bottom: 1134, left: 1134 }
+        }
+      },
+      children: [
+        new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: 'CEMEI VILA DA PAZ', bold: true, size: 22, font: 'Arial' })] }),
+        new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: 'VEREADOR AGRIPINO FERREIRA DIAS', bold: true, size: 22, font: 'Arial' })] }),
+        new Paragraph({ children: [new TextRun('')] }),
+        new Paragraph({ children: [new TextRun('')] }),
+        new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: nomeAluno.toUpperCase(), bold: true, size: 28, font: 'Arial' })], spacing: { before: 320, after: 320 } }),
+        ...paragrafos.map(p => new Paragraph({ alignment: AlignmentType.BOTH, children: [new TextRun({ text: p, size: 22, font: 'Arial' })], spacing: { before: 0, after: 200 }, indent: { firstLine: 720 } })),
+        new Paragraph({ children: [new TextRun('')] }),
+        new Paragraph({ children: [new TextRun('')] }),
+        new Paragraph({ children: [new TextRun({ text: 'Atenciosamente,', size: 22, font: 'Arial' })] }),
+        new Paragraph({ children: [new TextRun({ text: 'Fabiana Reis / Pedagoga', size: 22, font: 'Arial' })] }),
+      ]
+    }]
+  });
+  return await Packer.toBlob(doc);
+}
+
+function downloadBlob(blob, filename) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click();
+  setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 1000);
+}
+
+async function baixarDocx() {
+  const aluno = state.alunos.find(a => a.id === currentAlunoId);
+  const texto = state.relatorios[currentAlunoId];
+  if (!texto) { toast('Gere o relatório primeiro.'); return; }
+  try {
+    const blob = await gerarDocxBlob(aluno.nome, texto);
+    downloadBlob(blob, 'Relatorio_' + aluno.nome.replace(/\s+/g,'_') + '.docx');
+    toast('Download iniciado! 📄');
+  } catch(e) { toast('Erro ao gerar .docx'); console.error(e); }
+}
+
+async function baixarDocxVer() {
+  const titulo = document.getElementById('ver-rel-titulo').textContent;
+  const texto = document.getElementById('ver-rel-texto').getAttribute('data-raw') || '';
+  if (!texto) { toast('Sem relatório para baixar.'); return; }
+  try {
+    const blob = await gerarDocxBlob(titulo, texto);
+    downloadBlob(blob, 'Relatorio_' + titulo.replace(/\s+/g,'_') + '.docx');
+    toast('Download iniciado! 📄');
+  } catch(e) { toast('Erro ao gerar .docx'); console.error(e); }
+}
+
+async function baixarDocxById(id) {
+  const aluno = state.alunos.find(a => a.id === id);
+  const texto = state.relatorios[id];
+  if (!texto) { toast('Sem relatório para baixar.'); return; }
+  try {
+    const blob = await gerarDocxBlob(aluno.nome, texto);
+    downloadBlob(blob, 'Relatorio_' + aluno.nome.replace(/\s+/g,'_') + '.docx');
+    toast('Download iniciado! 📄');
+  } catch(e) { toast('Erro ao gerar .docx'); console.error(e); }
+}
+
 
 // ===================== SYNC =====================
 function syncStart() {
