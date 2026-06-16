@@ -9,21 +9,21 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
   :root {
-    --verde: #2d6a4f;
-    --verde-claro: #52b788;
-    --verde-menta: #d8f3dc;
-    --verde-escuro: #1b4332;
+    --verde: #6b3fa0;
+    --verde-claro: #a47dd4;
+    --verde-menta: #ede0f7;
+    --verde-escuro: #3b1f6b;
     --laranja: #f4845f;
     --amarelo: #f9c74f;
     --cinza-bg: #f7f9f8;
-    --cinza-borda: #e0e9e4;
-    --texto: #1c2e26;
-    --texto-suave: #5a7a68;
+    --cinza-borda: #e8daf4;
+    --texto: #1c1026;
+    --texto-suave: #6b5a7a;
     --branco: #ffffff;
-    --satisfatorio: #2d6a4f;
+    --satisfatorio: #6b3fa0;
     --desenvolvimento: #e9891a;
     --nao-adquirido: #c1121f;
-    --shadow: 0 4px 24px rgba(45,106,79,0.10);
+    --shadow: 0 4px 24px rgba(107,63,160,0.10);
     --radius: 14px;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -58,7 +58,7 @@
     transition: all .2s; border-left: 3px solid transparent;
   }
   .nav-item:hover { background: rgba(255,255,255,0.06); color: white; }
-  .nav-item.active { background: rgba(82,183,136,0.18); color: var(--verde-claro); border-left-color: var(--verde-claro); }
+  .nav-item.active { background: rgba(164,125,212,0.18); color: var(--verde-claro); border-left-color: var(--verde-claro); }
   .nav-item .icon { font-size: 18px; width: 22px; text-align: center; }
   .sidebar-footer { padding: 16px 20px; border-top: 1px solid rgba(255,255,255,0.08); }
   .semester-badge {
@@ -95,7 +95,7 @@
     cursor: pointer; border: none; transition: all .2s; font-family: 'DM Sans', sans-serif;
   }
   .btn-primary { background: var(--verde); color: white; }
-  .btn-primary:hover { background: var(--verde-escuro); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(45,106,79,0.3); }
+  .btn-primary:hover { background: var(--verde-escuro); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(107,63,160,0.3); }
   .btn-outline { background: white; color: var(--verde); border: 1.5px solid var(--cinza-borda); }
   .btn-outline:hover { border-color: var(--verde-claro); background: var(--verde-menta); }
   .btn-laranja { background: var(--laranja); color: white; }
@@ -125,7 +125,7 @@
   .badge { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; }
   .badge-turma { background: #e8f4fd; color: #1a6fa3; }
   .badge-especial { background: #fef3e2; color: #a05c00; }
-  .badge-sat { background: #d8f3dc; color: var(--verde-escuro); }
+  .badge-sat { background: #ede0f7; color: var(--verde-escuro); }
   .badge-dev { background: #fef3e2; color: #a05c00; }
   .badge-nao { background: #ffe0e0; color: var(--nao-adquirido); }
 
@@ -415,7 +415,7 @@
   }
   .score-box .score-val { font-family: 'Lora', serif; font-size: 30px; font-weight: 700; line-height: 1; }
   .score-box .score-label { font-size: 11px; font-weight: 700; letter-spacing: 0.5px; margin-top: 4px; text-transform: uppercase; }
-  .score-box.s { background: #d8f3dc; color: var(--verde-escuro); }
+  .score-box.s { background: #ede0f7; color: var(--verde-escuro); }
   .score-box.d { background: #fef3e2; color: #a05c00; }
   .score-box.n { background: #ffe0e0; color: var(--nao-adquirido); }
   .panorama-rel {
@@ -476,7 +476,7 @@
     cursor: pointer; transition: all .15s; background: white; text-align: center;
   }
   .exp-card:hover { border-color: var(--verde-claro); background: var(--verde-menta); }
-  .exp-card.sel { border-color: var(--verde); background: var(--verde-menta); box-shadow: 0 0 0 3px rgba(45,106,79,.12); }
+  .exp-card.sel { border-color: var(--verde); background: var(--verde-menta); box-shadow: 0 0 0 3px rgba(107,63,160,.12); }
   .exp-card-icon { font-size: 28px; margin-bottom: 6px; }
   .exp-card-title { font-weight: 700; font-size: 13px; color: var(--verde-escuro); margin-bottom: 4px; }
   .exp-card-desc { font-size: 11px; color: var(--texto-suave); line-height: 1.4; }
@@ -698,7 +698,7 @@
     <!-- Logo CEMEI direita + sync -->
     <div style="display:flex;align-items:center;gap:14px;flex-shrink:0;">
       <div id="sync-indicator" style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--texto-suave);">
-        <span id="sync-dot" style="width:7px;height:7px;border-radius:50%;background:#52b788;display:inline-block;transition:background .4s;"></span>
+        <span id="sync-dot" style="width:7px;height:7px;border-radius:50%;background:#a47dd4;display:inline-block;transition:background .4s;"></span>
         <span id="sync-label">Sincronizado</span>
       </div>
       <div class="topbar-actions" id="topbar-actions"></div>
@@ -871,11 +871,7 @@
         </div>
         <div class="form-group">
           <label>Turno</label>
-          <select id="turma-turno">
-            <option>Manhã</option>
-            <option>Tarde</option>
-            <option>Integral</option>
-          </select>
+          <input type="text" id="turma-turno" value="Integral" readonly style="background:var(--verde-menta);color:var(--verde-escuro);font-weight:600;cursor:not-allowed;">
         </div>
       </div>
     </div>
@@ -1751,14 +1747,14 @@ function imprimirLote(turmaId) {
     <title>Relatórios – ${turma ? turma.nome : 'Todos os alunos'}</title>
     <style>
       @page { size: A4; margin: 1.5cm; }
-      body { font-family: Georgia, serif; font-size: 12pt; color: #1c2e26; }
-      h1 { font-size: 14pt; color: #1b4332; border-bottom: 2px solid #52b788; padding-bottom: 6px; margin-bottom: 4px; }
-      .meta { font-size: 10pt; color: #5a7a68; margin-bottom: 20px; }
+      body { font-family: Georgia, serif; font-size: 12pt; color: #1c1026; }
+      h1 { font-size: 14pt; color: #3b1f6b; border-bottom: 2px solid #a47dd4; padding-bottom: 6px; margin-bottom: 4px; }
+      .meta { font-size: 10pt; color: #6b5a7a; margin-bottom: 20px; }
       .aluno-bloco { margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid #ccc; page-break-inside: avoid; }
       .aluno-bloco:last-child { border-bottom: none; }
       .aluno-header { display: flex; gap: 12px; align-items: baseline; margin-bottom: 6px; flex-wrap: wrap; }
-      .aluno-header strong { font-size: 12pt; color: #1b4332; }
-      .aluno-header span { font-size: 10pt; color: #5a7a68; }
+      .aluno-header strong { font-size: 12pt; color: #3b1f6b; }
+      .aluno-header span { font-size: 10pt; color: #6b5a7a; }
       .esp { background: #fef3e2; color: #a05c00; padding: 1px 6px; border-radius: 4px; font-size: 9pt; }
       .aluno-texto { font-size: 11pt; line-height: 1.7; text-align: justify; }
     </style>
@@ -1806,9 +1802,9 @@ function imprimirRelatorio() {
   if (!texto) { toast('Gere o relatório primeiro.'); return; }
   const win = window.open('', '_blank');
   win.document.write(`<html><head><title>Relatório - ${aluno.nome}</title>
-  <style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;font-size:14px;line-height:1.8;color:#1c2e26;}
-  h2{font-size:18px;color:#1b4332;border-bottom:2px solid #52b788;padding-bottom:8px;}
-  .meta{font-size:12px;color:#5a7a68;margin:8px 0 24px;}
+  <style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;font-size:14px;line-height:1.8;color:#1c1026;}
+  h2{font-size:18px;color:#3b1f6b;border-bottom:2px solid #a47dd4;padding-bottom:8px;}
+  .meta{font-size:12px;color:#6b5a7a;margin:8px 0 24px;}
   p{margin:0;}</style></head><body>
   <h2>Relatório Educação Infantil – CEMEI Vila da Paz</h2>
   <p class="meta">Aluno: <strong>${aluno.nome}</strong> &nbsp;|&nbsp; 1º Semestre 2026 &nbsp;|&nbsp; Prof.ª Bernadete Gomes</p>
@@ -1834,7 +1830,7 @@ function imprimirVer() {
   const titulo = document.getElementById('ver-rel-titulo').textContent;
   const texto = document.getElementById('ver-rel-texto').textContent;
   const win = window.open('', '_blank');
-  win.document.write(`<html><head><title>Relatório</title><style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;font-size:14px;line-height:1.8;}h2{color:#1b4332;border-bottom:2px solid #52b788;padding-bottom:8px;}</style></head><body><h2>Relatório – ${titulo}</h2><p>${texto}</p></body></html>`);
+  win.document.write(`<html><head><title>Relatório</title><style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;font-size:14px;line-height:1.8;}h2{color:#3b1f6b;border-bottom:2px solid #a47dd4;padding-bottom:8px;}</style></head><body><h2>Relatório – ${titulo}</h2><p>${texto}</p></body></html>`);
   win.document.close(); win.print();
 }
 
@@ -1865,7 +1861,7 @@ function imprimirRelatorioById(id) {
   const aluno = state.alunos.find(a => a.id === id);
   const texto = state.relatorios[id];
   const win = window.open('', '_blank');
-  win.document.write(`<html><head><title>Relatório - ${aluno.nome}</title><style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;font-size:14px;line-height:1.8;color:#1c2e26;}h2{font-size:18px;color:#1b4332;border-bottom:2px solid #52b788;padding-bottom:8px;}</style></head><body><h2>Relatório – CEMEI Vila da Paz</h2><p style="font-size:12px;color:#5a7a68;margin:8px 0 24px;">Aluno: <strong>${aluno.nome}</strong></p><p>${texto}</p></body></html>`);
+  win.document.write(`<html><head><title>Relatório - ${aluno.nome}</title><style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;font-size:14px;line-height:1.8;color:#1c1026;}h2{font-size:18px;color:#3b1f6b;border-bottom:2px solid #a47dd4;padding-bottom:8px;}</style></head><body><h2>Relatório – CEMEI Vila da Paz</h2><p style="font-size:12px;color:#6b5a7a;margin:8px 0 24px;">Aluno: <strong>${aluno.nome}</strong></p><p>${texto}</p></body></html>`);
   win.document.close(); win.print();
 }
 
@@ -2174,8 +2170,8 @@ function gerarHTMLCardImpressao(aluno, opts) {
   const areasBlocos = areas.map(area => {
     const rows = area.lista.map(c => {
       const val = aval[c.id] || '';
-      const cor = val==='S' ? '#2d6a4f' : val==='D' ? '#e9891a' : val==='N' ? '#c1121f' : '#aaa';
-      const bg  = val==='S' ? '#d8f3dc' : val==='D' ? '#fef3e2' : val==='N' ? '#ffe0e0' : '#f5f5f5';
+      const cor = val==='S' ? '#6b3fa0' : val==='D' ? '#e9891a' : val==='N' ? '#c1121f' : '#aaa';
+      const bg  = val==='S' ? '#ede0f7' : val==='D' ? '#fef3e2' : val==='N' ? '#ffe0e0' : '#f5f5f5';
       return `<tr>
         <td style="padding:5px 8px;font-size:9.5pt;border-bottom:1px solid #e8e8e8;line-height:1.4;">${c.texto}</td>
         <td style="padding:5px 8px;text-align:center;border-bottom:1px solid #e8e8e8;white-space:nowrap;">
@@ -2188,13 +2184,13 @@ function gerarHTMLCardImpressao(aluno, opts) {
     }).join('');
 
     return `<div style="margin-bottom:12pt;break-inside:avoid;page-break-inside:avoid;">
-      <div style="background:#1b4332;color:white;padding:5px 10px;border-radius:6px 6px 0 0;font-weight:700;font-size:10pt;">${area.emoji} ${area.label}</div>
+      <div style="background:#3b1f6b;color:white;padding:5px 10px;border-radius:6px 6px 0 0;font-weight:700;font-size:10pt;">${area.emoji} ${area.label}</div>
       <table style="width:100%;border-collapse:collapse;border:1px solid #ddd;border-top:none;border-radius:0 0 6px 6px;overflow:hidden;">
         <thead>
-          <tr style="background:#f0f7f0;">
-            <th style="padding:5px 8px;font-size:9pt;text-align:left;color:#5a7a68;font-weight:600;border-bottom:1px solid #ddd;">Critério</th>
-            <th style="padding:5px 8px;font-size:9pt;text-align:center;color:#5a7a68;font-weight:600;border-bottom:1px solid #ddd;width:45px;">Aval.</th>
-            <th style="padding:5px 8px;font-size:9pt;text-align:left;color:#5a7a68;font-weight:600;border-bottom:1px solid #ddd;width:120px;">Anotação</th>
+          <tr style="background:#f3eefa;">
+            <th style="padding:5px 8px;font-size:9pt;text-align:left;color:#6b5a7a;font-weight:600;border-bottom:1px solid #ddd;">Critério</th>
+            <th style="padding:5px 8px;font-size:9pt;text-align:center;color:#6b5a7a;font-weight:600;border-bottom:1px solid #ddd;width:45px;">Aval.</th>
+            <th style="padding:5px 8px;font-size:9pt;text-align:left;color:#6b5a7a;font-weight:600;border-bottom:1px solid #ddd;width:120px;">Anotação</th>
           </tr>
         </thead>
         <tbody>${rows}</tbody>
@@ -2209,8 +2205,8 @@ function gerarHTMLCardImpressao(aluno, opts) {
 
   const semanas = ['Sem. 1','Sem. 2','Sem. 3','Sem. 4','Sem. 5','Sem. 6','Sem. 7','Sem. 8'];
   const tabelaSemanas = `<table style="width:100%;border-collapse:collapse;font-size:9pt;">
-    <tr style="background:#f0f7f0;">
-      ${semanas.map(s => `<th style="border:1px solid #ddd;padding:5px;text-align:center;font-weight:600;color:#2d6a4f;">${s}</th>`).join('')}
+    <tr style="background:#f3eefa;">
+      ${semanas.map(s => `<th style="border:1px solid #ddd;padding:5px;text-align:center;font-weight:600;color:#6b3fa0;">${s}</th>`).join('')}
     </tr>
     <tr>
       ${semanas.map(() => `<td style="border:1px solid #ddd;height:32px;"></td>`).join('')}
@@ -2219,12 +2215,12 @@ function gerarHTMLCardImpressao(aluno, opts) {
 
   return `
     <!-- CABEÇALHO DO CARD -->
-    <div style="border:2.5px solid #2d6a4f;border-radius:12pt;margin-bottom:0;">
+    <div style="border:2.5px solid #6b3fa0;border-radius:12pt;margin-bottom:0;">
 
       <!-- Topo verde -->
-      <div style="background:#1b4332;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;break-inside:avoid;page-break-inside:avoid;">
+      <div style="background:#3b1f6b;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;break-inside:avoid;page-break-inside:avoid;">
         <div>
-          <div style="color:#52b788;font-size:8pt;letter-spacing:2px;text-transform:uppercase;font-weight:700;">CEMEI Vila da Paz · Contagem/MG</div>
+          <div style="color:#a47dd4;font-size:8pt;letter-spacing:2px;text-transform:uppercase;font-weight:700;">CEMEI Vila da Paz · Contagem/MG</div>
           <div style="color:white;font-size:15pt;font-weight:700;font-family:Georgia,serif;margin-top:2px;">${aluno.nome}</div>
           <div style="color:rgba(255,255,255,.7);font-size:9pt;margin-top:3px;">
             ${turma ? turma.nome + ' · ' + turma.turno + ' · ' + turma.faixa : ''}
@@ -2235,7 +2231,7 @@ function gerarHTMLCardImpressao(aluno, opts) {
           <div style="color:rgba(255,255,255,.5);font-size:8pt;">1º Semestre 2026</div>
           <div style="color:rgba(255,255,255,.5);font-size:8pt;margin-top:4px;">Prof.ª R1 - BERNADETE GOMES</div>
           <div style="display:flex;gap:6px;margin-top:8px;justify-content:flex-end;">
-            <span style="background:${cS>0?'#d8f3dc':'#f0f0f0'};color:${cS>0?'#1b4332':'#aaa'};padding:3px 8px;border-radius:6px;font-size:9pt;font-weight:700;">${cS} S</span>
+            <span style="background:${cS>0?'#ede0f7':'#f0f0f0'};color:${cS>0?'#3b1f6b':'#aaa'};padding:3px 8px;border-radius:6px;font-size:9pt;font-weight:700;">${cS} S</span>
             <span style="background:${cD>0?'#fef3e2':'#f0f0f0'};color:${cD>0?'#a05c00':'#aaa'};padding:3px 8px;border-radius:6px;font-size:9pt;font-weight:700;">${cD} D</span>
             <span style="background:${cN>0?'#ffe0e0':'#f0f0f0'};color:${cN>0?'#c1121f':'#aaa'};padding:3px 8px;border-radius:6px;font-size:9pt;font-weight:700;">${cN} N</span>
           </div>
@@ -2246,8 +2242,8 @@ function gerarHTMLCardImpressao(aluno, opts) {
       <div style="padding:14px 16px;background:white;">
 
         <!-- Legenda -->
-        ${opts.aval ? `<div style="display:flex;gap:16px;margin-bottom:12pt;font-size:8.5pt;color:#5a7a68;break-inside:avoid;page-break-inside:avoid;">
-          <span><strong style="color:#2d6a4f;">S</strong> = Satisfatório (70–100%)</span>
+        ${opts.aval ? `<div style="display:flex;gap:16px;margin-bottom:12pt;font-size:8.5pt;color:#6b5a7a;break-inside:avoid;page-break-inside:avoid;">
+          <span><strong style="color:#6b3fa0;">S</strong> = Satisfatório (70–100%)</span>
           <span><strong style="color:#e9891a;">D</strong> = Em desenvolvimento (50–70%)</span>
           <span><strong style="color:#c1121f;">N</strong> = Não adquirido (&lt;50%)</span>
           <span style="margin-left:auto;color:#aaa;font-style:italic;">Coluna "Anotação" para registros diários</span>
@@ -2258,13 +2254,13 @@ function gerarHTMLCardImpressao(aluno, opts) {
 
         <!-- Relatório narrativo -->
         ${opts.rel && rel ? `<div style="margin-bottom:14pt;break-inside:avoid;page-break-inside:avoid;">
-          <div style="background:#1b4332;color:white;padding:5px 10px;border-radius:6px 6px 0 0;font-weight:700;font-size:10pt;">📝 Relatório Narrativo</div>
-          <div style="border:1px solid #ddd;border-top:none;border-radius:0 0 6px 6px;padding:10px 12px;font-size:10pt;line-height:1.7;font-family:Georgia,serif;color:#1c2e26;background:#fafff9;">${rel}</div>
+          <div style="background:#3b1f6b;color:white;padding:5px 10px;border-radius:6px 6px 0 0;font-weight:700;font-size:10pt;">📝 Relatório Narrativo</div>
+          <div style="border:1px solid #ddd;border-top:none;border-radius:0 0 6px 6px;padding:10px 12px;font-size:10pt;line-height:1.7;font-family:Georgia,serif;color:#1c1026;background:#faf6ff;">${rel}</div>
         </div>` : ''}
 
         <!-- Presença semanal -->
         ${opts.presenca ? `<div style="margin-bottom:14pt;break-inside:avoid;page-break-inside:avoid;">
-          <div style="background:#1b4332;color:white;padding:5px 10px;border-radius:6px 6px 0 0;font-weight:700;font-size:10pt;">📅 Acompanhamento de Presença / Participação</div>
+          <div style="background:#3b1f6b;color:white;padding:5px 10px;border-radius:6px 6px 0 0;font-weight:700;font-size:10pt;">📅 Acompanhamento de Presença / Participação</div>
           <div style="border:1px solid #ddd;border-top:none;border-radius:0 0 6px 6px;padding:10px 12px;">
             ${tabelaSemanas}
           </div>
@@ -2272,7 +2268,7 @@ function gerarHTMLCardImpressao(aluno, opts) {
 
         <!-- Anotações livres -->
         ${opts.obs ? `<div style="break-inside:avoid;page-break-inside:avoid;">
-          <div style="background:#1b4332;color:white;padding:5px 10px;border-radius:6px 6px 0 0;font-weight:700;font-size:10pt;">🗒️ Observações e Anotações do Dia a Dia</div>
+          <div style="background:#3b1f6b;color:white;padding:5px 10px;border-radius:6px 6px 0 0;font-weight:700;font-size:10pt;">🗒️ Observações e Anotações do Dia a Dia</div>
           <div style="border:1px solid #ddd;border-top:none;border-radius:0 0 6px 6px;padding:12px 12px 6px;">
             ${linhasAnotacao}
           </div>
@@ -2405,7 +2401,7 @@ function abrirJanelaImpressao(lista, opts) {
     body {
       font-family: 'DM Sans', Arial, sans-serif;
       background: white;
-      color: #1c2e26;
+      color: #1c1026;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
@@ -2452,9 +2448,9 @@ function abrirJanelaImpressao(lista, opts) {
 </head>
 <body>
   <!-- Barra de ação (só na tela) -->
-  <div class="no-print" style="position:sticky;top:0;z-index:99;background:#1b4332;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;border-radius:0 0 10px 10px;box-shadow:0 4px 12px rgba(0,0,0,.2);max-width:780px;margin:0 auto 16px;">
+  <div class="no-print" style="position:sticky;top:0;z-index:99;background:#3b1f6b;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;border-radius:0 0 10px 10px;box-shadow:0 4px 12px rgba(0,0,0,.2);max-width:780px;margin:0 auto 16px;">
     <div style="color:white;font-weight:700;font-size:14px;">🖨️ ${lista.length} card${lista.length!==1?'s':''} de acompanhamento</div>
-    <button onclick="window.print()" style="background:#52b788;color:white;border:none;padding:9px 20px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;">🖨️ Imprimir / Salvar PDF</button>
+    <button onclick="window.print()" style="background:#a47dd4;color:white;border:none;padding:9px 20px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;">🖨️ Imprimir / Salvar PDF</button>
   </div>
 
   <div class="card-wrapper">
@@ -2491,7 +2487,7 @@ function expSel(tipo) {
 function expAtualizarPreview() {
   const preview = document.getElementById('exp-preview');
   const cols = expColunas();
-  preview.innerHTML = cols.map((c,i) => `<span style="background:${i%2===0?'#e8f4e8':'#f0f7f0'};padding:1px 6px;border-radius:4px;margin:2px;display:inline-block;">${c}</span>`).join(' ');
+  preview.innerHTML = cols.map((c,i) => `<span style="background:${i%2===0?'#e8f4e8':'#f3eefa'};padding:1px 6px;border-radius:4px;margin:2px;display:inline-block;">${c}</span>`).join(' ');
   const turmaId = document.getElementById('exp-filtro-turma').value;
   const alunos = state.alunos.filter(a => !turmaId || a.turmaId === turmaId);
   document.getElementById('exp-subtitulo').textContent =
@@ -2620,9 +2616,9 @@ async function importCSV(input) {
     let turma = state.turmas.find(t => t.nome.toLowerCase() === turmaNome.toLowerCase());
     if (!turma && turmaNome) {
       const id = 'turma_' + Date.now() + '_' + i;
-      turma = { id, nome: turmaNome, faixa: '4 anos', turno: 'Manhã' };
+      turma = { id, nome: turmaNome, faixa: '4 anos', turno: 'Integral' };
       state.turmas.push(turma);
-      await db.from('turmas').insert({ id, nome: turmaNome, faixa: '4 anos', turno: 'Manhã' });
+      await db.from('turmas').insert({ id, nome: turmaNome, faixa: '4 anos', turno: 'Integral' });
     }
     try {
       const id = 'aluno_' + Date.now() + '_' + i;
