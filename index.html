@@ -2990,6 +2990,29 @@ function setTemaDropdown(temaStr) {
   atualizarTemaLabel();
 }
 
+// ===================== SYNC =====================
+function syncStart() {
+  const dot = document.getElementById('sync-dot');
+  const label = document.getElementById('sync-label');
+  if (!dot) return;
+  dot.style.background = '#f9c74f';
+  label.textContent = 'Salvando…';
+}
+function syncOk() {
+  const dot = document.getElementById('sync-dot');
+  const label = document.getElementById('sync-label');
+  if (!dot) return;
+  dot.style.background = '#a47dd4';
+  label.textContent = 'Sincronizado';
+}
+function syncErro() {
+  const dot = document.getElementById('sync-dot');
+  const label = document.getElementById('sync-label');
+  if (!dot) return;
+  dot.style.background = '#c1121f';
+  label.textContent = 'Erro ao salvar';
+}
+
 // ===================== TOAST =====================
 function toast(msg) {
   const el = document.getElementById('toast');
