@@ -1668,18 +1668,13 @@ Escreva APENAS o relatório no formato indicado. Nenhum comentário extra, nenhu
 }
 
 function formatarRelatorio(texto) {
-  // Converte quebras de linha em parágrafos HTML e destaca o espaço do R2
-  const linhas = texto.split(/\n\n+/);
-  return linhas.map(bloco => {
+  const blocos = texto.split(/\n\n+/);
+  return blocos.map(bloco => {
     const trimmed = bloco.trim();
     if (!trimmed) return '';
-    // Detecta o espaço reservado ao R2 (linha de underscores ou vazia após 2º parágrafo)
     if (/^[_]{10,}$/.test(trimmed)) {
-      return `<div style="border:2px dashed #e9891a;border-radius:8px;padding:14px 16px;margin:10px 0;background:#fef3e2;color:#a05c00;font-size:13px;font-style:italic;min-height:80px;">
-        <strong>3º Parágrafo — Prof.ª R2</strong><br><span style="color:#c8860a;">(A ser preenchido pela professora R2 — Desenvolvimento Motor, Cognitivo e Esquema Corporal)</span>
-      </div>`;
+      return `<p style="margin:10px 0;color:var(--texto-suave);font-size:13px;font-style:italic;">3º Parágrafo — Prof.ª R2</p>`;
     }
-    // OBS destaque
     if (/^OBS\.:/.test(trimmed)) {
       return `<p style="margin-top:12px;padding:8px 12px;background:#ede0f7;border-left:3px solid #6b3fa0;border-radius:4px;font-size:13px;">${trimmed}</p>`;
     }
@@ -1693,13 +1688,57 @@ function formatarRelatorioPrint(texto) {
     const trimmed = bloco.trim();
     if (!trimmed) return '';
     if (/^[_]{10,}$/.test(trimmed)) {
-      return `<div class="r2-bloco"><div class="r2-label">3º Parágrafo — Prof.ª R2 (Desenvolvimento Motor, Cognitivo e Esquema Corporal)</div></div>`;
+      return `<p class="r2-label">3º Parágrafo — Prof.ª R2</p>`;
     }
     if (/^OBS\.:/.test(trimmed)) {
-      return `<div class="obs-bloco">${trimmed}</div>`;
+      return `<p class="obs">${trimmed}</p>`;
     }
     return `<p>${trimmed.replace(/\n/g,'<br>')}</p>`;
   }).join('');
+}
+
+function getPrintCSS() {
+  return `
+    @page { size: A4; margin: 2cm 2.5cm; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, Helvetica, sans-serif; font-size: 11pt; color: #1c1026; }
+    .page { page-break-after: always; }
+    .page:last-child { page-break-after: auto; }
+    .cabecalho { display: flex; align-items: flex-start; gap: 16pt; margin-bottom: 4pt; }
+    .logo-area { flex-shrink: 0; }
+    .escola-info { flex: 1; text-align: center; padding-top: 4pt; }
+    .escola-nome { font-size: 10pt; font-weight: bold; text-transform: uppercase; line-height: 1.6; }
+    .titulo-aluno { text-align: center; font-size: 14pt; font-weight: bold; text-transform: uppercase; margin: 22pt 0 24pt; letter-spacing: 0.5pt; }
+    .corpo p { text-align: justify; font-size: 11pt; line-height: 1.8; margin-bottom: 14pt; }
+    .corpo .r2-label { font-size: 10pt; color: #555; font-style: italic; margin-bottom: 14pt; }
+    .corpo .obs { font-size: 10pt; margin-top: 4pt; margin-bottom: 14pt; }
+    .rodape { margin-top: 36pt; }
+    .rodape p { font-size: 11pt; line-height: 1.9; }
+  `;
+}
+
+function getPrintPage(nomeAluno, htmlCorpo) {
+  return `<div class="page">
+    <div class="cabecalho">
+      <div class="logo-area">
+        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 60 60">
+          <circle cx="30" cy="30" r="28" fill="#6b3fa0" stroke="#3b1f6b" stroke-width="2"/>
+          <text x="30" y="23" text-anchor="middle" font-family="serif" font-size="9" font-weight="bold" fill="white">cemei</text>
+          <text x="30" y="34" text-anchor="middle" font-family="serif" font-size="5.5" fill="#f9c74f">VILA DA PAZ</text>
+          <text x="30" y="44" text-anchor="middle" font-family="sans-serif" font-size="4" fill="white">VER. AGRIPINO F. DIAS</text>
+        </svg>
+      </div>
+      <div class="escola-info">
+        <div class="escola-nome">CEMEI VILA DA PAZ<br>VEREADOR AGRIPINO FERREIRA DIAS</div>
+      </div>
+    </div>
+    <div class="titulo-aluno">${nomeAluno}</div>
+    <div class="corpo">${htmlCorpo}</div>
+    <div class="rodape">
+      <p>Atenciosamente,</p>
+      <p>Fabiana Reis / Pedagoga</p>
+    </div>
+  </div>`;
 }
 
 async function gerarRelatorio() {
@@ -1776,42 +1815,11 @@ function imprimirLote(turmaId) {
   if (!alunos.length) { toast('Nenhum relatório gerado para imprimir.'); return; }
   const turma = turmaId ? state.turmas.find(t => t.id === turmaId) : null;
   const win = window.open('', '_blank');
-  const linhas = alunos.map(a => {
-    const t = state.turmas.find(t => t.id === a.turmaId);
-    const textoFormatado = formatarRelatorioPrint(state.relatorios[a.id] || '');
-    return `<div class="aluno-bloco">
-      <div class="aluno-header">
-        <strong>${a.nome}</strong>
-        <span>${t ? t.nome : ''}</span>
-        ${a.especial ? `<span class="esp">⭐ Ed. Especial${a.diagnostico ? ' – ' + a.diagnostico : ''}</span>` : ''}
-      </div>
-      <div class="aluno-texto">${textoFormatado}</div>
-    </div>`;
+  const paginas = alunos.map(a => {
+    const htmlCorpo = formatarRelatorioPrint(state.relatorios[a.id] || '');
+    return getPrintPage(a.nome, htmlCorpo);
   }).join('');
-  win.document.write(`<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
-    <title>Relatórios – ${turma ? turma.nome : 'Todos os alunos'}</title>
-    <style>
-      @page { size: A4; margin: 1.5cm; }
-      body { font-family: Georgia, serif; font-size: 12pt; color: #1c1026; }
-      h1 { font-size: 14pt; color: #3b1f6b; border-bottom: 2px solid #a47dd4; padding-bottom: 6px; margin-bottom: 4px; }
-      .meta { font-size: 10pt; color: #6b5a7a; margin-bottom: 20px; }
-      .aluno-bloco { margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid #ccc; page-break-inside: avoid; }
-      .aluno-bloco:last-child { border-bottom: none; }
-      .aluno-header { display: flex; gap: 12px; align-items: baseline; margin-bottom: 6px; flex-wrap: wrap; }
-      .aluno-header strong { font-size: 12pt; color: #3b1f6b; }
-      .aluno-header span { font-size: 10pt; color: #6b5a7a; }
-      .esp { background: #fef3e2; color: #a05c00; padding: 1px 6px; border-radius: 4px; font-size: 9pt; }
-      .aluno-texto { font-size: 11pt; line-height: 1.7; text-align: justify; }
-      .aluno-texto p { margin-bottom: 8pt; }
-      .r2-bloco { border: 1.5pt dashed #b0781a; border-radius: 4pt; padding: 8pt 10pt; margin: 8pt 0; min-height: 60pt; background: #fffbf3; }
-      .r2-label { font-size: 9pt; color: #b0781a; font-style: italic; margin-bottom: 4pt; }
-      .obs-bloco { margin-top: 8pt; padding: 6pt 10pt; background: #f0e8f8; border-left: 3pt solid #6b3fa0; border-radius: 3pt; font-size: 10pt; }
-    </style>
-  </head><body>
-    <h1>Relatórios Educação Infantil – CEMEI Vila da Paz</h1>
-    <p class="meta">${turma ? turma.nome + ' · ' : ''}1º Semestre 2026 · Prof.ª R1 Bernadete Gomes · ${alunos.length} aluno(s)</p>
-    ${linhas}
-  </body></html>`);
+  win.document.write(`<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><title>Relatórios – ${turma ? turma.nome : 'Todos os alunos'}</title><style>${getPrintCSS()}</style></head><body>${paginas}</body></html>`);
   win.document.close();
   win.print();
 }
@@ -1850,15 +1858,8 @@ function imprimirRelatorio() {
   const texto = state.relatorios[currentAlunoId];
   if (!texto) { toast('Gere o relatório primeiro.'); return; }
   const win = window.open('', '_blank');
-  win.document.write(`<html><head><title>Relatório - ${aluno.nome}</title>
-  <style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;font-size:14px;line-height:1.8;color:#1c1026;}
-  h2{font-size:18px;color:#3b1f6b;border-bottom:2px solid #a47dd4;padding-bottom:8px;}
-  .meta{font-size:12px;color:#6b5a7a;margin:8px 0 24px;}
-  p{margin:0;}</style></head><body>
-  <h2>Relatório Educação Infantil – CEMEI Vila da Paz</h2>
-  <p class="meta">Aluno: <strong>${aluno.nome}</strong> &nbsp;|&nbsp; 1º Semestre 2026 &nbsp;|&nbsp; Prof.ª Bernadete Gomes</p>
-  <p>${texto}</p>
-  </body></html>`);
+  const htmlCorpo = formatarRelatorioPrint(texto);
+  win.document.write(`<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><title>Relatório - ${aluno.nome}</title><style>${getPrintCSS()}</style></head><body>${getPrintPage(aluno.nome, htmlCorpo)}</body></html>`);
   win.document.close(); win.print();
 }
 
@@ -1881,8 +1882,8 @@ function imprimirVer() {
   const titulo = document.getElementById('ver-rel-titulo').textContent;
   const texto = document.getElementById('ver-rel-texto').getAttribute('data-raw') || '';
   const win = window.open('', '_blank');
-  const htmlRel = formatarRelatorioPrint(texto);
-  win.document.write(`<html><head><title>Relatório</title><style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;font-size:14px;line-height:1.8;}h2{color:#3b1f6b;border-bottom:2px solid #a47dd4;padding-bottom:8px;}.r2-bloco{border:1.5px dashed #b0781a;border-radius:4px;padding:10px 14px;margin:8px 0;min-height:60px;background:#fffbf3;}.r2-label{font-size:11px;color:#b0781a;font-style:italic;}.obs-bloco{margin-top:8px;padding:6px 10px;background:#f0e8f8;border-left:3px solid #6b3fa0;}p{text-align:justify;}</style></head><body><h2>Relatório – ${titulo}</h2>${htmlRel}</body></html>`);
+  const htmlCorpo = formatarRelatorioPrint(texto);
+  win.document.write(`<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><title>Relatório - ${titulo}</title><style>${getPrintCSS()}</style></head><body>${getPrintPage(titulo, htmlCorpo)}</body></html>`);
   win.document.close(); win.print();
 }
 
@@ -1913,7 +1914,8 @@ function imprimirRelatorioById(id) {
   const aluno = state.alunos.find(a => a.id === id);
   const texto = state.relatorios[id];
   const win = window.open('', '_blank');
-  win.document.write(`<html><head><title>Relatório - ${aluno.nome}</title><style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;font-size:14px;line-height:1.8;color:#1c1026;}h2{font-size:18px;color:#3b1f6b;border-bottom:2px solid #a47dd4;padding-bottom:8px;}</style></head><body><h2>Relatório – CEMEI Vila da Paz</h2><p style="font-size:12px;color:#6b5a7a;margin:8px 0 24px;">Aluno: <strong>${aluno.nome}</strong></p><p>${texto}</p></body></html>`);
+  const htmlCorpo = formatarRelatorioPrint(texto);
+  win.document.write(`<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><title>Relatório - ${aluno.nome}</title><style>${getPrintCSS()}</style></head><body>${getPrintPage(aluno.nome, htmlCorpo)}</body></html>`);
   win.document.close(); win.print();
 }
 
